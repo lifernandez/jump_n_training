@@ -1,6 +1,6 @@
-class ClubsController < ApplicationController
+class ServicesController < ApplicationController
   def index
-
+    
   end
 
   def show
