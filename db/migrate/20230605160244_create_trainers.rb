@@ -1,6 +1,6 @@
-class CreateTrainerData < ActiveRecord::Migration[7.0]
+class CreateTrainers < ActiveRecord::Migration[7.0]
   def change
-    create_table :trainer_data do |t|
+    create_table :trainers do |t|
       t.string :sports
       t.text :description
       t.references :user, null: false, foreign_key: true
