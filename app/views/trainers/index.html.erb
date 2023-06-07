@@ -1,0 +1,18 @@
+<h1>Trainers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sports</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trainers.each do |trainer| %>
+      <tr>
+        <td><%= trainer.sports %></td>
+        <td><%= trainer.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

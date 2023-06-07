@@ -13,4 +13,6 @@ class User < ApplicationRecord
   has_many :clubs
   has_many :user_activities
   has_many :activities, through: :user_activities
+  has_one :trainer
 end
+

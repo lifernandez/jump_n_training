@@ -1,0 +1,32 @@
+<h1>New Booking</h1>
+
+<%= form_with(model: @booking, url: bookings_path) do |form| %>
+  <div>
+    <%= form.label :service_id %>
+    <%= form.text_field :service_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div>
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Booking" %>
+  </div>
+<% end %>

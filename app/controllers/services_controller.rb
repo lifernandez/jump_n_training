@@ -1,6 +1,10 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.order(id: :asc)
+    @services = Service.all
+  end
+
+  def show
+    @service = Service.find(params[:id])
   end
 
   def new
@@ -9,46 +13,17 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
-    @service.user = current_user
     if @service.save
-      redirect_to @service, notice: 'service was successfully created.'
+      redirect_to @service, notice: 'Service was successfully created.'
     else
       render :new
     end
   end
 
-  def show
-    @booking = Booking.new
-    @service = Service.find(params[:id])
-
-      # @markers = [{
-      #     lat: @service.latitude,
-      #     lng: @service.longitude
-      #   }]
-  end
-
-  def edit
-    @service = Service.find(params[:id])
-  end
-
-  def update
-    @service = Service.find(params[:id])
-    if @service.update(service_params)
-      redirect_to service_path(@service)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @service = Service.find(params[:id])
-    @service.destroy
-    redirect_to service_path, status: :see_other
-  end
-
   private
 
   def service_params
-    params.require(:service).permit(:user, :category, :address, :price, :description, :sport)
+    params.require(:service).permit(:trainer_id, :description, :service_type, :address, :sport, :price)
   end
 end
+
