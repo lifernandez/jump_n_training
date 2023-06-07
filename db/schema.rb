@@ -47,6 +47,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
 
   create_table "clubs", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.string "name"
+    t.text "description"
+    t.string "address"
+    t.string "sport"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_clubs_on_user_id"
@@ -77,6 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "club_id", null: false
     t.bigint "user_id", null: false
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["club_id"], name: "index_subscriptions_on_club_id"

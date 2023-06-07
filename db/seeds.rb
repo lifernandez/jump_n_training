@@ -100,3 +100,17 @@ service3= Service.create(
 # file = URI.open("https://static.wikia.nocookie.net/harrypotter/images/f/fb/Room_of_Requirement_OotP.png/revision/latest?cb=20161215063619")
 # gym.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 # gym.save!
+
+require 'faker'
+
+6.times do
+  Club.create(
+    user_id: User.all.sample.id,
+    name: Faker::Company.name,
+    description: Faker::Lorem.paragraph,
+    address: Faker::Address.full_address,
+    sport: Faker::Sport.name,
+    price: Faker::Number.between(from: 10, to: 100)
+  )
+end
+

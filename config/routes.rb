@@ -6,4 +6,11 @@ Rails.application.routes.draw do
   resources :services do
     resources :bookings, only: [:new, :create]
   end
+
+  resources :clubs, only: [:index, :new, :create, :show, :destroy, :update, :edit] do
+    resources :subscriptions, only: [:new, :create] do
+    resources :club_reviews, only: [:new, :create]
+    end
+  end
+  resources :subscriptions, only:[:index, :show]
 end
