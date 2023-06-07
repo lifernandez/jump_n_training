@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_143054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["service_id"], name: "index_bookings_on_service_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -47,11 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
 
   create_table "clubs", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "name"
-    t.text "description"
-    t.string "address"
-    t.string "sport"
-    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_clubs_on_user_id"
@@ -67,26 +65,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "user_id", null: false
     t.text "description"
     t.string "address"
     t.string "sport"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_services_on_category_id"
-    t.index ["user_id"], name: "index_services_on_user_id"
+    t.bigint "trainer_data_id"
+    t.string "service_type"
+    t.index ["trainer_data_id"], name: "index_services_on_trainer_data_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "club_id", null: false
     t.bigint "user_id", null: false
-    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["club_id"], name: "index_subscriptions_on_club_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
+  create_table "trainer_data", force: :cascade do |t|
+    t.string "sports"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trainer_data_on_user_id"
   end
 
   create_table "user_activities", force: :cascade do |t|
@@ -108,6 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.boolean "trainer"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -118,10 +124,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_153721) do
   add_foreign_key "club_reviews", "subscriptions"
   add_foreign_key "clubs", "users"
   add_foreign_key "reviews", "bookings"
-  add_foreign_key "services", "categories"
-  add_foreign_key "services", "users"
+  add_foreign_key "services", "trainer_data", column: "trainer_data_id"
   add_foreign_key "subscriptions", "clubs"
   add_foreign_key "subscriptions", "users"
+  add_foreign_key "trainer_data", "users"
   add_foreign_key "user_activities", "activities"
   add_foreign_key "user_activities", "users"
 end
