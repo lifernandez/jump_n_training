@@ -1,0 +1,7 @@
+<%= form_with(model: @club, url: @club.new_record? ? clubs_path : club_path(@club), local: true) do |form| %>
+  <% if @club.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@club.errors.count, "error") %> prohibited this club from being saved:</h2>
+
+      <ul>
+        <% @club.errors.full_messages.each do |message|
