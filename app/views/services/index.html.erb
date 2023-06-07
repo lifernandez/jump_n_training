@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="card-product">
+    <img src="https://jumpn-app.com/assets/our-vision.png" />
+      <% @services.each_with_index do |service, i|  %>
+        <div class="card-product-infos">
+          <% @services.each do |service| %>
+            <%= service.user.first_name %>
+            <%= service.description %>
+            <%= service.sport %>
+            <%= service.price %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
