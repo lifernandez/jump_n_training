@@ -1,4 +1,4 @@
 class Service < ApplicationRecord
-  belongs_to :category
-  belongs_to :user
+  belongs_to :trainer
+  has_many :bookings
 end

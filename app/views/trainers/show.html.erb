@@ -1,0 +1,34 @@
+
+<% if user.trainer %>
+<h1>Your Trainer Profile</h1>
+
+<p><strong>Sports:</strong> <%= @trainer.sports %></p>
+  <p><strong>Description:</strong> <%= @trainer.description %></p>
+<% else %>
+<h1>Trainer Details</h1>
+
+<p><strong>Sports:</strong> <%= @trainer.sports %></p>
+  <p><strong>Description:</strong> <%= user.description %></p>
+<% end %>
+
+<table>
+  <thead>
+
+
+    <tr>
+      <th>Type of service</th>
+      <th>Price</th>
+      <th>Sport</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trainer.services.each do |service| %>
+      <tr>
+        <td><%= service.service_type %></td>
+        <td><%= service.price %></td>
+        <td><%= service.sports %></td>
+        <td><%= service.description %></td>
+      </tr>
+    <% end %>
+  </table>

@@ -13,3 +13,32 @@
       <% end %>
   </div>
 </div>
+
+
+<h1>Services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Trainer</th>
+      <th>Description</th>
+      <th>Service Type</th>
+      <th>Address</th>
+      <th>Sport</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service.trainer_id %></td>
+        <td><%= service.description %></td>
+        <td><%= service.service_type %></td>
+        <td><%= service.address %></td>
+        <td><%= service.sport %></td>
+        <td><%= service.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
