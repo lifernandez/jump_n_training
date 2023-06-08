@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_143054) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.bigint "club_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_activities_on_club_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -48,13 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143054) do
     t.index ["subscription_id"], name: "index_club_reviews_on_subscription_id"
   end
 
-  create_table "clubs", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_clubs_on_user_id"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
@@ -77,11 +68,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143054) do
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.bigint "club_id", null: false
     t.bigint "user_id", null: false
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_subscriptions_on_club_id"
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
@@ -118,14 +108,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143054) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "activities", "clubs"
   add_foreign_key "bookings", "services"
   add_foreign_key "bookings", "users"
   add_foreign_key "club_reviews", "subscriptions"
-  add_foreign_key "clubs", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "services", "trainer_data", column: "trainer_data_id"
-  add_foreign_key "subscriptions", "clubs"
   add_foreign_key "subscriptions", "users"
   add_foreign_key "trainer_data", "users"
   add_foreign_key "user_activities", "activities"
