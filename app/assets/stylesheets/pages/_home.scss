@@ -75,6 +75,9 @@ html, body{background: rgb(236, 240, 241);}
     min-width: 500px;
     margin: 10% auto;
     text-align: center;
+    a:hover {
+      border: none;
+    }
   }
     a:hover{border-bottom: 1px solid #ababab;}
     h1{font-size: 2em; padding: 20px 0;}
@@ -118,4 +121,3 @@ html, body{background: rgb(236, 240, 241);}
         font-size: .8em;
         transition: all .3s ease-in-out;
       }
-
