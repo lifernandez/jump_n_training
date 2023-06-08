@@ -13,7 +13,6 @@
 ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
   create_table "bookings", force: :cascade do |t|
     t.bigint "service_id", null: false
     t.bigint "user_id", null: false
@@ -25,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
     t.index ["service_id"], name: "index_bookings_on_service_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
-
+  
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
@@ -46,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
     t.datetime "updated_at", null: false
     t.index ["trainer_id"], name: "index_services_on_trainer_id"
   end
+
 
   create_table "trainers", force: :cascade do |t|
     t.string "sports"
