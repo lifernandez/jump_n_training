@@ -19,7 +19,7 @@ class TrainersController < ApplicationController
     @trainer.user = current_user
     if @trainer.save
       current_user.update(trainer: true)
-      redirect_to trainer_path(trainer), notice: 'Congrats, Your are a trainer!.'
+      redirect_to trainer_path(trainer), notice: 'Congraaaaats, Your are a trainer!.'
     else
       render :new
     end
