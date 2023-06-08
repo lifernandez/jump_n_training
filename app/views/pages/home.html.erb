@@ -7,6 +7,8 @@
       <%# <div class="btn from-top">From Top</div> %>
       <%# <div class="btn btn-flat" href="#trainerlist">Find a Trainer </div> %>
       <section class="container">
-      <button data-hover="click me!" href="#trainerlist"><div>Find a Trainer</div></button>
+        <%= link_to "/trainers", class:"text-decoration-none" do %>
+          <button data-hover="Jump'n"><div>Find a Trainer</div></button>
+        <% end %>
   </div>
 </div>

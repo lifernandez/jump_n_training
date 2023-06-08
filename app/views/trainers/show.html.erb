@@ -1,4 +1,4 @@
-<% if current_user.trainer %>
+<% if current_user&.trainer %>
 <h1>Your Trainer Profile</h1>
 
 <p><strong>Sports:</strong> <%= @trainer.sports %></p>
@@ -7,7 +7,7 @@
 <h1>Trainer Details</h1>
 
 <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-  <p><strong>Description:</strong> <%= user.description %></p>
+  <p><strong>Description:</strong> <%= @trainer.description %></p>
 <% end %>
 
 <table>

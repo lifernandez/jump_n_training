@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_143054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "bookings", force: :cascade do |t|
     t.bigint "service_id", null: false
     t.bigint "user_id", null: false
@@ -24,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
     t.index ["service_id"], name: "index_bookings_on_service_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
-  
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
@@ -46,6 +52,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
     t.index ["trainer_id"], name: "index_services_on_trainer_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
 
   create_table "trainers", force: :cascade do |t|
     t.string "sports"
@@ -75,5 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_143442) do
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "services", "trainers"
+  add_foreign_key "subscriptions", "users"
   add_foreign_key "trainers", "users"
 end
