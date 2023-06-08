@@ -1,5 +1,4 @@
-
-<% if user.trainer %>
+<% if current_user.trainer %>
 <h1>Your Trainer Profile</h1>
 
 <p><strong>Sports:</strong> <%= @trainer.sports %></p>
@@ -27,7 +26,7 @@
       <tr>
         <td><%= service.service_type %></td>
         <td><%= service.price %></td>
-        <td><%= service.sports %></td>
+        <td><%= service.sport %></td>
         <td><%= service.description %></td>
       </tr>
     <% end %>
