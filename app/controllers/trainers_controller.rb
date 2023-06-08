@@ -16,7 +16,8 @@ class TrainersController < ApplicationController
     @trainer = Trainer.new(trainer_params)
     @trainer.user = current_user
     if @trainer.save
-      redirect_to @trainer, notice: 'trainer was successfully created.'
+      current_user.update(trainer: true)
+      redirect_to trainer_path(trainer), notice: 'Congrats, Your are a trainer!.'
     else
       render :new
     end
@@ -37,6 +38,6 @@ class TrainersController < ApplicationController
   private
 
   def trainer_params
-    params.require(:user).permit( :description, :sports )
+    params.require(:trainer).permit(:sports, :description, :user_id)
   end
 end

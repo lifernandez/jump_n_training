@@ -14,4 +14,6 @@ class User < ApplicationRecord
   has_one :trainer
   has_many :user_activities
   has_many :activities, through: :user_activities
+  has_one :trainer
 end
+
