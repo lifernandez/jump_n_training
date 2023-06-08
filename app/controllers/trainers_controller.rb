@@ -1,10 +1,10 @@
 class TrainersController < ApplicationController
   def index
-
-    @trainers = Trainer.all
+    @trainers = Trainers.all
   end
 
   def show
+    @booking = Booking.new
     @trainer = Trainer.find(params[:id])
   end
 
@@ -20,6 +20,18 @@ class TrainersController < ApplicationController
       redirect_to trainer_path(trainer), notice: 'Congrats, Your are a trainer!.'
     else
       render :new
+    end
+  end
+
+  def edit
+    @trainer = Trainer.find(params[:id])
+  end
+
+  def update
+    if @trainer.update(trainer_params)
+      redirect_to trainer_path(@trainer)
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

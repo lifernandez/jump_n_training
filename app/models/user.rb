@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :subscriptions
   has_many :club_reviews, through: :subscriptions
   has_many :clubs
+  has_one :trainer
   has_many :user_activities
   has_many :activities, through: :user_activities
   has_one :trainer
