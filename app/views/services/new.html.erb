@@ -1,0 +1,37 @@
+<h1>New Service</h1>
+
+<%= form_with(model: @service, url: services_path) do |form| %>
+  <div>
+    <%= form.label :trainer_id %>
+    <%= form.text_field :trainer_id %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :service_type %>
+    <%= form.text_field :service_type %>
+  </div>
+
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :sport %>
+    <%= form.text_field :sport %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Service" %>
+  </div>
+<% end %>
