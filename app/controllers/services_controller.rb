@@ -26,4 +26,3 @@ class ServicesController < ApplicationController
     params.require(:service).permit(:trainer_id, :description, :service_type, :address, :sport, :price)
   end
 end
-

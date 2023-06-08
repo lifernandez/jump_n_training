@@ -1,5 +1,6 @@
 class TrainersController < ApplicationController
   def index
+
     @trainers = Trainer.all
   end
 
@@ -15,7 +16,8 @@ class TrainersController < ApplicationController
     @trainer = Trainer.new(trainer_params)
     @trainer.user = current_user
     if @trainer.save
-      redirect_to @trainer, notice: 'Trainer was successfully created.'
+      current_user.update(trainer: true)
+      redirect_to trainer_path(trainer), notice: 'Congrats, Your are a trainer!.'
     else
       render :new
     end

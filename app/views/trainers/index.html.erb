@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Sports</th>
       <th>Description</th>
     </tr>
@@ -10,6 +11,8 @@
   <tbody>
     <% @trainers.each do |trainer| %>
       <tr>
+        <td><%= link_to trainer.user_id, trainer_path(trainer)%></td>
+        <td><%= trainer.user.first_name %></td>
         <td><%= trainer.sports %></td>
         <td><%= trainer.description %></td>
       </tr>
