@@ -1,0 +1,17 @@
+<h1>New Trainer</h1>
+
+<%= form_with(model: @trainer, url: trainers_path) do |form| %>
+  <div>
+    <%= form.label :sports %>
+    <%= form.text_field :sports %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Trainer" %>
+  </div>
+<% end %>
