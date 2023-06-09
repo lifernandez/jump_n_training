@@ -1,6 +1,13 @@
-<% if current_user.trainer %>
-  <div class="container">
-    <h1>Your Trainer Profile</h1>
+<% if @trainer.user.photo.attached? %>
+  <%= cl_image_tag @trainer.user.photo.key, class: "card-image" %>
+<% else %>
+  <%= image_tag "athlete.jpg", class: "card-image" %>
+<% end %>
+<% if current_user&.trainer %>
+
+
+<h1>Your Trainer Profile</h1>
+
 
     <div class="profile-banner">
       <p><strong>Sports:</strong> <%= @trainer.sports %></p>
