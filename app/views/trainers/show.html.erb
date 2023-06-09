@@ -1,4 +1,3 @@
-
 <% if @trainer.user.photo.attached? %>
   <%= cl_image_tag @trainer.user.photo.key, class: "card-image" %>
 <% else %>
@@ -9,55 +8,81 @@
 
 <h1>Your Trainer Profile</h1>
 
-  <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-  <p><strong>Description:</strong> <%= @trainer.description %></p>
-<% if @trainer.user == current_user %>
-  <%= link_to "Add a service", new_trainer_service_path(@trainer), class: "btn btn-primary"%>
-<% end %>
 
-  <table>
-  <thead>
-    <tr>
-      <th>Type of service</th>
-      <th>Price</th>
-      <th>Sport</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @trainer.services.each do |service| %>
-      <tr>
-        <td><%= service.service_type %></td>
-        <td><%= service.price %></td>
-        <td><%= service.sport %></td>
-        <td><%= service.description %></td>
-      </tr>
-    <% end %>
-  </table>
+    <div class="profile-banner">
+      <p><strong>Sports:</strong> <%= @trainer.sports %></p>
+      <p><strong>Description:</strong> <%= @trainer.description %></p>
+      <% if @trainer.user == current_user %>
+        <%= link_to "Add a service", new_trainer_service_path(@trainer), class: "btn"%>
+      <% end %>
+    </div>
+
+    <table class="services-table">
+      <thead>
+        <tr>
+          <th>Type of service</th>
+          <th>Price</th>
+          <th>Sport</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @trainer.services.each do |service| %>
+          <tr>
+            <td><%= service.service_type %></td>
+            <td><%= service.price %></td>
+            <td><%= service.sport %></td>
+            <td><%= service.description %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% else %>
-<h1>Trainer Details</h1>
+  <div class="container">
+    <div class="profile-banner">
+      <h2>Trainer Details</h2>
+      <p><strong>Sports:</strong> <%= @trainer.sports %></p>
+      <p><strong>Description:</strong> <%= @trainer.description %></p>
+    </div>
 
-  <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-  <p><strong>Description:</strong> <%= @trainer.description %></p>
+    <div class="services-section">
+      <div class="service-category">
+        <h2>Sessions</h2>
+        <% @trainer.services.each do |service| %>
+          <% if service.service_type == "Session" %>
+            <div class="service-card">
+              <img src="https://jumpn-app.com/assets/our-vision.png" />
+              <div class="service-card-infos">
+                <p><strong>Type:</strong> <%= service.service_type %></p>
+                <p><strong>Price:</strong> <%= service.price %></p>
+                <p><strong>Sport:</strong> <%= service.sport %></p>
+                <p><strong>Description:</strong> <%= service.description %></p>
+                <%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
 
-  <table>
-  <thead>
-    <tr>
-      <th>Type of service</th>
-      <th>Price</th>
-      <th>Sport</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @trainer.services.each do |service| %>
-      <tr>
-        <td><%= service.service_type %></td>
-        <td><%= service.price %></td>
-        <td><%= service.sport %></td>
-        <td><%= service.description %></td>
-        <td><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn btn-primary" %></td>
-      </tr>
-    <% end %>
-  </table>
+      <div class="service-category">
+        <h2>Training Plans</h2>
+        <% @trainer.services.each do |service| %>
+          <% if service.service_type == "Training Plan" %>
+            <div class="service-card">
+              <img src="https://jumpn-app.com/assets/our-vision.png" />
+              <div class="service-card-infos">
+                <p><strong>Type:</strong> <%= service.service_type %></p>
+                <p><strong>Price:</strong> <%= service.price %></p>
+                <p><strong>Sport:</strong> <%= service.sport %></p>
+                <p><strong>Description:</strong> <%= service.description %></p>
+                <%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 <% end %>

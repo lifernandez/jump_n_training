@@ -2,7 +2,13 @@ class TrainersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @trainers = Trainer.all
+    if params[:query].present?
+      sql_query = "sports ILIKE :query"
+      # sql_query = "sports ILIKE :query OR synopsis ILIKE :query"
+      @trainers = Trainer.search_by_sports_and_address_and_description(params[:query])
+    else
+      @trainers = Trainer.all
+    end
   end
 
   def show
@@ -42,4 +48,6 @@ class TrainersController < ApplicationController
   def trainer_params
     params.require(:trainer).permit(:sports, :description, :user_id)
   end
+
+
 end

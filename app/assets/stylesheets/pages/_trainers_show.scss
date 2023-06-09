@@ -1,0 +1,98 @@
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+.trainer-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  h1 {
+    margin: 0;
+  }
+
+  .trainer-card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.services-section {
+  display: flex;
+  justify-content: space-between;
+
+  .service-category {
+    flex-basis: 48%;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .service-card {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      img {
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .service-card-infos {
+        p {
+          margin: 0;
+        }
+
+        .btn {
+          margin-top: 10px;
+          background-color: #E0464D;
+          color: white;
+          border-radius: 5%;
+        }
+      }
+    }
+  }
+}
+
+.profile-banner {
+  background-color: #00063D;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .btn{
+      background-color: #E0464D;
+      color: white;
+      border-radius: 5%;
+
+    }
+}
+
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f1f1f1;
+  }
+}
+
