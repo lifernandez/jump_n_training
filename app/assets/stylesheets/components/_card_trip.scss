@@ -9,6 +9,7 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .card-trip h2 {
@@ -44,4 +45,15 @@
 
 a:hover {
   border: none;
+}
+
+.card-image {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.btn {
+  color: white;
 }
