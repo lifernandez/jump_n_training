@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.all
+    @trainer = Trainer.find(params[:trainer_id])
+    @services = @trainer.services
   end
 
   def show
@@ -8,13 +9,16 @@ class ServicesController < ApplicationController
   end
 
   def new
+    @trainer = Trainer.find(params[:trainer_id])
     @service = Service.new
   end
 
   def create
+    @trainer = Trainer.find(params[:trainer_id])
     @service = Service.new(service_params)
-    if @service.save
-      redirect_to @service, notice: 'Service was successfully created.'
+    @service.trainer = @trainer
+    if @service.save!
+      redirect_to trainer_services_path(@trainer), notice: 'Service was successfully created.'
     else
       render :new
     end

@@ -1,15 +1,6 @@
 <h1>New Booking</h1>
 
-<%= form_with(model: @booking, url: bookings_path) do |form| %>
-  <div>
-    <%= form.label :service_id %>
-    <%= form.text_field :service_id %>
-  </div>
-
-  <div>
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+<%= form_with(model: @booking, url: trainer_service_bookings_path(@trainer, @service)) do |form| %>
 
   <div>
     <%= form.label :status %>
@@ -27,6 +18,6 @@
   </div>
 
   <div>
-    <%= form.submit "Create Booking" %>
+    <%= form.submit "Createeee Booking" %>
   </div>
 <% end %>
