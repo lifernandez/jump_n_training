@@ -8,13 +8,19 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @trainer = Trainer.find(params[:trainer_id])
+    @service = Service.find(params[:service_id])
     @booking = Booking.new
   end
 
   def create
+    @trainer = Trainer.find(params[:trainer_id])
+    @service = Service.find(params[:service_id])
     @booking = Booking.new(booking_params)
-    if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created.'
+    @booking.service = @service
+    @booking.user = current_user
+    if @booking.save!
+      redirect_to trainer_service_bookings_path , notice: 'Booking was successfully created.'
     else
       render :new
     end
