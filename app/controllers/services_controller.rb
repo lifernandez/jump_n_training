@@ -18,7 +18,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.trainer = @trainer
     if @service.save!
-      redirect_to trainer_services_path(@trainer), notice: 'Service was successfully created.'
+      redirect_to trainer_path(@trainer), notice: 'Service was successfully created.'
     else
       render :new
     end
