@@ -15,13 +15,17 @@ User.destroy_all
 date = "2023-07-05 00:00:00".to_datetime
 time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
-  user1 = User.create(
+  user1 = User.new(
     email: "ife@gmail.com",
     password: "123456",
     first_name: "Ife",
     last_name: "Sanchez",
     istrainer: true
   )
+  file = URI.open("https://i.pinimg.com/474x/92/f6/4c/92f64c7d0a2566a5452b4a68e8bf308b.jpg")
+  user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user1.save!
+  puts "Hi User1"
 
   user2 = User.create(
     email: "lcf@gmail.com",
