@@ -1,0 +1,55 @@
+/* Styling for the title */
+.newTrainerTitle {
+  font-size: 32px;
+  color: #E0464D;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Styling for the sports field */
+.sportsField label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.sportsField input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for the description field */
+.descriptionField label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.descriptionField textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for the submit button */
+.submitTrainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submitTrainer input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #E0464D;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
