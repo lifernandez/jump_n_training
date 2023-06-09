@@ -1,49 +1,60 @@
-<% if @trainer.user.photo.attached? %>
-  <%= cl_image_tag @trainer.user.photo.key, class: "card-image" %>
-<% else %>
-  <%= image_tag "athlete.jpg", class: "card-image" %>
-<% end %>
+
 <% if current_user&.trainer %>
 
 
-<h1>Your Trainer Profile</h1>
+  <div class="container">
 
-
-    <div class="profile-banner">
-      <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-      <p><strong>Description:</strong> <%= @trainer.description %></p>
-      <% if @trainer.user == current_user %>
-        <%= link_to "Add a service", new_trainer_service_path(@trainer), class: "btn"%>
-      <% end %>
-    </div>
-
-    <table class="services-table">
-      <thead>
-        <tr>
-          <th>Type of service</th>
-          <th>Price</th>
-          <th>Sport</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @trainer.services.each do |service| %>
-          <tr>
-            <td><%= service.service_type %></td>
-            <td><%= service.price %></td>
-            <td><%= service.sport %></td>
-            <td><%= service.description %></td>
-          </tr>
+      <div class="profile-banner d-flex mt-4">
+        <% if @trainer.user.photo.attached? %>
+            <%= cl_image_tag @trainer.user.photo.key, class: "card-image me-4" %>
+        <% else %>
+          <%= image_tag "athlete.jpg", class: "card-image me-4" %>
         <% end %>
-      </tbody>
-    </table>
+        <div class="">
+          <h1>Your Trainer Profile</h1>
+          <p><strong>Sports:</strong> <%= @trainer.sports %></p>
+          <p><strong>Description:</strong> <%= @trainer.description %></p>
+          <% if @trainer.user == current_user %>
+            <%= link_to "Add a service", new_trainer_service_path(@trainer), class: "btn"%>
+          <% end %>
+        </div>
+      </div>
+
+      <table class="services-table">
+        <thead>
+          <tr>
+            <th>Type of service</th>
+            <th>Price</th>
+            <th>Sport</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @trainer.services.each do |service| %>
+            <tr>
+              <td><%= service.service_type %></td>
+              <td><%= service.price %></td>
+              <td><%= service.sport %></td>
+              <td><%= service.description %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 <% else %>
   <div class="container">
-    <div class="profile-banner">
-      <h2>Trainer Details</h2>
-      <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-      <p><strong>Description:</strong> <%= @trainer.description %></p>
+    <div class="profile-banner d-flex mt-4">
+      <% if @trainer.user.photo.attached? %>
+        <%= cl_image_tag @trainer.user.photo.key, class: "card-image me-4" %>
+      <% else %>
+        <%= image_tag "athlete.jpg", class: "card-image me-4" %>
+      <% end %>
+      <div class="">
+        <h2>Trainer Details</h2>
+        <p><strong>Sports:</strong> <%= @trainer.sports %></p>
+        <p><strong>Description:</strong> <%= @trainer.description %></p>
+      </div>
     </div>
 
     <div class="services-section">
