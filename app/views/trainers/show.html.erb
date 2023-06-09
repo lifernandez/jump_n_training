@@ -1,5 +1,8 @@
 
 <% if current_user.trainer %>
+<%= cl_image_tag @trainer.user.photo.key, class: "card-image" %>
+                     
+                     
 <h1>Your Trainer Profile</h1>
 
   <p><strong>Sports:</strong> <%= @trainer.sports %></p>
