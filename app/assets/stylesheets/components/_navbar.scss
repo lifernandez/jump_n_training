@@ -11,3 +11,20 @@
 .navbar-lewagon .navbar-brand img {
   width: 150px;
 }
+
+input.btn.btn-primary {
+  --bs-btn-color: #fff;
+    --bs-btn-bg: #E0464D;
+    --bs-btn-border-color: #E0464D;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #E0464D;
+    --bs-btn-hover-border-color: #E0464D;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #E0464D;
+    --bs-btn-active-border-color: #E0464D;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #E0464D;
+    --bs-btn-disabled-border-color: #E0464D;
+}
