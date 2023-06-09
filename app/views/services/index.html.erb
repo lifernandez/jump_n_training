@@ -1,44 +1,15 @@
+
+
 <div class="container">
-  <div class="card-product">
-    <img src="https://jumpn-app.com/assets/our-vision.png" />
       <% @services.each_with_index do |service, i|  %>
-        <div class="card-product-infos">
-          <% @services.each do |service| %>
-            <%= service.user.first_name %>
-            <%= service.description %>
-            <%= service.sport %>
-            <%= service.price %>
-          <% end %>
+        <div class="card-product">
+          <img src="https://jumpn-app.com/assets/our-vision.png" />
+              <div class="card-product-infos">
+                  <%= service.trainer.user.first_name %>
+                  <%= service.description %>
+                  <%= service.sport %>
+                  <%= service.price %>
         </div>
-      <% end %>
   </div>
+  <% end %>
 </div>
-
-
-<h1>Services</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Trainer</th>
-      <th>Description</th>
-      <th>Service Type</th>
-      <th>Address</th>
-      <th>Sport</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @services.each do |service| %>
-      <tr>
-        <td><%= service.trainer_id %></td>
-        <td><%= service.description %></td>
-        <td><%= service.service_type %></td>
-        <td><%= service.address %></td>
-        <td><%= service.sport %></td>
-        <td><%= service.price %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-

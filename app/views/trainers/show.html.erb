@@ -1,19 +1,15 @@
-<% if current_user&.trainer %>
+
+<% if current_user.trainer %>
 <h1>Your Trainer Profile</h1>
 
-<p><strong>Sports:</strong> <%= @trainer.sports %></p>
+  <p><strong>Sports:</strong> <%= @trainer.sports %></p>
   <p><strong>Description:</strong> <%= @trainer.description %></p>
-<% else %>
-<h1>Trainer Details</h1>
-
-<p><strong>Sports:</strong> <%= @trainer.sports %></p>
-  <p><strong>Description:</strong> <%= @trainer.description %></p>
+<% if @trainer.user == current_user %>
+  <%= link_to "Add a service", new_trainer_service_path(@trainer), class: "btn btn-primary"%>
 <% end %>
 
-<table>
+  <table>
   <thead>
-
-
     <tr>
       <th>Type of service</th>
       <th>Price</th>
@@ -31,3 +27,30 @@
       </tr>
     <% end %>
   </table>
+<% else %>
+<h1>Trainer Details</h1>
+
+  <p><strong>Sports:</strong> <%= @trainer.sports %></p>
+  <p><strong>Description:</strong> <%= @trainer.description %></p>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Type of service</th>
+      <th>Price</th>
+      <th>Sport</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trainer.services.each do |service| %>
+      <tr>
+        <td><%= service.service_type %></td>
+        <td><%= service.price %></td>
+        <td><%= service.sport %></td>
+        <td><%= service.description %></td>
+        <td><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
