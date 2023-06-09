@@ -1,4 +1,4 @@
-<h1>Trainers</h1>
+<%# <h1>Trainers</h1>
 
 <table>
   <thead>
@@ -10,12 +10,39 @@
   </thead>
   <tbody>
     <% @trainers.each do |trainer| %>
-      <tr>
-        <td><%= link_to trainer.user_id, trainer_path(trainer)%></td>
-        <td><%= trainer.user.first_name %></td>
-        <td><%= trainer.sports %></td>
-        <td><%= trainer.description %></td>
-      </tr>
+      <%# <tr>
+        <td><%= link_to trainer.user_id, trainer_path(trainer)%><%#/td>
+        <%#td><%= trainer.user.first_name %><%#/td>
+        <%#td><%= trainer.sports %><%#/td>
+        <%#td><%= trainer.description %><%#/td>
+      <%#/tr>
     <% end %>
-  </tbody>
-</table>
+  <%#/tbody>
+</table> %>
+
+
+<div class="container">
+  <div class="cards">
+      <% @trainers.each_with_index do |trainer, i| %>
+        <%= link_to trainer_path(trainer), class:"text-decoration-none mt-4" do %>
+          <div class="card-trip">
+            <% if trainer.user.photo.attached? %>
+              <%= cl_image_tag trainer.user.photo.key, class: "card-image" %>
+            <% else %>
+              <%= image_tag "athlete.jpg", class: "card-image" %>
+            <% end %>
+            <div class="card-trip-infos">
+              <div class="card-trip-infos-description">
+                <h2><%= trainer.user.first_name %></h2>
+                <p><%= trainer.sports %></p>
+                <p><% trainer.description %></p>
+                <%# <% if trainer.reviews != [] %>
+                <%#p class="card-trip-rating"> <i class="fa-solid fa-star"></i><%= (trainer.reviews.map(&:rating).sum)/trainer.reviews.length %>
+                <%#end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
