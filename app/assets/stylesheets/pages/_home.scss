@@ -33,32 +33,6 @@ a {
   text-align: center;
 }
 
-// .btn-flat {
-//   color: white;
-//   padding: 8px 24px;
-//   border-radius: 4px;
-//   background: #E0464D;
-//   transition: background 0.3s ease;
-// }
-
-// .btn-flat:hover {
-//   background: #bf232b;
-//   color: white;
-// }
-
-// .btn-flat {
-//   color: white;
-//   padding: 8px 24 px;
-//   border-radius: 4px;
-//   background: #ba4b29;
-//   transition: background 0.3s ease;
-// }
-
-// .btn-flat:hover {
-//   background: #bf232b;
-//   color: white;
-// }
-
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
 
@@ -70,13 +44,9 @@ a {
 
 html, body{background: rgb(236, 240, 241);}
 
-  section.container{
-    min-width: 500px;
-    margin: 10% auto;
-    text-align: center;
-    a:hover {
-      border: none;
-    }
+  .container1{
+    margin-left: 1050px;
+    max-width: 1000px;
   }
 
     h1{font-size: 2em; padding: 20px 0;}
