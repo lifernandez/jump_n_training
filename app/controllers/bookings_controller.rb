@@ -4,10 +4,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
-
   def new
     @trainer = Trainer.find(params[:trainer_id])
     @service = Service.find(params[:service_id])
@@ -25,6 +21,12 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @trainer = Trainer.find(params[:trainer_id])
+    @service = Service.find(params[:service_id])
+    @booking = Booking.find(params[:id])
   end
 
   private

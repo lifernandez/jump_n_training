@@ -1,28 +1,59 @@
-<h1>New Service</h1>
+<div class="container">
+  <div class="form-wrapper">
+    <h1>New Service</h1>
+    <%= form_with(model: @service, url: trainer_services_path(@trainer)) do |form| %>
+      <div class="service-type-container">
+        <input type="radio" name="service_type" id="training-plan-switch" value="Training Plan" class="switch-input" checked>
+        <label class="switch-label" for="training-plan-switch"></label>
+        <label for="training-plan-switch" class="service-type-label">Training Plan</label>
+        <input type="radio" name="service_type" id="session-switch" value="Session" class="switch-input">
+        <label class="switch-label" for="session-switch"></label>
+        <label for="session-switch" class="service-type-label">Session</label>
+      </div>
 
-<%= form_with(model: @service, url:  trainer_services_path(@trainer)) do |form| %>
+      <div class="form-fields training-plan-fields">
+        <div>
+          <%= form.label :description, class: "form-label" %>
+          <%= form.text_area :description, class: "form-field" %>
+        </div>
 
-  <div>
-    <%= form.label :service_type %>
-    <%= form.text_field :service_type %>
+        <div>
+          <%= form.label :sport, class: "form-label" %>
+          <%= form.select :sport, options_for_select(['Running', 'Cycling', 'Yoga', 'Gym', 'Tennis']), prompt: 'Select sport', class: "form-field" %>
+        </div>
+
+        <div>
+          <%= form.label :price, class: "form-label" %>
+          <%= form.number_field :price, class: "form-field" %>
+        </div>
+      </div>
+
+      <div class="form-fields session-fields">
+        <div>
+          <%= form.label :address, class: "form-label" %>
+          <%= form.text_field :address, class: "form-field" %>
+        </div>
+
+        <div>
+          <%= form.label :sport, class: "form-label" %>
+          <%= form.select :sport, options_for_select(['Running', 'Cycling', 'Yoga', 'Gym', 'Tennis']), prompt: 'Select sport', class: "form-field" %>
+        </div>
+
+        <div>
+          <%= form.label :price, class: "form-label" %>
+          <%= form.number_field :price, class: "form-field" %>
+        </div>
+
+        <div>
+          <%= form.label :description, class: "form-label" %>
+          <%= form.text_area :description, class: "form-field" %>
+        </div>
+      </div>
+
+      <div>
+        <%= form.submit "Create Service", class: "submit-button" %>
+      </div>
+    <% end %>
   </div>
-
-  <div>
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div>
-    <%= form.label :sport %>
-    <%= form.text_field :sport %>
-  </div>
-
-  <div>
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div>
-    <%= form.submit "Create Service" %>
-  </div>
-<% end %>
+</div>
+<script src="/app/javascript/trainers_form.js"> </script>
