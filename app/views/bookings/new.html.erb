@@ -1,23 +1,39 @@
-<h1>New Booking</h1>
+<div class = "container mt-5 mb-5">
+  <h1>bookings</h1>
 
-<%= form_with(model: @booking, url: trainer_service_bookings_path(@trainer, @service)) do |form| %>
+  <font style="600<h5>See your scheduled events from your calendar events links. </h5>
 
-  <div>
-    <%= form.label :status %>
-    <%= form.number_field :status %>
-  </div>
 
-  <div>
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
+     <div class="card-header no-border bg-white pb-150">
 
-  <div>
-    <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
-  </div>
+        <ul class="nav nav-pills lavalamp mb-2" id="card_product-tab" role="tablist"><div class="lavalamp-object ease" style="transition-duration: 0.2s; width: 70.3984px; height: 37px; transform: translate(2px, 2px);"></div>
+          <li class="nav-item lavalamp-item" style="z-index: 5; position: relative;">
+            <a class="nav-link active" id="card_product-html-tab" data-bs-toggle="pill" href="#card_product-html" role="tab" aria-controls="card_product-html" aria-selected="true" onclick="return false">Training Plans</a>
+          </li>
+          <li class="nav-item lavalamp-item" style="z-index: 5; position: relative;">
+            <a class="nav-link" id="card_product-css-tab" data-bs-toggle="pill" href="#card_product-css" role="tab" aria-controls="card_product-css" aria-selected="false" onclick="return false">Bookings</a>
+          </li>
+        </ul>
 
-  <div>
-    <%= form.submit "Create Booking" %>
-  </div>
-<% end %>
+      </div>
+
+
+
+
+  <%= form_with(model: @booking, url: trainer_service_bookings_path(@trainer, @service)) do |form| %>
+
+    <div>
+      <%= form.label :start_time %>
+      <%= form.datetime_select :start_time %>
+    </div>
+
+    <div>
+      <%= form.label :end_time %>
+      <%= form.datetime_select :end_time %>
+    </div>
+
+    <div>
+      <%= form.submit "Create Booking" %>
+    </div>
+  <% end %>
+</div>
