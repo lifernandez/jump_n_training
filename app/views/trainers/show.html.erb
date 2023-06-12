@@ -1,3 +1,8 @@
+<head>
+
+  <script src="https://kit.fontawesome.com/a071ff1fce.js" crossorigin="anonymous"></script>
+</head>
+
 
 <% if current_user&.trainer %>
 
@@ -53,7 +58,12 @@
       <div class="">
         <h2>Trainer Details</h2>
         <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-        <p><strong>Description:</strong> <%= @trainer.description %></p>
+        <div class="mt-2 mb-2">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+          <p class="mr-5"><strong>Description:</strong> <%= @trainer.description %></p>
       </div>
     </div>
 
@@ -63,7 +73,7 @@
         <% @trainer.services.each do |service| %>
           <% if service.service_type == "Session" %>
             <div class="service-card">
-              <img src="https://jumpn-app.com/assets/our-vision.png" />
+              <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
               <div class="service-card-infos">
                 <p><strong>Type:</strong> <%= service.service_type %></p>
                 <p><strong>Price:</strong> <%= service.price %></p>
@@ -81,7 +91,7 @@
         <% @trainer.services.each do |service| %>
           <% if service.service_type == "Training Plan" %>
             <div class="service-card">
-              <img src="https://jumpn-app.com/assets/our-vision.png" />
+              <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
               <div class="service-card-infos">
                 <p><strong>Type:</strong> <%= service.service_type %></p>
                 <p><strong>Price:</strong> <%= service.price %></p>
