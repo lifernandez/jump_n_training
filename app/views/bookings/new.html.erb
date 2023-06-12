@@ -2,10 +2,12 @@
 
 <%= form_with(model: @booking, url: trainer_service_bookings_path(@trainer, @service)) do |form| %>
 
-  <div>
+  <%# <div>
     <%= form.label :status %>
-    <%= form.number_field :status %>
-  </div>
+    <%# <%= form.number_field :status %>
+  <%# <%/div> %>
+
+
 
   <div>
     <%= form.label :start_time %>
