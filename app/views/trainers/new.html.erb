@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <div class= "container">
   <h1 class="newTrainerTitle">New Trainer</h1>
@@ -13,6 +14,22 @@
       <%= form.text_area :description %>
     </div>
 
+=======
+<div class = container>
+  <h1 class="newTrainerTitle">New Trainer</h1>
+
+  <%= form_with(model: @trainer, url: trainers_path) do |form| %>
+    <div class="sportsField">
+      <%= form.label :sports %>
+      <%= form.text_field :sports %>
+    </div>
+
+    <div class="descriptionField">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+>>>>>>> 480bf07874a7100388a4a0138082a1ab0ab9a86d
     <div class="submitTrainer">
       <%= form.submit "Create Trainer" %>
     </div>
