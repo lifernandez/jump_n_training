@@ -1,0 +1,8 @@
+<h2> my bookings </h2>
+
+<p> <%= current_user.email %> </p>
+<ul>
+  <% current_user.bookings.each do | booking | %>
+    <li> you have a booking with <%= booking.service.trainer.user.first_name%> about <%= booking.service.sport%>  </li>
+  <% end %>
+</ul>

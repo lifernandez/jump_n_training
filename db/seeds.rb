@@ -16,9 +16,9 @@ date = "2023-07-05 00:00:00".to_datetime
 time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
   user1 = User.new(
-    email: "ife@gmail.com",
+    email: "jns@gmail.com",
     password: "123456",
-    first_name: "Ife",
+    first_name: "Jane",
     last_name: "Sanchez",
     istrainer: true
   )
@@ -27,15 +27,20 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   user1.save!
   puts "Hi User1"
 
-  user2 = User.create(
-    email: "lcf@gmail.com",
+  user2 = User.new(
+    email: "ss@gmail.com",
     password: "123456",
-    first_name: "Linda",
-    last_name: "Fernandez",
+    first_name: "Sarah",
+    last_name: "Sue",
     istrainer: false
   )
 
-  user3 = User.create(
+  file = URI.open("https://images.contentstack.io/v3/assets/blt45c082eaf9747747/blt91728955a4af6fbb/5de0ba07bfcabd6600c114d6/HOMEWORKOUT_HEAD.jpg?format=pjpg&auto=webp&quality=76&width=1232")
+  user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user2.save!
+  puts "Hi User2"
+
+  user3 = User.new(
     email: "john@gmail.com",
     password: "123456",
     first_name: "John",
@@ -43,7 +48,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user4 = User.create(
+  file = URI.open("https://cdn.shopify.com/s/files/1/2665/6840/files/London_mararthon_running_coach_1500x.jpg?v=1664987108")
+  user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user3.save!
+  puts "Hi User3"
+
+  user4 = User.new(
     email: "bob@gmail.com",
     password: "123456",
     first_name: "Bob",
@@ -51,7 +61,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user5 = User.create(
+  file = URI.open("https://www.drugwatch.com/wp-content/uploads/mens-health-hero.jpg")
+  user4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user4.save!
+  puts "Hi User4"
+
+  user5 = User.new(
     email: "paul@gmail.com",
     password: "123456",
     first_name: "Paul",
@@ -59,7 +74,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user6 = User.create(
+  file = URI.open("https://as1.ftcdn.net/v2/jpg/05/69/47/66/1000_F_569476600_N94kdkCfICYIuRmZ6HfxQyXZ1CNupyfY.jpg")
+  user5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user5.save!
+  puts "Hi User5"
+
+  user6 = User.new(
     email: "ben@gmail.com",
     password: "123456",
     first_name: "Ben",
@@ -67,7 +87,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user7 = User.create(
+  file = URI.open("https://www.naturalpathmed.com/wp-content/uploads/2017/10/blog-fit-older-man.jpg")
+  user6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user6.save!
+  puts "Hi User6"
+
+  user7 = User.new(
     email: "ed@gmail.com",
     password: "123456",
     first_name: "Eddie",
@@ -75,7 +100,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user8 = User.create(
+  file = URI.open("https://i.pinimg.com/474x/3e/ac/7e/3eac7e2435c547d4964450f84f827d3d.jpg")
+  user7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user7.save!
+  puts "Hi User7"
+
+  user8 = User.new(
     email: "jcb@gmail.com",
     password: "123456",
     first_name: "Jules",
@@ -83,7 +113,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user9 = User.create(
+  file = URI.open("https://www.qardio.com/wp-content/uploads/2016/01/spring_running_man_blog.jpg")
+  user8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user8.save!
+  puts "Hi User8"
+
+  user9 = User.new(
     email: "tom@gmail.com",
     password: "123456",
     first_name: "Tom",
@@ -91,7 +126,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user10 = User.create(
+  file = URI.open("https://www.athleteally.org/wp-content/uploads/2018/12/Sam-Needs-Headshot.png")
+  user9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user9.save!
+  puts "Hi User9"
+
+  user10 = User.new(
     email: "ruth@gmail.com",
     password: "123456",
     first_name: "Ruth",
@@ -99,23 +139,38 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user11 = User.create(
+  file = URI.open("https://hips.hearstapps.com/goodhousekeeping-uk/main/embedded/33948/happy-woman-in-40s.jpg")
+  user10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user10.save!
+  puts "Hi User10"
+
+  user11 = User.new(
     email: "skip@gmail.com",
     password: "123456",
-    first_name: "Skippy",
-    last_name: "Lane",
+    first_name: "Lily",
+    last_name: "Miller",
     istrainer: true
   )
 
-  user12 = User.create(
-    email: "kevin@gmail.com",
+  file = URI.open("https://healthcare.utah.edu/sites/g/files/zrelqx136/files/migrate_images/0_pqjcs16b.jpg")
+  user11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user11.save!
+  puts "Hi User11"
+
+  user12 = User.new(
+    email: "kj@gmail.com",
     password: "123456",
-    first_name: "Kevin",
-    last_name: "Something",
+    first_name: "Ken",
+    last_name: "Johnson",
     istrainer: false
   )
 
-  user13 = User.create(
+  file = URI.open("https://img.freepik.com/free-photo/cheerful-curly-dark-skinned-man-white-long-sleeved-t-shirt-smiles-sincerely-rests-near-sea_197531-23689.jpg")
+  user12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user12.save!
+  puts "Hi User12"
+
+  user13 = User.new(
     email: "js@gmail.com",
     password: "123456",
     first_name: "Javier",
@@ -123,7 +178,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user14 = User.create(
+  file = URI.open("https://www.kimalexisphotography.com/wp-content/uploads/2019/09/KaraCrane_402.jpg")
+  user13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user13.save!
+  puts "Hi User13"
+
+  user14 = User.new(
     email: "lc@gmail.com",
     password: "123456",
     first_name: "Louis",
@@ -131,7 +191,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user15 = User.create(
+  file = URI.open("https://media.istockphoto.com/id/1359149467/photo/shot-of-a-handsome-young-man-standing-alone-and-stretching-during-his-outdoor-workout.jpg?s=612x612&w=0&k=20&c=bCwqY95KICwmFZKRgbc9yd9O-0Ra1oHrhv6vYe6Weh8=")
+  user14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user14.save!
+  puts "Hi User14"
+
+  user15 = User.new(
     email: "marco@gmail.com",
     password: "123456",
     first_name: "Marco",
@@ -139,7 +204,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user16 = User.create(
+  file = URI.open("https://9ea7469d30465e75444e-c54cf9109a4d71ddfa1ccf1feea14eb4.ssl.cf1.rackcdn.com/BPI-Headshots-27-Edit.jpg")
+  user15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user15.save!
+  puts "Hi User15"
+
+  user16 = User.new(
     email: "bb@gmail.com",
     password: "123456",
     first_name: "Billy",
@@ -147,7 +217,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user17 = User.create(
+  file = URI.open("https://img.freepik.com/premium-photo/focused-fitness-shot-man-stretching-before-run_590464-38888.jpg")
+  user16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user16.save!
+  puts "Hi User16"
+
+  user17 = User.new(
     email: "joe@gmail.com",
     password: "123456",
     first_name: "Joe",
@@ -155,7 +230,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user18 = User.create(
+  file = URI.open("https://i.pinimg.com/474x/78/1f/aa/781faae239ae960f1952b6cf6a45bfe0.jpg")
+  user17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user17.save!
+  puts "Hi User17"
+
+  user18 = User.new(
     email: "ling@gmail.com",
     password: "123456",
     first_name: "Ling",
@@ -163,7 +243,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user19 = User.create(
+  file = URI.open("https://cdn.sanity.io/images/xmpcmhrn/production/2188acdb9bf06fe04a6e668f585eae2c7b2fc593-3600x2400.jpg?rect=0,188,3600,2023&w=436&h=245&q=80&fit=max&auto=format")
+  user18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user18.save!
+  puts "Hi User18"
+
+  user19 = User.new(
     email: "ra@gmail.com",
     password: "123456",
     first_name: "Ruby",
@@ -171,7 +256,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user20 = User.create(
+  file = URI.open("https://9ea7469d30465e75444e-c54cf9109a4d71ddfa1ccf1feea14eb4.ssl.cf1.rackcdn.com/BPI-Headshots-251-Edit.jpg")
+  user19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user19.save!
+  puts "Hi User19"
+
+  user20 = User.new(
     email: "bf@gmail.com",
     password: "123456",
     first_name: "Blanca",
@@ -179,7 +269,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  user21 = User.create(
+  file = URI.open("https://imgk.timesnownews.com/story/women_0.gif")
+  user20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user20.save!
+  puts "Hi User20"
+
+  user21 = User.new(
     email: "lou@gmail.com",
     password: "123456",
     first_name: "Louise",
@@ -187,7 +282,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: true
   )
 
-  user22 = User.create(
+  file = URI.open("https://poyeyphotos.com/wp-content/uploads/2020/07/NB_163_layers-720x1080.jpg")
+  user21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user21.save!
+  puts "Hi User21"
+
+  user22 = User.new(
     email: "cunning@gmail.com",
     password: "123456",
     first_name: "Carol",
@@ -195,38 +295,58 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
+  file = URI.open("https://www.mayoclinichealthsystem.org/-/media/national-files/images/hometown-health/2022/sitting-on-sofa-writing-in-journal.jpg?h=370&w=660&la=en&hash=AEA5A82A0053CAA81859033A055EE4E0")
+  user22.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  user22.save!
+  puts "Hi User22"
+
   trainer1 = Trainer.create(
-    description: "I'm an excellent trainer",
+    description: "Motivated trainer with a keen eye for detail and a focus on technique refinement. Specializes in form correction and injury prevention strategies to ensure clients perform at their best while minimizing the risk of setbacks.",
     sports: "Football,Cycling,Golf",
     user: user1
   )
 
-  service1 = Service.create(
+  service1 = Service.new(
     trainer: trainer1,
     address: "Brighton",
     price: 25,
-    description: "I will create a 12 week training plan to help you train for your next marathon!",
-    sport: "Football",
+    description: "Comprehensive Week-Long Running Training: Embark on a transformative journey with our week-long training plan designed to enhance your running/cycling performance. This comprehensive program incorporates a mix of endurance, speed, and recovery sessions, expertly crafted by our trainers to help you achieve your goals.",
+    sport: "Running",
     service_type: "Training Plan"
   )
 
-  service2= Service.create(
+  file = URI.open("https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/07/eat_after_working_out_732x549_thumb-732x549.jpg")
+  service1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service1.save!
+  puts "Hi Service1"
+
+  service2= Service.new(
     trainer: trainer1,
     address: "Brighton",
     price: 25,
-    description: "We will train at Hyde Park for 2 hours!",
+    description: "Intense Endurance Boost: Push your limits and improve your stamina with a power-packed running/cycling session led by a personal trainer. This 2-hour session is designed to challenge you and enhance your endurance capabilities.",
     sport: "Cycling",
     service_type: "Session"
   )
 
-  service3= Service.create(
+  file = URI.open("https://media.self.com/photos/61bcd0e05aed92fc4251b026/16:9/w_5839,h_3284,c_limit/GettyImages-1213234926.jpeg")
+  service2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service2.save!
+  puts "Hi Service2"
+
+  service3= Service.new(
     trainer: trainer1,
     address: "Brighton",
     price: 30,
-    description: "We will play golf at James Heire Park for 2 hours!",
+    description: "Hill Interval Mastery: Conquer the toughest terrains with a focused running/cycling session that incorporates hill intervals. Our personal trainer will guide you through a 3-hour session, helping you build strength, speed, and mental resilience.",
     sport: "Golf",
     service_type: "Session"
   )
+
+  file = URI.open("https://images.ctfassets.net/8urtyqugdt2l/3D2iE8CWiIZ8ZnZ1ZGCjWJ/97aaba852f17eb10e65b8aceeb63acad/1594309624-how-to-start-working-out-again-header.jpg")
+  service3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service3.save!
+  puts "Hi Service3"
 
   booking1 = Booking.create(
     user: user2,
@@ -245,37 +365,52 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer2 = Trainer.create(
-    description: "I'm an excellent trainer",
+    description: "Dynamic and adaptable trainer committed to creating a positive and inclusive training environment. Equipped with a vast repertoire of training techniques and a genuine desire to help clients achieve their fitness aspirations.",
     sports: "Running,Cycling,Climbing",
     user: user3
   )
 
-  service4 = Service.create(
+  service4 = Service.new(
     trainer: trainer2,
     address: "London",
     price: 300,
-    description: "I will customize a training plan to help you train for your next marathon!",
+    description: "Intensive Week of Running Workouts: Take your training to the next level with our intensive week-long program. Each day, you'll engage in targeted running/cycling workouts, including interval training, hill repeats, tempo runs, and long-distance rides, all carefully structured to push your limits and maximize your progress.",
     sport: "Running",
     service_type: "Training Plan"
   )
 
-  service5 = Service.create(
+  file = URI.open("https://d2lfsu1qnyxzxu.cloudfront.net/cms/iStock-960571902-0_d2.jpg")
+  service4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service4.save!
+  puts "Hi Service4"
+
+  service5 = Service.new(
     trainer: trainer2,
     address: "London",
     price: 50,
-    description: "We will cycle for 3 hours starting at Richmond Park.",
+    description: "Long Distance Adventure: Embark on an epic running/cycling journey with a personal trainer by your side. Explore scenic routes and conquer impressive distances in this 2-hour session tailored to challenge and inspire endurance athletes.",
     sport: "Cycling",
     service_type: "Session"
   )
 
-  service6 = Service.create(
+  file = URI.open("https://mindpumppodcast.com/wp-content/uploads/2018/09/UdOGV3Q6y3XvOZg90QfA_Stop_Working_Out_And_Start_Practicing_Mind_Pump_Media.jpg")
+  service5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service5.save!
+  puts "Hi Service5"
+
+  service6 = Service.new(
     trainer: trainer2,
     address: "London",
     price: 30,
-    description: "We will meet at Climbing Arches and I will help you get a level up!",
+    description: "Speed and Agility Fusion: Boost your speed, agility, and overall athletic performance with this dynamic running/cycling session. In just 2 hours, our personal trainer will guide you through a series of drills and exercises to elevate your performance.",
     sport: "Climbing",
     service_type: "Session"
   )
+
+  file = URI.open("https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2021-12/211208-working-out-stock-mn-1310-55e1c7.jpg")
+  service6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service6.save!
+  puts "Hi Service6"
 
   booking3 = Booking.create(
     user: user6,
@@ -302,37 +437,52 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer3 = Trainer.create(
-    description: "I have been training athletes for a decade and I keep finding exciting new ways to push the human body! Train with me and you'll keep beating your PB!",
+    description: "Goal-oriented trainer who thrives on empowering individuals to surpass their limits. Combines a strategic approach with motivational coaching to enhance performance and foster long-term success.",
     sports: "Running,Swimming,Cycling",
     user: user5
   )
 
-  service7 = Service.create(
+  service7 = Service.new(
     trainer: trainer3,
     address: "London",
     price: 300,
-    description: "I will create a training plan to help you train for your next marathon!",
+    description: "Balanced Running Training Week: Achieve a balance between strength, endurance, and recovery with our meticulously designed week-long training plan. Our trainers will guide you through a well-rounded schedule, combining challenging workouts, cross-training activities, and rest days to optimize your performance and prevent burnout.",
     sport: "Running",
     service_type: "Training Plan"
   )
 
-  service8 = Service.create(
+  file = URI.open("https://static.showit.co/800/p7J-VkiHSzy_TJFABEl67w/164038/dale_erdmier_4thmar22.jpg")
+  service7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service7.save!
+  puts "Hi Service7"
+
+  service8 = Service.new(
     trainer: trainer3,
     address: "London",
     price: 12,
-    description: "Let's practice your backstroke!",
+    description: "Endurance Endorphins: Get ready for a euphoric running/cycling session focused on building endurance and releasing those feel-good endorphins. With a personal trainer leading the way, you'll enjoy a 1-hour session filled with energy and motivation.",
     sport: "Swimming",
     service_type: "Session"
   )
 
-  service9 = Service.create(
+  file = URI.open("https://blog.fitbit.com/wp-content/uploads/2018/08/0816-summer-workouts-HERO.jpg")
+  service8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service8.save!
+  puts "Hi Service8"
+
+  service9 = Service.new(
     trainer: trainer3,
     address: "London",
     price: 12,
-    description: "I will create a 12 week training plan to help you train for your next marathon!",
+    description: "Performance Enhancement Intensive: Elevate your running/cycling performance to new heights with this comprehensive 2-hour training session. Our personal trainer will analyze your form, provide valuable feedback, and implement strategies to optimize your performance.",
     sport: "Cycling",
     service_type: "Session"
   )
+
+  file = URI.open("https://media.cnn.com/api/v1/images/stellar/prod/211101161141-01-how-to-have-fun-working-out.jpg?q=w_3000,h_2000,x_0,y_0,c_fill")
+  service9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service9.save!
+  puts "Hi Service9"
 
   booking6 = Booking.create(
     user: user12,
@@ -359,37 +509,52 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer4 = Trainer.create(
-    description: "I'm an excellent trainer",
+    description: "I am a passionate trainer with a deep understanding of biomechanics and exercise physiology. Skilled at tailoring training plans to address specific needs and helping clients reach their peak performance levels.",
     sports: "Running,Climbing,Tennis",
     user: user7
   )
 
-  service10 = Service.create(
+  service10 = Service.new(
     trainer: trainer4,
     address: "London",
     price: 288,
-    description: "I will create a training plan to help you train for your next marathon!",
+    description: "Performance-Driven Week of Running Training: Get ready to elevate your performance with our dynamic week-long training plan. Designed for ambitious athletes, this program includes intense interval training, time trials, and targeted strength exercises, ensuring you reach peak performance by the end of the week.",
     sport: "Running",
     service_type: "Training Plan"
   )
 
-  service11 = Service.create(
+  file = URI.open("https://images.squarespace-cdn.com/content/v1/5ebfd2ce19eb48129f382e27/1596992029599-ZJ844T63G1VSQ3LRGE9U/_MG_3309.jpg?format=1000w")
+  service10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service10.save!
+  puts "Hi Service10"
+
+  service11 = Service.new(
     trainer: trainer4,
     address: "London",
     price: 30,
-    description: "Going to climb for 2 hours.",
+    description: "Interval Power Ride: Ignite your cycling potential with this high-intensity interval training session. Led by a personal trainer, you'll experience a 2-hour session that alternates between intense bursts of effort and active recovery.",
     sport: "Climbing",
     service_type: "Session"
   )
 
-  service12 = Service.create(
+  file = URI.open("https://hips.hearstapps.com/hmg-prod/images/cheerful-women-doing-push-ups-on-retaining-wall-at-royalty-free-image-1649095460.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*")
+  service11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service11.save!
+  puts "Hi Service11"
+
+  service12 = Service.new(
     trainer: trainer4,
     address: "London",
     price: 22,
-    description: "Tennis at the park for an hr.",
+    description: "Endurance Base Building: Lay a solid foundation for your running/cycling goals with this 1.5-hour endurance-focused training session. Under the guidance of a personal trainer, you'll work on building strength, stamina, and mental resilience.",
     sport: "Tennis",
     service_type: "Session"
   )
+
+  file = URI.open("https://www.wellandgood.com/wp-content/uploads/2021/08/GettyImages-1316198696-425x285.jpg")
+  service12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service12.save!
+  puts "Hi Service12"
 
   booking9 = Booking.create(
     user: user4,
@@ -408,37 +573,52 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer5 = Trainer.create(
-    description: "I am passionate about fitness. Become my trainee to unlock your ultimate potential.",
+    description: "Results-driven trainer experienced in working with diverse populations, from beginners to elite athletes. Utilizes a comprehensive approach to training, incorporating strength, endurance, and injury prevention techniques.",
     sports: "Running,Cycling,Kayaking",
     user: user9
   )
 
-  service13 = Service.create(
+  service13 = Service.new(
     trainer: trainer5,
     address: "London",
     price: 500,
-    description: "I will create a training plan to help you train for your next marathon!",
+    description: "Progressive Running Week: Progress steadily towards your running/cycling goals with our progressive week-long training plan. Starting with moderate intensity and gradually increasing the challenges, this program incorporates different types of workouts to improve your endurance, speed, and overall fitness level over the course of the week.",
     sport: "Running",
     service_type: "Training Plan"
   )
 
-  service14 = Service.create(
+  file = URI.open("https://www.lk-fitness.co.uk/wp-content/uploads/Lee-PT-164-scaled.jpg")
+  service13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service13.save!
+  puts "Hi Service13"
+
+  service14 = Service.new(
     trainer: trainer5,
     address: "London",
     price: 35,
-    description: "Cycling at Peckham Rye.",
+    description: "Tempo Training Challenge: Fine-tune your pace and rhythm in this challenging running/cycling session. With a personal trainer, you'll engage in a 3-hour workout that combines steady-state efforts and intervals to enhance your overall performance.",
     sport: "Cycling",
     service_type: "Session"
   )
 
-  service15 = Service.create(
+  file = URI.open("https://bloximages.newyork1.vip.townnews.com/waaytv.com/content/tncms/assets/v3/editorial/f/c3/fc39c7a3-6678-53cc-9e89-960105a66d44/61d7236727a7e.image.jpg?crop=1763%2C926%2C0%2C125&resize=1200%2C630&order=crop%2Cresize")
+  service14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service14.save!
+  puts "Hi Service14"
+
+  service15 = Service.new(
     trainer: trainer5,
     address: "London",
     price: 50,
-    description: "Kayaking for an hour at Thames.",
+    description: "Adventure Trail Ride: Embark on an exhilarating trail cycling adventure with a personal trainer as your guide. This 2-hour session will take you through scenic trails, testing your skills and endurance in a thrilling outdoor experience.",
     sport: "Kayaking",
     service_type: "Session"
   )
+
+  file = URI.open("https://www.simplysupplements.co.uk/healthylife/uploads/images/image_mid_677_5d6688fd5e650.jpg")
+  service15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service15.save!
+  puts "Hi Service15"
 
   booking11 = Booking.create(
     user: user22,
@@ -465,19 +645,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer6 = Trainer.create(
-    description: "I love sports and fitness! Let's sweat together!",
+    description: "Energetic and knowledgeable trainer adept at creating dynamic and engaging workout sessions. Possesses strong communication skills to effectively guide and inspire clients towards their desired results.",
     sports: "Running,Kayaking,Cycling",
     user: user11
   )
 
-  service16 = Service.create(
+  service16 = Service.new(
     trainer: trainer6,
     address: "London",
     price: 12,
-    description: "Let's run",
+    description: "Ultra-Distance Preparation: Prepare for long-distance running/cycling events with this 2-hour training session. Our personal trainer will provide guidance on pacing, fueling strategies, and mental preparation to ensure you're ready for the ultimate endurance challenge.",
     sport: "Running",
     service_type: "Session"
   )
+
+  file = URI.open("https://media1.popsugar-assets.com/files/thumbor/nFMJa75Ys1sVMzJkvE3hzPffzWg/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2015/05/07/733/n/1922729/e3698b65_edit_img_image_845239_1431009170/i/Hill-Strength-Training-Workout.png")
+  service16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service16.save!
+  puts "Hi Service16"
 
   booking11 = Booking.create(
     user: user2,
@@ -488,19 +673,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer7 = Trainer.create(
-    description: "Let's kayak on the Thames",
+    description: "Innovative trainer with a creative approach to training methodologies. Implements cutting-edge techniques and incorporates technology-driven tools to enhance performance tracking and analysis for clients seeking the latest advancements in their training routines.",
     sports: "Kayaking",
     user: user13
   )
 
-  service17 = Service.create(
+  service17 = Service.new(
     trainer: trainer7,
     address: "London",
     price: 12,
-    description: "Cycling training at Hackney Park.",
+    description: "Power Hills and Sprints: Conquer hills and unleash your speed in this dynamic running/cycling session. With a personal trainer leading the way, you'll tackle challenging inclines and engage in exhilarating sprints during this 2-hour workout.",
     sport: "Cycling",
     service_type: "Session"
   )
+
+  file = URI.open("https://www.eatthis.com/wp-content/uploads/sites/4/2023/04/woman-bird-dogs.jpg?quality=82&strip=all")
+  service17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service17.save!
+  puts "Hi Service17"
 
   booking11 = Booking.create(
     user: user4,
@@ -511,19 +701,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer8 = Trainer.create(
-    description: "Fitness is life! Let's train.",
+    description: "Dedicated trainer with a proven track record of improving performance and technique. Well-versed in utilizing advanced training methodologies and offering valuable insights to optimize training routines.",
     sports: "Running",
     user: user15
   )
 
-  service18 = Service.create(
+  service18 = Service.new(
     trainer: trainer8,
     address: "Brighton",
     price: 12,
-    description: "Let's run for 2 hours. I'll couch you throughout.",
+    description: "Mindful Endurance Journey: Embark on a mindful and meditative running/cycling session with a personal trainer. This 3-hour session will focus on finding a balance between physical exertion and mental clarity, allowing you to connect with your body and surroundings.",
     sport: "Running",
     service_type: "Session"
   )
+
+  file = URI.open("https://images.huffingtonpost.com/2015-07-27-1438037178-3176987-SweatyAngelC.jpg")
+  service18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service18.save!
+  puts "Hi Service18"
 
   booking12 = Booking.create(
     user: user4,
@@ -534,19 +729,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer9 = Trainer.create(
-    description: "I love fitness. Let's be fit together!",
+    description: "I am an experienced trainer with a passion for helping individuals achieve their fitness goals. Skilled in designing personalized training programs and providing motivation for clients of all levels.",
     sports: "Running",
     user: user17
   )
 
-  service19 = Service.create(
+  service19 = Service.new(
     trainer: trainer9,
     address: "Brighton",
     price: 20,
-    description: "We will run for 3 hours... I need money!",
+    description: "Strength and Stamina Fusion: Combine strength training and endurance work in this 1.5-hour running/cycling session led by a personal trainer. You'll engage in a variety of exercises and drills to build both muscular strength and cardiovascular endurance.",
     sport: "Running",
     service_type: "Session"
   )
+
+  file = URI.open("https://media.self.com/photos/60e76fe01f69d35150b50014/4:3/w_2560%2Cc_limit/GettyImages-1254996115.jpg")
+  service19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service19.save!
+  puts "Hi Service19"
 
   booking13 = Booking.create(
     user: user6,
@@ -557,19 +757,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer10 = Trainer.create(
-    description: "Hire me",
+    description: "Personable and empathetic trainer who understands the unique challenges individuals face on their fitness journey. Skilled in building strong relationships with clients and providing unwavering support to help them overcome obstacles and achieve their goals.",
     sports: "Kayaking",
     user: user19
   )
 
-  service20 = Service.create(
+  service20 = Service.new(
     trainer: trainer10,
     address: "Brighton",
     price: 30,
-    description: "We will be kayaking for an hour.",
+    description: "Performance Optimization Clinic: Fine-tune your running/cycling performance with this 2-hour session designed to optimize your technique, pacing, and race strategy. Our experienced personal trainer will provide personalized guidance and support to help you reach your goals.",
     sport: "Kayaking",
     service_type: "Session"
   )
+
+  file = URI.open("https://img.livestrong.com/640/clsd/getty/1b4092b2fc4a47119f1def88e6e94b33.jpg")
+  service20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service20.save!
+  puts "Hi Service20"
 
   booking14 = Booking.create(
     user: user8,
@@ -580,19 +785,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   )
 
   trainer11 = Trainer.create(
-    description: "I like sports.",
+    description: "Well-rounded trainer experienced in multi-disciplinary training methods. Combines elements of strength training, cardio conditioning, and flexibility work to create well-rounded and comprehensive training programs tailored to individual needs.",
     sports: "Cycling",
     user: user21
   )
 
-  service21 = Service.create(
+  service21 = Service.new(
     trainer: trainer11,
     address: "Brighton",
     price: 30,
-    description: "Two hours intense training.",
+    description: "Adventure Cycling Expedition: Embark on an unforgettable cycling adventure with a personal trainer leading the way. This 2-hour session will take you on a scenic route, allowing you to explore new landscapes and challenge",
     sport: "Cycling",
     service_type: "Session"
   )
+
+  file = URI.open("https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/11/muslim-poc-gym-exercising-weight-lifting-1296x728-header.jpg?h=1528")
+  service21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service21.save!
+  puts "Hi Service21"
 
   booking15 = Booking.create(
     user: user10,
