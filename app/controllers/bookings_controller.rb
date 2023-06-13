@@ -4,10 +4,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
-
   def new
     @trainer = Trainer.find(params[:trainer_id])
     @service = Service.find(params[:service_id])
@@ -21,10 +17,23 @@ class BookingsController < ApplicationController
     @booking.service = @service
     @booking.user = current_user
     if @booking.save!
-      redirect_to trainer_service_bookings_path , notice: 'Booking was successfully created.'
+      redirect_to mybookings_path , notice: 'Booking was successfully created.'
     else
       render :new
     end
+  end
+
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to mybookings_path
+  end 
+
+  def show
+    @trainer = Trainer.find(params[:trainer_id])
+    @service = Service.find(params[:service_id])
+    @booking = Booking.find(params[:id])
   end
 
   private

@@ -28,23 +28,30 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <% unless current_user.trainer %>
+          <% if current_user.trainer  %>
+              <%= link_to "Add an activity", new_trainer_service_path(current_user.trainer), class: "nav-link" %>
+              <li class="nav-item dropdown">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            </a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "My Trainer Profile", trainer_path(current_user.trainer), class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path(@service, @trainer), data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else%>
               <%= link_to "Become a Trainer", new_trainer_path, class: "nav-link" %>
+            <li class="nav-item dropdown">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            </a>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "My bookings", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path(@service, @trainer), data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
             <% end %>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-            <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
-            <% else %>
-              <%= image_tag "athlete.jpg", class: "avatar", alt: "dropdown menu" %>
-            <% end %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", mybookings_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
