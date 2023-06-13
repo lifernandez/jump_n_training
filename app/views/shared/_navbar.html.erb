@@ -10,7 +10,7 @@
       value: params[:query],
       class: "query-field",
       placeholder: "Location" %>
-      <%= f.select(:sport, options_for_select(Trainer.all.map(&:sports).map { |sport| sport.split(",") }.flatten.uniq, selected: params[:sport]), { :include_blank => 'sport'}, { class: "filter-field" }) %>
+      <%= f.select(:sport, options_for_select(Trainer.all.map(&:sports).reject(&:blank?).map { |sport| sport.split(",") }.flatten.uniq, selected: params[:sport]), { :include_blank => 'sport'}, { class: "filter-field" }) %>
       <%= f.range_field :price, in: (Service.all.map(&:price).sort[0]..Service.all.map(&:price).sort[-1]), value: params[:price].to_i %>
       <%#= f.select(:price, options_for_select(Trainer.all.map(&:services).flatten.map(&:price).uniq, selected: params[:price]), { :include_blank => 'price'}, { class: "filter-field" }) %>
 

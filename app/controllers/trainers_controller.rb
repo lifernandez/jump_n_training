@@ -56,7 +56,7 @@ class TrainersController < ApplicationController
   private
 
   def trainer_params
-    params.require(:trainer).permit(:sports, :description, :user_id)
+    params.require(:trainer).permit(:description, :user_id, sports: [])
   end
 
 
