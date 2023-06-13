@@ -299,6 +299,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   # file = URI.open("https://www.mayoclinichealthsystem.org/-/media/national-files/images/hometown-health/2022/sitting-on-sofa-writing-in-journal.jpg?h=370&w=660&la=en&hash=AEA5A82A0053CAA81859033A055EE4E0")
   # user22.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user22.save!
+
   # puts "Hi User22"
 
   trainer1 = Trainer.create(
@@ -396,6 +397,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   service4.save!
   puts "Hi Service4"
+
 
   service5 = Service.new(
     trainer: trainer2,
@@ -657,4 +659,6 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   #   trainer: trainer5,
   #   address: "London",
   #   price: 35,
+
   #   description: "Tempo Training Challenge: Fine-tune your pace and rhythm in this challenging running/cyclin
+
