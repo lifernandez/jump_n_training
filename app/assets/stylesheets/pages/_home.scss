@@ -49,12 +49,15 @@ html, body{background: rgb(236, 240, 241);}
     max-width: 1000px;
   }
 
-    h1{font-size: 2em; padding: 20px 0;}
+    h1{
+      font-size: 2em;
+      // padding: 20px 0;
+    }
     p{
       font-size: .75em;
       text-transform: uppercase;
       letter-spacing: 2px;
-      padding: 20px 0;
+      // padding: 20px 0;
     }
 
     button:hover{cursor: pointer}

@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to mybookings_path
-  end 
+  end
 
   def show
     @trainer = Trainer.find(params[:trainer_id])
