@@ -7,6 +7,9 @@
   background: white;
   display: flex;
   align-items: center;
+  .avatar {
+    margin-left: 60px;
+  }
 }
 
 // .card-product img {
@@ -34,16 +37,17 @@
   padding: 16px;
 }
 
-.btn-edit {
+.btn-cancel {
   padding: 4px 8px;
   color: black;
   padding: 8px 24px;
   border-radius: 4px;
   background: lightgray;
   transition: background 0.3s ease;
+  border: none;
 }
 
-.btn-edit:hover {
+.btn-cancel:hover {
   background: lightgray;
   color: white;
 }

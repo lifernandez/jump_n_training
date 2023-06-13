@@ -1,10 +1,11 @@
-<h2> My bookings!! </h2>
 
-<p> <%= current_user.first_name %> </p>
-<ul>
+<div class ="container bookings-container pt-5">
+  <h2> My bookings!! </h2>
+
   <% current_user.bookings.each do | booking | %>
-    <li> you have a booking with <%= booking.service.trainer.user.first_name%> about <%= booking.service.sport%>  </li>
+    <%= render 'bookings/booking', booking: booking  %>
   <% end %>
+
 </ul>
 <div class ="container bookings-container">
 
@@ -73,9 +74,5 @@
     <%= link_to "edit" , mybookings_path, class: 'btn-edit'%>
 
   </div>
-
-
-
-
 
 </div>
