@@ -36,10 +36,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://images.contentstack.io/v3/assets/blt45c082eaf9747747/blt91728955a4af6fbb/5de0ba07bfcabd6600c114d6/HOMEWORKOUT_HEAD.jpg?format=pjpg&auto=webp&quality=76&width=1232")
-  user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://images.contentstack.io/v3/assets/blt45c082eaf9747747/blt91728955a4af6fbb/5de0ba07bfcabd6600c114d6/HOMEWORKOUT_HEAD.jpg?format=pjpg&auto=webp&quality=76&width=1232")
+  # user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user2.save!
-  puts "Hi User2"
+  # puts "Hi User2"
 
   user3 = User.new(
     email: "john@gmail.com",
@@ -62,10 +62,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://www.drugwatch.com/wp-content/uploads/mens-health-hero.jpg")
-  user4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://www.drugwatch.com/wp-content/uploads/mens-health-hero.jpg")
+  # user4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user4.save!
-  puts "Hi User4"
+  # puts "Hi User4"
 
   user5 = User.new(
     email: "paul@gmail.com",
@@ -88,10 +88,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://www.naturalpathmed.com/wp-content/uploads/2017/10/blog-fit-older-man.jpg")
-  user6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://www.naturalpathmed.com/wp-content/uploads/2017/10/blog-fit-older-man.jpg")
+  # user6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user6.save!
-  puts "Hi User6"
+  # puts "Hi User6"
 
   user7 = User.new(
     email: "ed@gmail.com",
@@ -114,10 +114,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://www.qardio.com/wp-content/uploads/2016/01/spring_running_man_blog.jpg")
-  user8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://www.qardio.com/wp-content/uploads/2016/01/spring_running_man_blog.jpg")
+  # user8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user8.save!
-  puts "Hi User8"
+  # puts "Hi User8"
 
   user9 = User.new(
     email: "tom@gmail.com",
@@ -140,10 +140,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://hips.hearstapps.com/goodhousekeeping-uk/main/embedded/33948/happy-woman-in-40s.jpg")
-  user10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://hips.hearstapps.com/goodhousekeeping-uk/main/embedded/33948/happy-woman-in-40s.jpg")
+  # user10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user10.save!
-  puts "Hi User10"
+  # puts "Hi User10"
 
   user11 = User.new(
     email: "skip@gmail.com",
@@ -166,10 +166,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://img.freepik.com/free-photo/cheerful-curly-dark-skinned-man-white-long-sleeved-t-shirt-smiles-sincerely-rests-near-sea_197531-23689.jpg")
-  user12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://img.freepik.com/free-photo/cheerful-curly-dark-skinned-man-white-long-sleeved-t-shirt-smiles-sincerely-rests-near-sea_197531-23689.jpg")
+  # user12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user12.save!
-  puts "Hi User12"
+  # puts "Hi User12"
 
   user13 = User.new(
     email: "js@gmail.com",
@@ -192,10 +192,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://media.istockphoto.com/id/1359149467/photo/shot-of-a-handsome-young-man-standing-alone-and-stretching-during-his-outdoor-workout.jpg?s=612x612&w=0&k=20&c=bCwqY95KICwmFZKRgbc9yd9O-0Ra1oHrhv6vYe6Weh8=")
-  user14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://media.istockphoto.com/id/1359149467/photo/shot-of-a-handsome-young-man-standing-alone-and-stretching-during-his-outdoor-workout.jpg?s=612x612&w=0&k=20&c=bCwqY95KICwmFZKRgbc9yd9O-0Ra1oHrhv6vYe6Weh8=")
+  # user14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user14.save!
-  puts "Hi User14"
+  # puts "Hi User14"
 
   user15 = User.new(
     email: "marco@gmail.com",
@@ -218,10 +218,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://img.freepik.com/premium-photo/focused-fitness-shot-man-stretching-before-run_590464-38888.jpg")
-  user16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://img.freepik.com/premium-photo/focused-fitness-shot-man-stretching-before-run_590464-38888.jpg")
+  # user16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user16.save!
-  puts "Hi User16"
+  # puts "Hi User16"
 
   user17 = User.new(
     email: "joe@gmail.com",
@@ -244,10 +244,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://cdn.sanity.io/images/xmpcmhrn/production/2188acdb9bf06fe04a6e668f585eae2c7b2fc593-3600x2400.jpg?rect=0,188,3600,2023&w=436&h=245&q=80&fit=max&auto=format")
-  user18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://cdn.sanity.io/images/xmpcmhrn/production/2188acdb9bf06fe04a6e668f585eae2c7b2fc593-3600x2400.jpg?rect=0,188,3600,2023&w=436&h=245&q=80&fit=max&auto=format")
+  # user18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user18.save!
-  puts "Hi User18"
+  # puts "Hi User18"
 
   user19 = User.new(
     email: "ra@gmail.com",
@@ -270,10 +270,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://imgk.timesnownews.com/story/women_0.gif")
-  user20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://imgk.timesnownews.com/story/women_0.gif")
+  # user20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user20.save!
-  puts "Hi User20"
+  # puts "Hi User20"
 
   user21 = User.new(
     email: "lou@gmail.com",
@@ -296,10 +296,10 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     istrainer: false
   )
 
-  file = URI.open("https://www.mayoclinichealthsystem.org/-/media/national-files/images/hometown-health/2022/sitting-on-sofa-writing-in-journal.jpg?h=370&w=660&la=en&hash=AEA5A82A0053CAA81859033A055EE4E0")
-  user22.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://www.mayoclinichealthsystem.org/-/media/national-files/images/hometown-health/2022/sitting-on-sofa-writing-in-journal.jpg?h=370&w=660&la=en&hash=AEA5A82A0053CAA81859033A055EE4E0")
+  # user22.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user22.save!
-  puts "Hi User22"
+  # puts "Hi User22"
 
   trainer1 = Trainer.create(
     description: "Motivated trainer with a keen eye for detail and a focus on technique refinement. Specializes in form correction and injury prevention strategies to ensure clients perform at their best while minimizing the risk of setbacks.",
@@ -633,296 +633,296 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     comment: "The trainer's passion for the sport was contagious. Their energy and commitment motivated me to push myself harder and strive for continuous improvement."
   )
 
-  trainer5 = Trainer.create(
-    description: "Results-driven trainer experienced in working with diverse populations, from beginners to elite athletes. Utilizes a comprehensive approach to training, incorporating strength, endurance, and injury prevention techniques.",
-    sports: "Running,Cycling,Kayaking",
-    user: user9
-  )
+  # trainer5 = Trainer.create(
+  #   description: "Results-driven trainer experienced in working with diverse populations, from beginners to elite athletes. Utilizes a comprehensive approach to training, incorporating strength, endurance, and injury prevention techniques.",
+  #   sports: "Running,Cycling,Kayaking",
+  #   user: user9
+  # )
 
-  service13 = Service.new(
-    trainer: trainer5,
-    address: "London",
-    price: 500,
-    description: "Progressive Running Week: Progress steadily towards your running/cycling goals with our progressive week-long training plan. Starting with moderate intensity and gradually increasing the challenges, this program incorporates different types of workouts to improve your endurance, speed, and overall fitness level over the course of the week.",
-    sport: "Running",
-    service_type: "Training Plan"
-  )
+  # service13 = Service.new(
+  #   trainer: trainer5,
+  #   address: "London",
+  #   price: 500,
+  #   description: "Progressive Running Week: Progress steadily towards your running/cycling goals with our progressive week-long training plan. Starting with moderate intensity and gradually increasing the challenges, this program incorporates different types of workouts to improve your endurance, speed, and overall fitness level over the course of the week.",
+  #   sport: "Running",
+  #   service_type: "Training Plan"
+  # )
 
-  file = URI.open("https://www.lk-fitness.co.uk/wp-content/uploads/Lee-PT-164-scaled.jpg")
-  service13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service13.save!
-  puts "Hi Service13"
+  # file = URI.open("https://www.lk-fitness.co.uk/wp-content/uploads/Lee-PT-164-scaled.jpg")
+  # service13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service13.save!
+  # puts "Hi Service13"
 
-  service14 = Service.new(
-    trainer: trainer5,
-    address: "London",
-    price: 35,
-    description: "Tempo Training Challenge: Fine-tune your pace and rhythm in this challenging running/cycling session. With a personal trainer, you'll engage in a 3-hour workout that combines steady-state efforts and intervals to enhance your overall performance.",
-    sport: "Cycling",
-    service_type: "Session"
-  )
+  # service14 = Service.new(
+  #   trainer: trainer5,
+  #   address: "London",
+  #   price: 35,
+  #   description: "Tempo Training Challenge: Fine-tune your pace and rhythm in this challenging running/cycling session. With a personal trainer, you'll engage in a 3-hour workout that combines steady-state efforts and intervals to enhance your overall performance.",
+  #   sport: "Cycling",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://bloximages.newyork1.vip.townnews.com/waaytv.com/content/tncms/assets/v3/editorial/f/c3/fc39c7a3-6678-53cc-9e89-960105a66d44/61d7236727a7e.image.jpg?crop=1763%2C926%2C0%2C125&resize=1200%2C630&order=crop%2Cresize")
-  service14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service14.save!
-  puts "Hi Service14"
+  # file = URI.open("https://bloximages.newyork1.vip.townnews.com/waaytv.com/content/tncms/assets/v3/editorial/f/c3/fc39c7a3-6678-53cc-9e89-960105a66d44/61d7236727a7e.image.jpg?crop=1763%2C926%2C0%2C125&resize=1200%2C630&order=crop%2Cresize")
+  # service14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service14.save!
+  # puts "Hi Service14"
 
-  service15 = Service.new(
-    trainer: trainer5,
-    address: "London",
-    price: 50,
-    description: "Adventure Trail Ride: Embark on an exhilarating trail cycling adventure with a personal trainer as your guide. This 2-hour session will take you through scenic trails, testing your skills and endurance in a thrilling outdoor experience.",
-    sport: "Kayaking",
-    service_type: "Session"
-  )
+  # service15 = Service.new(
+  #   trainer: trainer5,
+  #   address: "London",
+  #   price: 50,
+  #   description: "Adventure Trail Ride: Embark on an exhilarating trail cycling adventure with a personal trainer as your guide. This 2-hour session will take you through scenic trails, testing your skills and endurance in a thrilling outdoor experience.",
+  #   sport: "Kayaking",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://www.simplysupplements.co.uk/healthylife/uploads/images/image_mid_677_5d6688fd5e650.jpg")
-  service15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service15.save!
-  puts "Hi Service15"
+  # file = URI.open("https://www.simplysupplements.co.uk/healthylife/uploads/images/image_mid_677_5d6688fd5e650.jpg")
+  # service15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service15.save!
+  # puts "Hi Service15"
 
-  booking11 = Booking.create(
-    user: user22,
-    service: service13,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking11 = Booking.create(
+  #   user: user22,
+  #   service: service13,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review11 = Review.create(
-    booking: booking11,
-    rating: 4,
-    comment: "I highly recommend the sports training session to anyone looking to improve their skills. The trainer's patience, dedication, and ability to break down complex movements were impressive."
-  )
+  # review11 = Review.create(
+  #   booking: booking11,
+  #   rating: 4,
+  #   comment: "I highly recommend the sports training session to anyone looking to improve their skills. The trainer's patience, dedication, and ability to break down complex movements were impressive."
+  # )
 
-  booking12 = Booking.create(
-    user: user22,
-    service: service14,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking12 = Booking.create(
+  #   user: user22,
+  #   service: service14,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review12 = Review.create(
-    booking: booking12,
-    rating: 4,
-    comment: "The training session was well-organized, with a perfect balance of theory and practical drills. The trainer's clear explanations and demonstrations made it easy to grasp new concepts."
-  )
+  # review12 = Review.create(
+  #   booking: booking12,
+  #   rating: 4,
+  #   comment: "The training session was well-organized, with a perfect balance of theory and practical drills. The trainer's clear explanations and demonstrations made it easy to grasp new concepts."
+  # )
 
-  booking13 = Booking.create(
-    user: user22,
-    service: service15,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking13 = Booking.create(
+  #   user: user22,
+  #   service: service15,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review13 = Review.create(
-    booking: booking13,
-    rating: 5,
-    comment: "I've participated in various sports training sessions, but this one stood out. The trainer's enthusiasm and expertise created an inspiring atmosphere, making the session both educational and fun."
-  )
+  # review13 = Review.create(
+  #   booking: booking13,
+  #   rating: 5,
+  #   comment: "I've participated in various sports training sessions, but this one stood out. The trainer's enthusiasm and expertise created an inspiring atmosphere, making the session both educational and fun."
+  # )
 
-  trainer6 = Trainer.create(
-    description: "Energetic and knowledgeable trainer adept at creating dynamic and engaging workout sessions. Possesses strong communication skills to effectively guide and inspire clients towards their desired results.",
-    sports: "Running,Kayaking,Cycling",
-    user: user11
-  )
+  # trainer6 = Trainer.create(
+  #   description: "Energetic and knowledgeable trainer adept at creating dynamic and engaging workout sessions. Possesses strong communication skills to effectively guide and inspire clients towards their desired results.",
+  #   sports: "Running,Kayaking,Cycling",
+  #   user: user11
+  # )
 
-  service16 = Service.new(
-    trainer: trainer6,
-    address: "London",
-    price: 12,
-    description: "Ultra-Distance Preparation: Prepare for long-distance running/cycling events with this 2-hour training session. Our personal trainer will provide guidance on pacing, fueling strategies, and mental preparation to ensure you're ready for the ultimate endurance challenge.",
-    sport: "Running",
-    service_type: "Session"
-  )
+  # service16 = Service.new(
+  #   trainer: trainer6,
+  #   address: "London",
+  #   price: 12,
+  #   description: "Ultra-Distance Preparation: Prepare for long-distance running/cycling events with this 2-hour training session. Our personal trainer will provide guidance on pacing, fueling strategies, and mental preparation to ensure you're ready for the ultimate endurance challenge.",
+  #   sport: "Running",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://media1.popsugar-assets.com/files/thumbor/nFMJa75Ys1sVMzJkvE3hzPffzWg/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2015/05/07/733/n/1922729/e3698b65_edit_img_image_845239_1431009170/i/Hill-Strength-Training-Workout.png")
-  service16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service16.save!
-  puts "Hi Service16"
+  # file = URI.open("https://media1.popsugar-assets.com/files/thumbor/nFMJa75Ys1sVMzJkvE3hzPffzWg/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2015/05/07/733/n/1922729/e3698b65_edit_img_image_845239_1431009170/i/Hill-Strength-Training-Workout.png")
+  # service16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service16.save!
+  # puts "Hi Service16"
 
-  booking14 = Booking.create(
-    user: user2,
-    service: service16,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking14 = Booking.create(
+  #   user: user2,
+  #   service: service16,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review14 = Review.create(
-    booking: booking14,
-    rating: 4,
-    comment: "The training session was challenging yet enjoyable. The trainer created a supportive environment that pushed me beyond my comfort zone and helped me exceed my own expectations."
-  )
+  # review14 = Review.create(
+  #   booking: booking14,
+  #   rating: 4,
+  #   comment: "The training session was challenging yet enjoyable. The trainer created a supportive environment that pushed me beyond my comfort zone and helped me exceed my own expectations."
+  # )
 
-  trainer7 = Trainer.create(
-    description: "Innovative trainer with a creative approach to training methodologies. Implements cutting-edge techniques and incorporates technology-driven tools to enhance performance tracking and analysis for clients seeking the latest advancements in their training routines.",
-    sports: "Kayaking",
-    user: user13
-  )
+  # trainer7 = Trainer.create(
+  #   description: "Innovative trainer with a creative approach to training methodologies. Implements cutting-edge techniques and incorporates technology-driven tools to enhance performance tracking and analysis for clients seeking the latest advancements in their training routines.",
+  #   sports: "Kayaking",
+  #   user: user13
+  # )
 
-  service17 = Service.new(
-    trainer: trainer7,
-    address: "London",
-    price: 12,
-    description: "Power Hills and Sprints: Conquer hills and unleash your speed in this dynamic running/cycling session. With a personal trainer leading the way, you'll tackle challenging inclines and engage in exhilarating sprints during this 2-hour workout.",
-    sport: "Cycling",
-    service_type: "Session"
-  )
+  # service17 = Service.new(
+  #   trainer: trainer7,
+  #   address: "London",
+  #   price: 12,
+  #   description: "Power Hills and Sprints: Conquer hills and unleash your speed in this dynamic running/cycling session. With a personal trainer leading the way, you'll tackle challenging inclines and engage in exhilarating sprints during this 2-hour workout.",
+  #   sport: "Cycling",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://www.eatthis.com/wp-content/uploads/sites/4/2023/04/woman-bird-dogs.jpg?quality=82&strip=all")
-  service17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service17.save!
-  puts "Hi Service17"
+  # file = URI.open("https://www.eatthis.com/wp-content/uploads/sites/4/2023/04/woman-bird-dogs.jpg?quality=82&strip=all")
+  # service17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service17.save!
+  # puts "Hi Service17"
 
-  booking15 = Booking.create(
-    user: user4,
-    service: service17,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking15 = Booking.create(
+  #   user: user4,
+  #   service: service17,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review15 = Review.create(
-    booking: booking15,
-    rating: 5,
-    comment: "I'm grateful for the knowledgeable trainer who conducted the session. They provided valuable insights, tips, and techniques that have elevated my game to a whole new level."
-  )
+  # review15 = Review.create(
+  #   booking: booking15,
+  #   rating: 5,
+  #   comment: "I'm grateful for the knowledgeable trainer who conducted the session. They provided valuable insights, tips, and techniques that have elevated my game to a whole new level."
+  # )
 
-  trainer8 = Trainer.create(
-    description: "Dedicated trainer with a proven track record of improving performance and technique. Well-versed in utilizing advanced training methodologies and offering valuable insights to optimize training routines.",
-    sports: "Running",
-    user: user15
-  )
+  # trainer8 = Trainer.create(
+  #   description: "Dedicated trainer with a proven track record of improving performance and technique. Well-versed in utilizing advanced training methodologies and offering valuable insights to optimize training routines.",
+  #   sports: "Running",
+  #   user: user15
+  # )
 
-  service18 = Service.new(
-    trainer: trainer8,
-    address: "Brighton",
-    price: 12,
-    description: "Mindful Endurance Journey: Embark on a mindful and meditative running/cycling session with a personal trainer. This 3-hour session will focus on finding a balance between physical exertion and mental clarity, allowing you to connect with your body and surroundings.",
-    sport: "Running",
-    service_type: "Session"
-  )
+  # service18 = Service.new(
+  #   trainer: trainer8,
+  #   address: "Brighton",
+  #   price: 12,
+  #   description: "Mindful Endurance Journey: Embark on a mindful and meditative running/cycling session with a personal trainer. This 3-hour session will focus on finding a balance between physical exertion and mental clarity, allowing you to connect with your body and surroundings.",
+  #   sport: "Running",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://images.huffingtonpost.com/2015-07-27-1438037178-3176987-SweatyAngelC.jpg")
-  service18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service18.save!
-  puts "Hi Service18"
+  # file = URI.open("https://images.huffingtonpost.com/2015-07-27-1438037178-3176987-SweatyAngelC.jpg")
+  # service18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service18.save!
+  # puts "Hi Service18"
 
-  booking16 = Booking.create(
-    user: user4,
-    service: service18,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking16 = Booking.create(
+  #   user: user4,
+  #   service: service18,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review16 = Review.create(
-    booking: booking16,
-    rating: 4,
-    comment: "The sports training session was intense but incredibly rewarding. The trainer's attention to detail and personalized feedback helped me make significant improvements. Definitely worth it!"
-  )
+  # review16 = Review.create(
+  #   booking: booking16,
+  #   rating: 4,
+  #   comment: "The sports training session was intense but incredibly rewarding. The trainer's attention to detail and personalized feedback helped me make significant improvements. Definitely worth it!"
+  # )
 
-  trainer9 = Trainer.create(
-    description: "I am an experienced trainer with a passion for helping individuals achieve their fitness goals. Skilled in designing personalized training programs and providing motivation for clients of all levels.",
-    sports: "Running",
-    user: user17
-  )
+  # trainer9 = Trainer.create(
+  #   description: "I am an experienced trainer with a passion for helping individuals achieve their fitness goals. Skilled in designing personalized training programs and providing motivation for clients of all levels.",
+  #   sports: "Running",
+  #   user: user17
+  # )
 
-  service19 = Service.new(
-    trainer: trainer9,
-    address: "Brighton",
-    price: 20,
-    description: "Strength and Stamina Fusion: Combine strength training and endurance work in this 1.5-hour running/cycling session led by a personal trainer. You'll engage in a variety of exercises and drills to build both muscular strength and cardiovascular endurance.",
-    sport: "Running",
-    service_type: "Session"
-  )
+  # service19 = Service.new(
+  #   trainer: trainer9,
+  #   address: "Brighton",
+  #   price: 20,
+  #   description: "Strength and Stamina Fusion: Combine strength training and endurance work in this 1.5-hour running/cycling session led by a personal trainer. You'll engage in a variety of exercises and drills to build both muscular strength and cardiovascular endurance.",
+  #   sport: "Running",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://media.self.com/photos/60e76fe01f69d35150b50014/4:3/w_2560%2Cc_limit/GettyImages-1254996115.jpg")
-  service19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service19.save!
-  puts "Hi Service19"
+  # file = URI.open("https://media.self.com/photos/60e76fe01f69d35150b50014/4:3/w_2560%2Cc_limit/GettyImages-1254996115.jpg")
+  # service19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service19.save!
+  # puts "Hi Service19"
 
-  booking17 = Booking.create(
-    user: user6,
-    service: service19,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking17 = Booking.create(
+  #   user: user6,
+  #   service: service19,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review17 = Review.create(
-    booking: booking17,
-    rating: 4,
-    comment: "I had an amazing experience in the training session. The trainer's motivational and positive approach kept me focused and determined throughout. Can't wait for the next session!"
-  )
+  # review17 = Review.create(
+  #   booking: booking17,
+  #   rating: 4,
+  #   comment: "I had an amazing experience in the training session. The trainer's motivational and positive approach kept me focused and determined throughout. Can't wait for the next session!"
+  # )
 
-  trainer10 = Trainer.create(
-    description: "Personable and empathetic trainer who understands the unique challenges individuals face on their fitness journey. Skilled in building strong relationships with clients and providing unwavering support to help them overcome obstacles and achieve their goals.",
-    sports: "Kayaking",
-    user: user19
-  )
+  # trainer10 = Trainer.create(
+  #   description: "Personable and empathetic trainer who understands the unique challenges individuals face on their fitness journey. Skilled in building strong relationships with clients and providing unwavering support to help them overcome obstacles and achieve their goals.",
+  #   sports: "Kayaking",
+  #   user: user19
+  # )
 
-  service20 = Service.new(
-    trainer: trainer10,
-    address: "Brighton",
-    price: 30,
-    description: "Performance Optimization Clinic: Fine-tune your running/cycling performance with this 2-hour session designed to optimize your technique, pacing, and race strategy. Our experienced personal trainer will provide personalized guidance and support to help you reach your goals.",
-    sport: "Kayaking",
-    service_type: "Session"
-  )
+  # service20 = Service.new(
+  #   trainer: trainer10,
+  #   address: "Brighton",
+  #   price: 30,
+  #   description: "Performance Optimization Clinic: Fine-tune your running/cycling performance with this 2-hour session designed to optimize your technique, pacing, and race strategy. Our experienced personal trainer will provide personalized guidance and support to help you reach your goals.",
+  #   sport: "Kayaking",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://img.livestrong.com/640/clsd/getty/1b4092b2fc4a47119f1def88e6e94b33.jpg")
-  service20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service20.save!
-  puts "Hi Service20"
+  # file = URI.open("https://img.livestrong.com/640/clsd/getty/1b4092b2fc4a47119f1def88e6e94b33.jpg")
+  # service20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service20.save!
+  # puts "Hi Service20"
 
-  booking18 = Booking.create(
-    user: user8,
-    service: service20,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking18 = Booking.create(
+  #   user: user8,
+  #   service: service20,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review18 = Review.create(
-    booking: booking18,
-    rating: 4,
-    comment: "The sports training session was well-structured and tailored to my specific needs. The trainer's expertise and guidance significantly improved my technique and performance."
-  )
+  # review18 = Review.create(
+  #   booking: booking18,
+  #   rating: 4,
+  #   comment: "The sports training session was well-structured and tailored to my specific needs. The trainer's expertise and guidance significantly improved my technique and performance."
+  # )
 
-  trainer11 = Trainer.create(
-    description: "Well-rounded trainer experienced in multi-disciplinary training methods. Combines elements of strength training, cardio conditioning, and flexibility work to create well-rounded and comprehensive training programs tailored to individual needs.",
-    sports: "Cycling",
-    user: user21
-  )
+  # trainer11 = Trainer.create(
+  #   description: "Well-rounded trainer experienced in multi-disciplinary training methods. Combines elements of strength training, cardio conditioning, and flexibility work to create well-rounded and comprehensive training programs tailored to individual needs.",
+  #   sports: "Cycling",
+  #   user: user21
+  # )
 
-  service21 = Service.new(
-    trainer: trainer11,
-    address: "Brighton",
-    price: 30,
-    description: "Adventure Cycling Expedition: Embark on an unforgettable cycling adventure with a personal trainer leading the way. This 2-hour session will take you on a scenic route, allowing you to explore new landscapes and challenge",
-    sport: "Cycling",
-    service_type: "Session"
-  )
+  # service21 = Service.new(
+  #   trainer: trainer11,
+  #   address: "Brighton",
+  #   price: 30,
+  #   description: "Adventure Cycling Expedition: Embark on an unforgettable cycling adventure with a personal trainer leading the way. This 2-hour session will take you on a scenic route, allowing you to explore new landscapes and challenge",
+  #   sport: "Cycling",
+  #   service_type: "Session"
+  # )
 
-  file = URI.open("https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/11/muslim-poc-gym-exercising-weight-lifting-1296x728-header.jpg?h=1528")
-  service21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  service21.save!
-  puts "Hi Service21"
+  # file = URI.open("https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/11/muslim-poc-gym-exercising-weight-lifting-1296x728-header.jpg?h=1528")
+  # service21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service21.save!
+  # puts "Hi Service21"
 
-  booking19 = Booking.create(
-    user: user10,
-    service: service21,
-    status: 0,
-    start_time: date,
-    end_time: date + time
-  )
+  # booking19 = Booking.create(
+  #   user: user10,
+  #   service: service21,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
 
-  review19 = Review.create(
-    booking: booking19,
-    rating: 5,
-    comment: "The training session was exceptional! The trainer pushed me to my limits and helped me achieve a new personal best. Highly recommend!"
-  )
+  # review19 = Review.create(
+  #   booking: booking19,
+  #   rating: 5,
+  #   comment: "The training session was exceptional! The trainer pushed me to my limits and helped me achieve a new personal best. Highly recommend!"
+  # )

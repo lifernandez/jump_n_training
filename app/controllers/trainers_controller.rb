@@ -17,7 +17,7 @@ class TrainersController < ApplicationController
     @booking = Booking.new
     @trainer = Trainer.find(params[:id])
     @services = Service.where(trainer: @trainer)
-
+    @reviews = @services.map(&:reviews).flatten + @services.map(&:reviews).flatten + @services.map(&:reviews).flatten
     @markers = @services.geocoded.map do |service|
       {
         lat: service.latitude,
