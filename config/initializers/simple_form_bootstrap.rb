@@ -43,7 +43,6 @@ SimpleForm.setup do |config|
   config.input_field_error_class = 'is-invalid'
   config.input_field_valid_class = 'is-valid'
 
-
   # vertical forms
   #
   # vertical default_wrapper
@@ -56,7 +55,7 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :label, class: 'form-label'
-    b.use :input, class: 'form-control'
+    b.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid'
     b.use :full_error, wrap_with: { class: 'invalid-feedback' }
     b.use :hint, wrap_with: { class: 'form-text' }
   end
