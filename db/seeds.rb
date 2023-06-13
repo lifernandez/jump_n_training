@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+Review.destroy_all
 Booking.destroy_all
 Service.destroy_all
 Trainer.destroy_all
@@ -359,7 +360,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review1 = Review.create(
     booking: booking1,
     rating: 4,
-    comment: ""
+    comment: "The sports training session was a game-changer for me. The trainer's ability to provide a supportive yet challenging environment gave me the confidence to push my boundaries and achieve breakthrough results."
   )
 
   booking2 = Booking.create(
@@ -372,8 +373,8 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
   review2 = Review.create(
     booking: booking2,
-    rating: 4,
-    comment: ""
+    rating: 5,
+    comment: "The training session was thoughtfully designed to target different aspects of my game. The trainer's commitment to addressing my specific weaknesses and improving my overall performance was evident."
   )
 
   trainer2 = Trainer.create(
@@ -435,7 +436,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review3 = Review.create(
     booking: booking3,
     rating: 4,
-    comment: ""
+    comment: "I appreciated the trainer's dedication to injury prevention. Their emphasis on proper form, warm-up routines, and cooldown exercises made me feel confident in my training and reduced the risk of injuries."
   )
 
   booking4 = Booking.create(
@@ -449,7 +450,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review4 = Review.create(
     booking: booking4,
     rating: 4,
-    comment: ""
+    comment: "The trainer's positive reinforcement and constructive criticism helped me develop a growth mindset. I left the training session feeling empowered and ready to conquer new challenges."
   )
 
   booking5 = Booking.create(
@@ -462,8 +463,8 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
   review5 = Review.create(
     booking: booking5,
-    rating: 4,
-    comment: ""
+    rating: 5,
+    comment: "I've attended several sports training sessions, but this one truly stood out. The trainer's passion, knowledge, and ability to connect with participants created a memorable and impactful experience."
   )
 
   trainer3 = Trainer.create(
@@ -525,7 +526,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review6 = Review.create(
     booking: booking6,
     rating: 4,
-    comment: ""
+    comment: "The training session was incredibly insightful. The trainer's deep understanding of sports mechanics and their ability to communicate complex concepts in a simplified manner were remarkable."
   )
 
   booking7 = Booking.create(
@@ -539,7 +540,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review7 = Review.create(
     booking: booking7,
     rating: 4,
-    comment: ""
+    comment: "I felt challenged, supported, and motivated throughout the entire training session. The trainer's ability to adapt to different skill levels and provide constructive feedback was impressive."
   )
 
   booking8 = Booking.create(
@@ -553,7 +554,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review8 = Review.create(
     booking: booking8,
     rating: 4,
-    comment: ""
+    comment: "The sports training session exceeded my expectations. The trainer's expertise, coupled with their ability to provide individualized attention, ensured I got the most out of every minute."
   )
 
   trainer4 = Trainer.create(
@@ -615,7 +616,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review9 = Review.create(
     booking: booking9,
     rating: 4,
-    comment: "I'm really happy with my training. My marathon is next week! I feel very prepared."
+    comment: "The training session was exactly what I needed to overcome my plateau. The trainer's creative exercises and innovative training methods helped me break through my limits."
   )
 
   booking10 = Booking.create(
@@ -629,7 +630,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review10 = Review.create(
     booking: booking10,
     rating: 4,
-    comment: ""
+    comment: "The trainer's passion for the sport was contagious. Their energy and commitment motivated me to push myself harder and strive for continuous improvement."
   )
 
   trainer5 = Trainer.create(
@@ -691,7 +692,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review11 = Review.create(
     booking: booking11,
     rating: 4,
-    comment: ""
+    comment: "I highly recommend the sports training session to anyone looking to improve their skills. The trainer's patience, dedication, and ability to break down complex movements were impressive."
   )
 
   booking12 = Booking.create(
@@ -705,7 +706,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   review12 = Review.create(
     booking: booking12,
     rating: 4,
-    comment: ""
+    comment: "The training session was well-organized, with a perfect balance of theory and practical drills. The trainer's clear explanations and demonstrations made it easy to grasp new concepts."
   )
 
   booking13 = Booking.create(
@@ -718,8 +719,8 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
   review13 = Review.create(
     booking: booking13,
-    rating: 4,
-    comment: ""
+    rating: 5,
+    comment: "I've participated in various sports training sessions, but this one stood out. The trainer's enthusiasm and expertise created an inspiring atmosphere, making the session both educational and fun."
   )
 
   trainer6 = Trainer.create(
@@ -742,12 +743,18 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service16.save!
   puts "Hi Service16"
 
-  booking11 = Booking.create(
+  booking14 = Booking.create(
     user: user2,
     service: service16,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review14 = Review.create(
+    booking: booking14,
+    rating: 4,
+    comment: "The training session was challenging yet enjoyable. The trainer created a supportive environment that pushed me beyond my comfort zone and helped me exceed my own expectations."
   )
 
   trainer7 = Trainer.create(
@@ -770,12 +777,18 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service17.save!
   puts "Hi Service17"
 
-  booking11 = Booking.create(
+  booking15 = Booking.create(
     user: user4,
     service: service17,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review15 = Review.create(
+    booking: booking15,
+    rating: 5,
+    comment: "I'm grateful for the knowledgeable trainer who conducted the session. They provided valuable insights, tips, and techniques that have elevated my game to a whole new level."
   )
 
   trainer8 = Trainer.create(
@@ -798,12 +811,18 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service18.save!
   puts "Hi Service18"
 
-  booking12 = Booking.create(
+  booking16 = Booking.create(
     user: user4,
     service: service18,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review16 = Review.create(
+    booking: booking16,
+    rating: 4,
+    comment: "The sports training session was intense but incredibly rewarding. The trainer's attention to detail and personalized feedback helped me make significant improvements. Definitely worth it!"
   )
 
   trainer9 = Trainer.create(
@@ -826,12 +845,18 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service19.save!
   puts "Hi Service19"
 
-  booking13 = Booking.create(
+  booking17 = Booking.create(
     user: user6,
     service: service19,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review17 = Review.create(
+    booking: booking17,
+    rating: 4,
+    comment: "I had an amazing experience in the training session. The trainer's motivational and positive approach kept me focused and determined throughout. Can't wait for the next session!"
   )
 
   trainer10 = Trainer.create(
@@ -854,12 +879,18 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service20.save!
   puts "Hi Service20"
 
-  booking14 = Booking.create(
+  booking18 = Booking.create(
     user: user8,
     service: service20,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review18 = Review.create(
+    booking: booking18,
+    rating: 4,
+    comment: "The sports training session was well-structured and tailored to my specific needs. The trainer's expertise and guidance significantly improved my technique and performance."
   )
 
   trainer11 = Trainer.create(
@@ -882,10 +913,16 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service21.save!
   puts "Hi Service21"
 
-  booking15 = Booking.create(
+  booking19 = Booking.create(
     user: user10,
     service: service21,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review19 = Review.create(
+    booking: booking19,
+    rating: 5,
+    comment: "The training session was exceptional! The trainer pushed me to my limits and helped me achieve a new personal best. Highly recommend!"
   )
