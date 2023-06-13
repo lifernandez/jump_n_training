@@ -397,6 +397,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service4.save!
   puts "Hi Service4"
 
+
   service5 = Service.new(
     trainer: trainer2,
     address: "London",
@@ -657,6 +658,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   #   trainer: trainer5,
   #   address: "London",
   #   price: 35,
+
   #   description: "Tempo Training Challenge: Fine-tune your pace and rhythm in this challenging running/cycling session. With a personal trainer, you'll engage in a 3-hour workout that combines steady-state efforts and intervals to enhance your overall performance.",
   #   sport: "Cycling",
   #   service_type: "Session"

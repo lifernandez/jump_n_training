@@ -1,9 +1,8 @@
-
-  <div class="card-product d-flex justify-content-around" >
+<div class="card-product d-flex justify-content-around" >
     <div class="date"><%=booking.start_time.strftime("%a %d").capitalize %></div>
 
     <div class="card-product-infos">
-      <p>🕓 <%= booking.start_time.strftime("%-k:%M")%> - <%= booking.end_time.strftime("%-k:%M")%></p>
+      <p>🕓 <%= booking.start_time.strftime("%-k:%M")%></p>
 
       <p>📍 <%= booking.service.address %></p>
     </div>

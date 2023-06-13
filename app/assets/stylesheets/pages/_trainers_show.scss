@@ -95,3 +95,31 @@
     background-color: #f1f1f1;
   }
 }
+
+
+
+//MODAL
+
+/* SCSS */
+#sessions-dialog {
+  .modal-lg {
+    max-width: 800px; // Adjust the width as needed
+  }
+
+  #sessions-body {
+    .row {
+      margin-bottom: 10px;
+
+      .col-md-6 {
+        padding: 10px;
+
+        h5 {
+          margin-bottom: 5px;
+        }
+        p{
+          padding: 0px
+        }
+      }
+    }
+  }
+}
