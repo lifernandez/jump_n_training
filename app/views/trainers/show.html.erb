@@ -11,7 +11,7 @@
         <% end %>
         <div class="">
           <h1>Your Trainer Profile</h1>
-          <h1 class="mb-3"><strong> <%= trainer.user.first_name %> <%= trainer.user.last_name %></strong></h1>
+          <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <p><strong>Description:</strong> <%= @trainer.description %></p>
           <% if @trainer.user == current_user %>
