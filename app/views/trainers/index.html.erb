@@ -1,9 +1,27 @@
-
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sports</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trainers.each do |trainer| %>
+      <tr>
+        <td><%= link_to trainer.user_id, trainer_path(trainer) %></td>
+        <td><%= trainer.user.first_name %></td>
+        <td><%= trainer.sports %></td>
+        <td><%= trainer.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <div class="container pb-5">
   <div class="cards">
     <% @trainers.each_with_index do |trainer, i| %>
-      <%= link_to trainer_path(trainer), class:"text-decoration-none mt-4 text-dark" do %>
+      <%= link_to trainer_path(trainer), class: "text-decoration-none mt-4 text-dark" do %>
         <div class="card-trip">
           <% if trainer.user.photo.attached? %>
             <%= cl_image_tag trainer.user.photo.key %>
