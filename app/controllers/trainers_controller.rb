@@ -16,6 +16,14 @@ class TrainersController < ApplicationController
   def show
     @booking = Booking.new
     @trainer = Trainer.find(params[:id])
+    @services = Service.where(trainer: @trainer)
+
+    @markers = @services.geocoded.map do |service|
+      {
+        lat: service.latitude,
+        lng: service.longitude
+      }
+    end
   end
 
   def new
