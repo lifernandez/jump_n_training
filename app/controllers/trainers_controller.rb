@@ -9,6 +9,8 @@ class TrainersController < ApplicationController
     else
       @trainers = Trainer.all
     end
+    @trainers = @trainers.select { |trainer| trainer.sports.include?(params[:sport]) } if params[:sport].present?
+    @trainers = @trainers.select { |trainer| trainer.services.select { |service| service.price <= params[:price].to_i }.length > 0 } if params[:price].present?
   end
 
   def show

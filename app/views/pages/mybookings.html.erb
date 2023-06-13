@@ -1,8 +1,81 @@
-<h2> my bookings </h2>
+<h2> My bookings!! </h2>
 
-<p> <%= current_user.email %> </p>
+<p> <%= current_user.first_name %> </p>
 <ul>
   <% current_user.bookings.each do | booking | %>
     <li> you have a booking with <%= booking.service.trainer.user.first_name%> about <%= booking.service.sport%>  </li>
   <% end %>
 </ul>
+<div class ="container bookings-container">
+
+  <div class="card-product d-flex justify-content-around" >
+    <div class="date">WED 12</div>
+
+    <div class="card-product-infos">
+      <p>🕓 09:00 - 09:30</p>
+      <p>📍 Hoxton, London</p>
+    </div>
+
+    <div>
+      <p>Indoor Rock Climbing</p>
+      <%= image_tag "athlete.jpg", alt: "athlete", class: "avatar" %>
+    </div>
+
+    <%= link_to "edit" , mybookings_path, class: 'btn-edit'%>
+
+  </div>
+  <div class="card-product d-flex justify-content-around" >
+    <div class="date">WED 12</div>
+
+    <div class="card-product-infos">
+      <p>🕓 09:00 - 09:30</p>
+      <p>📍 Hoxton, London</p>
+    </div>
+
+    <div>
+      <p>Indoor Rock Climbing</p>
+      <%= image_tag "athlete.jpg", alt: "athlete", class: "avatar" %>
+    </div>
+
+    <%= link_to "edit" , mybookings_path, class: 'btn-edit'%>
+
+  </div>
+
+  <div class="card-product d-flex justify-content-around" >
+    <div class="date">WED 12</div>
+
+    <div class="card-product-infos">
+      <p>🕓 09:00 - 09:30</p>
+      <p>📍 Hoxton, London</p>
+    </div>
+
+    <div>
+      <p>Indoor Rock Climbing</p>
+      <%= image_tag "athlete.jpg", alt: "athlete", class: "avatar" %>
+    </div>
+
+    <%= link_to "edit" , mybookings_path, class: 'btn-edit'%>
+
+  </div>
+  <div class="card-product d-flex justify-content-around" >
+    <div class="date">WED 12</div>
+
+    <div class="card-product-infos">
+      <p>🕓 09:00 - 09:30</p>
+      <p>📍 Hoxton, London</p>
+    </div>
+
+    <div>
+      <p>Indoor Rock Climbing</p>
+      <%= image_tag "athlete.jpg", alt: "athlete", class: "avatar" %>
+    </div>
+
+    <%= link_to "edit" , mybookings_path, class: 'btn-edit'%>
+
+  </div>
+
+
+
+
+
+</div>
