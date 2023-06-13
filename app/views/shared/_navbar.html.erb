@@ -5,15 +5,21 @@
     <% end %>
 
 <% if controller_name == 'trainers' && action_name == 'index' %>
-  <%= form_with url: trainers_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a trainer"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-<% end %>
+  <%= form_with url: trainers_path, method: :get, class: "search-form" do |f| %>
+     <%= f.text_field :query,
+      value: params[:query],
+      class: "query-field",
+      placeholder: "Location" %>
+      <%= f.select(:sport, options_for_select(Trainer.all.map(&:sports).map { |sport| sport.split(",") }.flatten.uniq, selected: params[:sport]), { :include_blank => 'sport'}, { class: "filter-field" }) %>
+      <%= f.range_field :price, in: (Service.all.map(&:price).sort[0]..Service.all.map(&:price).sort[-1]), value: params[:price].to_i %>
+      <%#= f.select(:price, options_for_select(Trainer.all.map(&:services).flatten.map(&:price).uniq, selected: params[:price]), { :include_blank => 'price'}, { class: "filter-field" }) %>
+
+     <button class='btn btn-search' type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+     </button>
+   <% end %>
+ <% end %>
+
 
     <button class="navbar-toggler" type="button" color= data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
