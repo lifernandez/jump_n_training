@@ -1,19 +1,16 @@
 <div class = container>
   <h1 class="newTrainerTitle">New Trainer</h1>
 
-  <%= form_with(model: @trainer, url: trainers_path) do |form| %>
+  <%= simple_form_for @trainer do |form| %>
     <div class="sportsField">
-      <%= form.label :sports %>
-      <%= form.text_field :sports %>
+      <%= form.input :sports, as: :check_boxes, collection: ['Running', 'Cycling', 'Yoga', 'Gym', 'Tennis'] %>
     </div>
-
     <div class="descriptionField">
-      <%= form.label :description %>
-      <%= form.text_area :description %>
+      <%= form.input :description %>
     </div>
-
     <div class="submitTrainer">
-      <%= form.submit "Create Trainer" %>
+      <%= form.submit  "Become a Trainer" %>
     </div>
   <% end %>
+
 </div>
