@@ -356,12 +356,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review1 = Review.create(
+    booking: booking1,
+    rating: 4,
+    comment: ""
+  )
+
   booking2 = Booking.create(
     user: user4,
     service: service2,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review2 = Review.create(
+    booking: booking2,
+    rating: 4,
+    comment: ""
   )
 
   trainer2 = Trainer.create(
@@ -420,6 +432,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review3 = Review.create(
+    booking: booking3,
+    rating: 4,
+    comment: ""
+  )
+
   booking4 = Booking.create(
     user: user8,
     service: service5,
@@ -428,12 +446,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review4 = Review.create(
+    booking: booking4,
+    rating: 4,
+    comment: ""
+  )
+
   booking5 = Booking.create(
     user: user10,
     service: service6,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review5 = Review.create(
+    booking: booking5,
+    rating: 4,
+    comment: ""
   )
 
   trainer3 = Trainer.create(
@@ -492,6 +522,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review6 = Review.create(
+    booking: booking6,
+    rating: 4,
+    comment: ""
+  )
+
   booking7 = Booking.create(
     user: user14,
     service: service8,
@@ -500,12 +536,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review7 = Review.create(
+    booking: booking7,
+    rating: 4,
+    comment: ""
+  )
+
   booking8 = Booking.create(
     user: user16,
     service: service9,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review8 = Review.create(
+    booking: booking8,
+    rating: 4,
+    comment: ""
   )
 
   trainer4 = Trainer.create(
@@ -564,12 +612,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review9 = Review.create(
+    booking: booking9,
+    rating: 4,
+    comment: "I'm really happy with my training. My marathon is next week! I feel very prepared."
+  )
+
   booking10 = Booking.create(
     user: user4,
     service: service10,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review10 = Review.create(
+    booking: booking10,
+    rating: 4,
+    comment: ""
   )
 
   trainer5 = Trainer.create(
@@ -628,6 +688,12 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review11 = Review.create(
+    booking: booking11,
+    rating: 4,
+    comment: ""
+  )
+
   booking12 = Booking.create(
     user: user22,
     service: service14,
@@ -636,12 +702,24 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     end_time: date + time
   )
 
+  review12 = Review.create(
+    booking: booking12,
+    rating: 4,
+    comment: ""
+  )
+
   booking13 = Booking.create(
     user: user22,
     service: service15,
     status: 0,
     start_time: date,
     end_time: date + time
+  )
+
+  review13 = Review.create(
+    booking: booking13,
+    rating: 4,
+    comment: ""
   )
 
   trainer6 = Trainer.create(

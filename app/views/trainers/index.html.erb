@@ -1,24 +1,4 @@
-<%# <h1>Trainers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Sports</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @trainers.each do |trainer| %>
-      <%# <tr>
-        <td><%= link_to trainer.user_id, trainer_path(trainer)%><%#/td>
-        <%#td><%= trainer.user.first_name %><%#/td>
-        <%#td><%= trainer.sports %><%#/td>
-        <%#td><%= trainer.description %><%#/td>
-      <%#/tr>
-    <% end %>
-  <%#/tbody>
-</table> %>
 
 <div class="container pb-5">
   <div class="cards">
@@ -34,7 +14,6 @@
             <div>
               <h2 class="mb-3"><%= trainer.user.first_name %> <%= trainer.user.last_name %></h2>
               <p><%= trainer.sports %></p>
-              <p><%= trainer.description %></p>
             </div>
           </div>
         </div>

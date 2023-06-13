@@ -5,7 +5,7 @@ ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
-# gem 'font-awesome-sass'
+gem 'font-awesome-sass'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -54,7 +54,7 @@ gem "sassc-rails"
 gem "bootstrap", "~> 5.2"
 gem "devise"
 gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
+# gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 
 group :development, :test do
@@ -84,3 +84,5 @@ end
 gem 'faker'
 
 gem "pg_search"
+
+gem "geocoder"

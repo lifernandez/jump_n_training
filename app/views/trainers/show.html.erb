@@ -1,9 +1,6 @@
-<head>
-
-  <script src="https://kit.fontawesome.com/a071ff1fce.js" crossorigin="anonymous"></script>
-</head>
 
 
+<i class="fa-brands fa-instalod"></i>
 <% if current_user&.trainer %>
 
 
@@ -78,8 +75,32 @@
                 <p><strong>Type:</strong> <%= service.service_type %></p>
                 <p><strong>Price:</strong> <%= service.price %></p>
                 <p><strong>Sport:</strong> <%= service.sport %></p>
-                <p><strong>Description:</strong> <%= service.description %></p>
-                <%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
+                <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      More information
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Session Informations</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                                  <h5>Location</h5>
+                                  <p> <%= service.address %></p>
+                                  <div style="width: 100%; height: 600px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+                            <p><strong>Description:</strong> <%= service.description %></p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
               </div>
             </div>
           <% end %>
@@ -96,8 +117,28 @@
                 <p><strong>Type:</strong> <%= service.service_type %></p>
                 <p><strong>Price:</strong> <%= service.price %></p>
                 <p><strong>Sport:</strong> <%= service.sport %></p>
-                <p><strong>Description:</strong> <%= service.description %></p>
-                <%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
+                <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      More information
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Training Plan Informations</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p><strong>Description:</strong> <%= service.description %></p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
               </div>
             </div>
           <% end %>
@@ -105,5 +146,13 @@
       </div>
     </div>
   </div>
+  <% end %>
 
-<% end %>
+
+   <div class="map">
+                                    <div class="location_map"
+                                          data-controller="map"
+                                          data-map-markers-value="<%= @markers.to_json %>"
+                                          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+                                    </div>
+                                  </div>
