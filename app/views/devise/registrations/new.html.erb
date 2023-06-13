@@ -5,6 +5,10 @@
 
   <h2 class="newTrainerTitle">Sign up</h2>
     <div class="sportsField">
+      <%= f.input :first_name,
+                  required: true %>
+      <%= f.input :last_name,
+                  required: true %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
