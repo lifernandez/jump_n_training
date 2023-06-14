@@ -1,6 +1,3 @@
-
-
-<i class="fa-brands fa-instalod"></i>
 <% if current_user&.trainer %>
 
 
@@ -14,7 +11,7 @@
         <% end %>
         <div class="">
           <h1>Your Trainer Profile</h1>
-          <h1 class="mb-3"><strong> <%= trainer.user.first_name %> <%= trainer.user.last_name %></strong></h1>
+          <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <p><strong>Description:</strong> <%= @trainer.description %></p>
           <% if @trainer.user == current_user %>
@@ -63,14 +60,24 @@
           <i class="fa-brands fa-facebook"></i>
         </div>
           <p class="mr-5"><strong>Description:</strong> <%= @trainer.description %></p>
+          <% rating = 0.0 %>
+          <% count = 0 %>
+          <% @trainer.services.each do |service| %>
+            <% if service.reviews.any? %>
+            <% rating += service.reviews.map(&:rating).sum %>
+            <% count += service.reviews.length %>
+              <%#= (service.reviews.map(&:rating).sum)/service.reviews.length %>
+            <% end %>
+          <% end %>
+          Average rating <%= (rating / count).round(1) %>
       </div>
     </div>
 
     <div class="services-section">
-      <div class="service-category">
-        <h2>Sessions</h2>
+      <div class="service-category w-25 me-5">
+        <h2>Training Plans</h2>
         <% @trainer.services.each do |service| %>
-          <% if service.service_type == "Session" %>
+          <% if service.service_type == "Training Plan" %>
             <div class="service-card">
               <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
               <div class="service-card-infos">
@@ -78,6 +85,7 @@
                 <p><strong>Price:</strong> <%= service.price %></p>
                 <p><strong>Sport:</strong> <%= service.sport %></p>
                 <!-- Button trigger modal -->
+
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                       More information </button>
               <!-- Modal -->
@@ -116,13 +124,16 @@
                             <% end %>
                         </div>
                             <%# <button type="button" class=""><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
+
                           </div>
                         </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
+
 
 
               </div>
@@ -131,30 +142,36 @@
         <% end %>
       </div>
 
-      <div class="service-category">
-        <h2>Training Plans</h2>
-        <% @trainer.services.each do |service| %>
-          <% if service.service_type == "Training Plan" %>
-            <div class="service-card">
-              <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
-              <div class="service-card-infos">
-                <p><strong>Type:</strong> <%= service.service_type %></p>
-                <p><strong>Price:</strong> <%= service.price %></p>
-                <p><strong>Sport:</strong> <%= service.sport %></p>
-                <!-- Button trigger modal -->
+      <div class="service-category w-75">
+        <h2>Sessions</h2>
+        <div class="row align-items-start">
+          <% @trainer.services.each do |service| %>
+            <% if service.service_type == "Session" %>
+              <div class="col-4">
+                <div class="service-card">
+                  <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
+                  <div class="service-card-infos">
+                    <p><strong>Type:</strong> <%= service.service_type %></p>
+                    <p><strong>Price:</strong> <%= service.price %></p>
+                    <p><strong>Sport:</strong> <%= service.sport %></p>
+                    <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                       More information
                     </button>
-
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
+
                             <h5 class="modal-title" id="exampleModalLabel"><%= service.title %></h5>
+
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
+                            <h5>Location</h5>
+                            <p> <%= service.address %></p>
+                            <div style="width: 100%; height: 600px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
                             <p><strong>Description:</strong> <%= service.description %></p>
                           </div>
                               <%= simple_form_for [@trainer, service, @booking] do |form| %>
@@ -167,10 +184,44 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
+          <div>
+        </div>
+        
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <% @reviews.each_slice(3).with_index do |reviews, i| %>
+              <div class="carousel-item <%= 'active' if i == 0 %>">
+                <div class="row">
+                  <% reviews.each do |review| %>
+                    <div class="col-4">
+                      <div class="service-card">
+                        <% if review.booking.user.photo.attached? %>
+                          <%= cl_image_tag review.booking.user.photo.key, class: "card-image me-4" %>
+                        <% else %>
+                          <%= image_tag "athlete.jpg", class: "card-image me-4" %>
+                        <% end %>
+                        <p><%= review.comment %></p>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

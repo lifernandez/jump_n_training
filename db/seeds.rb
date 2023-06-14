@@ -299,7 +299,6 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   # file = URI.open("https://www.mayoclinichealthsystem.org/-/media/national-files/images/hometown-health/2022/sitting-on-sofa-writing-in-journal.jpg?h=370&w=660&la=en&hash=AEA5A82A0053CAA81859033A055EE4E0")
   # user22.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   user22.save!
-
   # puts "Hi User22"
 
   trainer1 = Trainer.create(
@@ -312,9 +311,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer1,
     address: "Brighton",
     price: 25,
-    description: "Comprehensive Week-Long Running Training: Embark on a transformative journey with our week-long training plan designed to enhance your running/cycling performance. This comprehensive program incorporates a mix of endurance, speed, and recovery sessions, expertly crafted by our trainers to help you achieve your goals.",
+    description: "Embark on a transformative journey with our week-long training plan designed to enhance your running/cycling performance. This comprehensive program incorporates a mix of endurance, speed, and recovery sessions, expertly crafted by our trainers to help you achieve your goals.",
     sport: "Running",
-    service_type: "Training Plan"
+    service_type: "Training Plan",
+    duration: 1,
+    title: "Comprehensive Week-Long Running Training"
   )
 
   file = URI.open("https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/07/eat_after_working_out_732x549_thumb-732x549.jpg")
@@ -326,9 +327,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer1,
     address: "Brighton",
     price: 25,
-    description: "Intense Endurance Boost: Push your limits and improve your stamina with a power-packed running/cycling session led by a personal trainer. This 2-hour session is designed to challenge you and enhance your endurance capabilities.",
+    description: "Push your limits and improve your stamina with a power-packed running/cycling session led by a personal trainer. This 2-hour session is designed to challenge you and enhance your endurance capabilities.",
     sport: "Cycling",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 3,
+    title: "Intense Endurance Boost"
   )
 
   file = URI.open("https://media.self.com/photos/61bcd0e05aed92fc4251b026/16:9/w_5839,h_3284,c_limit/GettyImages-1213234926.jpeg")
@@ -340,9 +343,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer1,
     address: "Brighton",
     price: 30,
-    description: "Hill Interval Mastery: Conquer the toughest terrains with a focused running/cycling session that incorporates hill intervals. Our personal trainer will guide you through a 3-hour session, helping you build strength, speed, and mental resilience.",
+    description: "Conquer the toughest terrains with a focused running/cycling session that incorporates hill intervals. Our personal trainer will guide you through a 3-hour session, helping you build strength, speed, and mental resilience.",
     sport: "Golf",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 2,
+    title: "Hill Interval Mastery"
   )
 
   file = URI.open("https://images.ctfassets.net/8urtyqugdt2l/3D2iE8CWiIZ8ZnZ1ZGCjWJ/97aaba852f17eb10e65b8aceeb63acad/1594309624-how-to-start-working-out-again-header.jpg")
@@ -388,9 +393,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer2,
     address: "London",
     price: 300,
-    description: "Intensive Week of Running Workouts: Take your training to the next level with our intensive week-long program. Each day, you'll engage in targeted running/cycling workouts, including interval training, hill repeats, tempo runs, and long-distance rides, all carefully structured to push your limits and maximize your progress.",
+    description: "Take your training to the next level with our intensive week-long program. Each day, you'll engage in targeted running/cycling workouts, including interval training, hill repeats, tempo runs, and long-distance rides, all carefully structured to push your limits and maximize your progress.",
     sport: "Running",
-    service_type: "Training Plan"
+    service_type: "Training Plan",
+    duration: 1,
+    title: "Intensive Week of Running Workouts"
   )
 
   file = URI.open("https://d2lfsu1qnyxzxu.cloudfront.net/cms/iStock-960571902-0_d2.jpg")
@@ -403,9 +410,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer2,
     address: "London",
     price: 50,
-    description: "Long Distance Adventure: Embark on an epic running/cycling journey with a personal trainer by your side. Explore scenic routes and conquer impressive distances in this 2-hour session tailored to challenge and inspire endurance athletes.",
+    description: "Embark on an epic running/cycling journey with a personal trainer by your side. Explore scenic routes and conquer impressive distances in this 2-hour session tailored to challenge and inspire endurance athletes.",
     sport: "Cycling",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 2,
+    title: "Long Distance Adventure"
   )
 
   file = URI.open("https://mindpumppodcast.com/wp-content/uploads/2018/09/UdOGV3Q6y3XvOZg90QfA_Stop_Working_Out_And_Start_Practicing_Mind_Pump_Media.jpg")
@@ -417,9 +426,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer2,
     address: "London",
     price: 30,
-    description: "Speed and Agility Fusion: Boost your speed, agility, and overall athletic performance with this dynamic running/cycling session. In just 2 hours, our personal trainer will guide you through a series of drills and exercises to elevate your performance.",
+    description: "Boost your speed, agility, and overall athletic performance with this dynamic running/cycling session. In just 2 hours, our personal trainer will guide you through a series of drills and exercises to elevate your performance.",
     sport: "Climbing",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 3,
+    title: "Speed and Agility Fusion"
   )
 
   file = URI.open("https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2021-12/211208-working-out-stock-mn-1310-55e1c7.jpg")
@@ -479,9 +490,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer3,
     address: "London",
     price: 300,
-    description: "Balanced Running Training Week: Achieve a balance between strength, endurance, and recovery with our meticulously designed week-long training plan. Our trainers will guide you through a well-rounded schedule, combining challenging workouts, cross-training activities, and rest days to optimize your performance and prevent burnout.",
+    description: "Achieve a balance between strength, endurance, and recovery with our meticulously designed week-long training plan. Our trainers will guide you through a well-rounded schedule, combining challenging workouts, cross-training activities, and rest days to optimize your performance and prevent burnout.",
     sport: "Running",
-    service_type: "Training Plan"
+    service_type: "Training Plan",
+    duration: 2,
+    title: "Balanced Running Training Week"
   )
 
   file = URI.open("https://static.showit.co/800/p7J-VkiHSzy_TJFABEl67w/164038/dale_erdmier_4thmar22.jpg")
@@ -493,9 +506,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer3,
     address: "London",
     price: 12,
-    description: "Endurance Endorphins: Get ready for a euphoric running/cycling session focused on building endurance and releasing those feel-good endorphins. With a personal trainer leading the way, you'll enjoy a 1-hour session filled with energy and motivation.",
+    description: "Get ready for a euphoric running/cycling session focused on building endurance and releasing those feel-good endorphins. With a personal trainer leading the way, you'll enjoy a 1-hour session filled with energy and motivation.",
     sport: "Swimming",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 1,
+    title: "Endurance Endorphins"
   )
 
   file = URI.open("https://blog.fitbit.com/wp-content/uploads/2018/08/0816-summer-workouts-HERO.jpg")
@@ -507,9 +522,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer3,
     address: "London",
     price: 12,
-    description: "Performance Enhancement Intensive: Elevate your running/cycling performance to new heights with this comprehensive 2-hour training session. Our personal trainer will analyze your form, provide valuable feedback, and implement strategies to optimize your performance.",
+    description: "Elevate your running/cycling performance to new heights with this comprehensive 2-hour training session. Our personal trainer will analyze your form, provide valuable feedback, and implement strategies to optimize your performance.",
     sport: "Cycling",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 2,
+    title: "Performance Enhancement Intensive"
   )
 
   file = URI.open("https://media.cnn.com/api/v1/images/stellar/prod/211101161141-01-how-to-have-fun-working-out.jpg?q=w_3000,h_2000,x_0,y_0,c_fill")
@@ -569,9 +586,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer4,
     address: "London",
     price: 288,
-    description: "Performance-Driven Week of Running Training: Get ready to elevate your performance with our dynamic week-long training plan. Designed for ambitious athletes, this program includes intense interval training, time trials, and targeted strength exercises, ensuring you reach peak performance by the end of the week.",
+    description: "Get ready to elevate your performance with our dynamic week-long training plan. Designed for ambitious athletes, this program includes intense interval training, time trials, and targeted strength exercises, ensuring you reach peak performance by the end of the week.",
     sport: "Running",
-    service_type: "Training Plan"
+    service_type: "Training Plan",
+    duration: 2,
+    title: "Performance-Driven Week of Running Training"
   )
 
   file = URI.open("https://images.squarespace-cdn.com/content/v1/5ebfd2ce19eb48129f382e27/1596992029599-ZJ844T63G1VSQ3LRGE9U/_MG_3309.jpg?format=1000w")
@@ -583,9 +602,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer4,
     address: "London",
     price: 30,
-    description: "Interval Power Ride: Ignite your cycling potential with this high-intensity interval training session. Led by a personal trainer, you'll experience a 2-hour session that alternates between intense bursts of effort and active recovery.",
+    description: "Ignite your cycling potential with this high-intensity interval training session. Led by a personal trainer, you'll experience a 2-hour session that alternates between intense bursts of effort and active recovery.",
     sport: "Climbing",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 3,
+    title: "Interval Power Ride"
   )
 
   file = URI.open("https://hips.hearstapps.com/hmg-prod/images/cheerful-women-doing-push-ups-on-retaining-wall-at-royalty-free-image-1649095460.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*")
@@ -597,9 +618,11 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     trainer: trainer4,
     address: "London",
     price: 22,
-    description: "Endurance Base Building: Lay a solid foundation for your running/cycling goals with this 1.5-hour endurance-focused training session. Under the guidance of a personal trainer, you'll work on building strength, stamina, and mental resilience.",
+    description: "Lay a solid foundation for your running/cycling goals with this 1.5-hour endurance-focused training session. Under the guidance of a personal trainer, you'll work on building strength, stamina, and mental resilience.",
     sport: "Tennis",
-    service_type: "Session"
+    service_type: "Session",
+    duration: 2,
+    title: "Endurance Base Building"
   )
 
   file = URI.open("https://www.wellandgood.com/wp-content/uploads/2021/08/GettyImages-1316198696-425x285.jpg")
@@ -660,5 +683,272 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   #   address: "London",
   #   price: 35,
 
-  #   description: "Tempo Training Challenge: Fine-tune your pace and rhythm in this challenging running/cyclin
+  #   description: "Tempo Training Challenge: Fine-tune your pace and rhythm in this challenging running/cycling session. With a personal trainer, you'll engage in a 3-hour workout that combines steady-state efforts and intervals to enhance your overall performance.",
+  #   sport: "Cycling",
+  #   service_type: "Session"
+  # )
 
+  # file = URI.open("https://bloximages.newyork1.vip.townnews.com/waaytv.com/content/tncms/assets/v3/editorial/f/c3/fc39c7a3-6678-53cc-9e89-960105a66d44/61d7236727a7e.image.jpg?crop=1763%2C926%2C0%2C125&resize=1200%2C630&order=crop%2Cresize")
+  # service14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service14.save!
+  # puts "Hi Service14"
+
+  # service15 = Service.new(
+  #   trainer: trainer5,
+  #   address: "London",
+  #   price: 50,
+  #   description: "Adventure Trail Ride: Embark on an exhilarating trail cycling adventure with a personal trainer as your guide. This 2-hour session will take you through scenic trails, testing your skills and endurance in a thrilling outdoor experience.",
+  #   sport: "Kayaking",
+  #   service_type: "Session"
+  # )
+
+  # file = URI.open("https://www.simplysupplements.co.uk/healthylife/uploads/images/image_mid_677_5d6688fd5e650.jpg")
+  # service15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service15.save!
+  # puts "Hi Service15"
+
+  # booking11 = Booking.create(
+  #   user: user22,
+  #   service: service13,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review11 = Review.create(
+  #   booking: booking11,
+  #   rating: 4,
+  #   comment: "I highly recommend the sports training session to anyone looking to improve their skills. The trainer's patience, dedication, and ability to break down complex movements were impressive."
+  # )
+
+  # booking12 = Booking.create(
+  #   user: user22,
+  #   service: service14,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review12 = Review.create(
+  #   booking: booking12,
+  #   rating: 4,
+  #   comment: "The training session was well-organized, with a perfect balance of theory and practical drills. The trainer's clear explanations and demonstrations made it easy to grasp new concepts."
+  # )
+
+  # booking13 = Booking.create(
+  #   user: user22,
+  #   service: service15,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review13 = Review.create(
+  #   booking: booking13,
+  #   rating: 5,
+  #   comment: "I've participated in various sports training sessions, but this one stood out. The trainer's enthusiasm and expertise created an inspiring atmosphere, making the session both educational and fun."
+  # )
+
+  # trainer6 = Trainer.create(
+  #   description: "Energetic and knowledgeable trainer adept at creating dynamic and engaging workout sessions. Possesses strong communication skills to effectively guide and inspire clients towards their desired results.",
+  #   sports: "Running,Kayaking,Cycling",
+  #   user: user11
+  # )
+
+  # service16 = Service.new(
+  #   trainer: trainer6,
+  #   address: "London",
+  #   price: 12,
+  #   description: "Ultra-Distance Preparation: Prepare for long-distance running/cycling events with this 2-hour training session. Our personal trainer will provide guidance on pacing, fueling strategies, and mental preparation to ensure you're ready for the ultimate endurance challenge.",
+  #   sport: "Running",
+  #   service_type: "Session"
+  # )
+
+  # file = URI.open("https://media1.popsugar-assets.com/files/thumbor/nFMJa75Ys1sVMzJkvE3hzPffzWg/fit-in/728xorig/filters:format_auto-!!-:strip_icc-!!-/2015/05/07/733/n/1922729/e3698b65_edit_img_image_845239_1431009170/i/Hill-Strength-Training-Workout.png")
+  # service16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service16.save!
+  # puts "Hi Service16"
+
+  # booking14 = Booking.create(
+  #   user: user2,
+  #   service: service16,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review14 = Review.create(
+  #   booking: booking14,
+  #   rating: 4,
+  #   comment: "The training session was challenging yet enjoyable. The trainer created a supportive environment that pushed me beyond my comfort zone and helped me exceed my own expectations."
+  # )
+
+  # trainer7 = Trainer.create(
+  #   description: "Innovative trainer with a creative approach to training methodologies. Implements cutting-edge techniques and incorporates technology-driven tools to enhance performance tracking and analysis for clients seeking the latest advancements in their training routines.",
+  #   sports: "Kayaking",
+  #   user: user13
+  # )
+
+  # service17 = Service.new(
+  #   trainer: trainer7,
+  #   address: "London",
+  #   price: 12,
+  #   description: "Power Hills and Sprints: Conquer hills and unleash your speed in this dynamic running/cycling session. With a personal trainer leading the way, you'll tackle challenging inclines and engage in exhilarating sprints during this 2-hour workout.",
+  #   sport: "Cycling",
+  #   service_type: "Session"
+  # )
+
+  # file = URI.open("https://www.eatthis.com/wp-content/uploads/sites/4/2023/04/woman-bird-dogs.jpg?quality=82&strip=all")
+  # service17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service17.save!
+  # puts "Hi Service17"
+
+  # booking15 = Booking.create(
+  #   user: user4,
+  #   service: service17,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review15 = Review.create(
+  #   booking: booking15,
+  #   rating: 5,
+  #   comment: "I'm grateful for the knowledgeable trainer who conducted the session. They provided valuable insights, tips, and techniques that have elevated my game to a whole new level."
+  # )
+
+  # trainer8 = Trainer.create(
+  #   description: "Dedicated trainer with a proven track record of improving performance and technique. Well-versed in utilizing advanced training methodologies and offering valuable insights to optimize training routines.",
+  #   sports: "Running",
+  #   user: user15
+  # )
+
+  # service18 = Service.new(
+  #   trainer: trainer8,
+  #   address: "Brighton",
+  #   price: 12,
+  #   description: "Mindful Endurance Journey: Embark on a mindful and meditative running/cycling session with a personal trainer. This 3-hour session will focus on finding a balance between physical exertion and mental clarity, allowing you to connect with your body and surroundings.",
+  #   sport: "Running",
+  #   service_type: "Session"
+  # )
+
+  # file = URI.open("https://images.huffingtonpost.com/2015-07-27-1438037178-3176987-SweatyAngelC.jpg")
+  # service18.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service18.save!
+  # puts "Hi Service18"
+
+  # booking16 = Booking.create(
+  #   user: user4,
+  #   service: service18,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review16 = Review.create(
+  #   booking: booking16,
+  #   rating: 4,
+  #   comment: "The sports training session was intense but incredibly rewarding. The trainer's attention to detail and personalized feedback helped me make significant improvements. Definitely worth it!"
+  # )
+
+  # trainer9 = Trainer.create(
+  #   description: "I am an experienced trainer with a passion for helping individuals achieve their fitness goals. Skilled in designing personalized training programs and providing motivation for clients of all levels.",
+  #   sports: "Running",
+  #   user: user17
+  # )
+
+  # service19 = Service.new(
+  #   trainer: trainer9,
+  #   address: "Brighton",
+  #   price: 20,
+  #   description: "Strength and Stamina Fusion: Combine strength training and endurance work in this 1.5-hour running/cycling session led by a personal trainer. You'll engage in a variety of exercises and drills to build both muscular strength and cardiovascular endurance.",
+  #   sport: "Running",
+  #   service_type: "Session"
+  # )
+
+  # file = URI.open("https://media.self.com/photos/60e76fe01f69d35150b50014/4:3/w_2560%2Cc_limit/GettyImages-1254996115.jpg")
+  # service19.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service19.save!
+  # puts "Hi Service19"
+
+  # booking17 = Booking.create(
+  #   user: user6,
+  #   service: service19,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review17 = Review.create(
+  #   booking: booking17,
+  #   rating: 4,
+  #   comment: "I had an amazing experience in the training session. The trainer's motivational and positive approach kept me focused and determined throughout. Can't wait for the next session!"
+  # )
+
+  # trainer10 = Trainer.create(
+  #   description: "Personable and empathetic trainer who understands the unique challenges individuals face on their fitness journey. Skilled in building strong relationships with clients and providing unwavering support to help them overcome obstacles and achieve their goals.",
+  #   sports: "Kayaking",
+  #   user: user19
+  # )
+
+  # service20 = Service.new(
+  #   trainer: trainer10,
+  #   address: "Brighton",
+  #   price: 30,
+  #   description: "Performance Optimization Clinic: Fine-tune your running/cycling performance with this 2-hour session designed to optimize your technique, pacing, and race strategy. Our experienced personal trainer will provide personalized guidance and support to help you reach your goals.",
+  #   sport: "Kayaking",
+  #   service_type: "Session"
+  # )
+
+  # file = URI.open("https://img.livestrong.com/640/clsd/getty/1b4092b2fc4a47119f1def88e6e94b33.jpg")
+  # service20.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service20.save!
+  # puts "Hi Service20"
+
+  # booking18 = Booking.create(
+  #   user: user8,
+  #   service: service20,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review18 = Review.create(
+  #   booking: booking18,
+  #   rating: 4,
+  #   comment: "The sports training session was well-structured and tailored to my specific needs. The trainer's expertise and guidance significantly improved my technique and performance."
+  # )
+
+  # trainer11 = Trainer.create(
+  #   description: "Well-rounded trainer experienced in multi-disciplinary training methods. Combines elements of strength training, cardio conditioning, and flexibility work to create well-rounded and comprehensive training programs tailored to individual needs.",
+  #   sports: "Cycling",
+  #   user: user21
+  # )
+
+  # service21 = Service.new(
+  #   trainer: trainer11,
+  #   address: "Brighton",
+  #   price: 30,
+  #   description: "Adventure Cycling Expedition: Embark on an unforgettable cycling adventure with a personal trainer leading the way. This 2-hour session will take you on a scenic route, allowing you to explore new landscapes and challenge",
+  #   sport: "Cycling",
+  #   service_type: "Session"
+  # )
+
+  # file = URI.open("https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/11/muslim-poc-gym-exercising-weight-lifting-1296x728-header.jpg?h=1528")
+  # service21.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service21.save!
+  # puts "Hi Service21"
+
+  # booking19 = Booking.create(
+  #   user: user10,
+  #   service: service21,
+  #   status: 0,
+  #   start_time: date,
+  #   end_time: date + time
+  # )
+
+  # review19 = Review.create(
+  #   booking: booking19,
+  #   rating: 5,
+  #   comment: "The training session was exceptional! The trainer pushed me to my limits and helped me achieve a new personal best. Highly recommend!"
+  # )
