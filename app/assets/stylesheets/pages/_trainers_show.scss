@@ -1,8 +1,12 @@
-// .container {
-//   margin: 0 auto;
-//   max-width: 960px;
-//   padding: 0 20px;
-// }
+.trainer-container {
+  margin: 0 auto;
+  max-width: 1040px;
+  padding: 0 20px;
+}
+
+.trainer-section {
+  background-color: rgb(236, 240, 241);
+}
 
 .trainer-details {
   display: flex;
@@ -64,12 +68,11 @@
 }
 
 .profile-banner {
-  background-color: #00063D;
   padding: 20px;
   border-radius: 8px;
-  color: #fff;
+  color: #363636;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     .btn{
       background-color: #E0464D;
       color: white;
@@ -131,18 +134,29 @@
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+  p {
+    margin-right: 5px;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  .star {
+    position: relative;
+  }
+
   img {
     border-radius: 50%;
-    max-width: 100%;
+    height: 100px;
+    width: 100px;
+    // max-width: 100%;
     margin-bottom: 10px;
-    object-fit: fill;
+    object-fit: cover;
     filter: grayscale(85%);
     &:hover {
       filter: none;
     }
   }
-
-  }
+}
 
 .training-plan-category {
   // height: px;
@@ -153,6 +167,7 @@
 
   p {
     margin: 0;
+    font-size: 14px;
   }
 
   .btn {
