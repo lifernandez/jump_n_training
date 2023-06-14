@@ -74,20 +74,25 @@
     </div>
 
     <div class="services-section">
-      <div class="service-category w-25 me-5">
+      <div class="training-plan-category w-25 me-5">
         <h2>Training Plans</h2>
         <% @trainer.services.each do |service| %>
           <% if service.service_type == "Training Plan" %>
             <div class="service-card">
-              <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
+              <%# <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
               <div class="service-card-infos">
                 <p><strong>Type:</strong> <%= service.service_type %></p>
                 <p><strong>Price:</strong> <%= service.price %></p>
                 <p><strong>Sport:</strong> <%= service.sport %></p>
+                <p><%= service.description %></p>
                 <!-- Button trigger modal -->
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                       More information </button>
+
+
+
+
               <!-- Modal -->
               <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" id="sessions-dialog">
@@ -191,7 +196,7 @@
           <% end %>
           <div>
         </div>
-        
+
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <% @reviews.each_slice(3).with_index do |reviews, i| %>
@@ -199,11 +204,11 @@
                 <div class="row">
                   <% reviews.each do |review| %>
                     <div class="col-4">
-                      <div class="service-card">
+                      <div class="review-card">
                         <% if review.booking.user.photo.attached? %>
-                          <%= cl_image_tag review.booking.user.photo.key, class: "card-image me-4" %>
+                          <%= cl_image_tag review.booking.user.photo.key, class: "" %>
                         <% else %>
-                          <%= image_tag "athlete.jpg", class: "card-image me-4" %>
+                          <%= image_tag "athlete.jpg", class: "" %>
                         <% end %>
                         <p><%= review.comment %></p>
                       </div>
