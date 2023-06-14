@@ -14,6 +14,7 @@
         <% end %>
         <div class="">
           <h1>Your Trainer Profile</h1>
+          <h1 class="mb-3"><strong> <%= trainer.user.first_name %> <%= trainer.user.last_name %></strong></h1>
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <p><strong>Description:</strong> <%= @trainer.description %></p>
           <% if @trainer.user == current_user %>
@@ -54,6 +55,7 @@
       <% end %>
       <div class="">
         <h2>Trainer Details</h2>
+        <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
         <p><strong>Sports:</strong> <%= @trainer.sports %></p>
         <div class="mt-2 mb-2">
           <i class="fa-brands fa-instagram"></i>
@@ -76,30 +78,52 @@
                 <p><strong>Price:</strong> <%= service.price %></p>
                 <p><strong>Sport:</strong> <%= service.sport %></p>
                 <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      More information
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Session Informations</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                                  <h5>Location</h5>
-                                  <p> <%= service.address %></p>
-                                  <div style="width: 100%; height: 600px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-                            <p><strong>Description:</strong> <%= service.description %></p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-primary"><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %></button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                      More information </button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" id="sessions-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel"><%= service.title %></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="sessions-body">
+                      <div class="row">
+                        <div class="col-12">
+                          <h5>Description</h5>
+                          <p><%= service.description %></p>
+                        </div>
+                        <div class="col-md-6">
+                          <h5>Location</h5>
+                          <p class="mb-3"><%= service.address %></p>
+                          <div style="width: 100%; height: 400px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="d-block no-border">
+                            <div>
+                            <h5>Start time</h5>
+                             <p class="mb-3">Training Duration: <%= service.duration %> hours</p>
+                            <%= simple_form_for [@trainer, service, @booking] do |form| %>
+                              <%= form.input :start_time,
+                              as: :string,
+                              label: false,
+                              input_html: { data: { controller: "datepicker" }, class: "d-none" } %>
+                              <div class="d-flex align-items-center justify-content-between" style="width: 307.875px;">
+                                <p><strong>Price:</strong> <%= service.price %></p>
+                                <%= form.submit "Book", class: "btn btn-primary" %>
+                              </div>
+                            <% end %>
+                        </div>
+                            <%# <button type="button" class=""><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
 
               </div>
             </div>
@@ -127,15 +151,19 @@
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Training Plan Informations</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><%= service.title %></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
                             <p><strong>Description:</strong> <%= service.description %></p>
                           </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-primary"><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %></button>
-                          </div>
+                              <%= simple_form_for [@trainer, service, @booking] do |form| %>
+                              <%= form.hidden_field :start_time, :value => Date.today %>
+                              <div class="d-flex align-items-center justify-content-between mb-4" style="width: 307.875px;">
+                                <p><strong>Price:</strong> <%= service.price %></p>
+                                <%= form.submit "Book", class: "btn btn-primary width:100px" %>
+                              </div>
+                            <% end %>
                         </div>
                       </div>
                     </div>
@@ -147,12 +175,3 @@
     </div>
   </div>
   <% end %>
-
-
-   <div class="map">
-                                    <div class="location_map"
-                                          data-controller="map"
-                                          data-map-markers-value="<%= @markers.to_json %>"
-                                          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-                                    </div>
-                                  </div>

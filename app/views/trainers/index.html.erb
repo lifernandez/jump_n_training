@@ -1,21 +1,54 @@
+
 <div class="container pb-5">
-  <div class="cards">
-    <% @trainers.each_with_index do |trainer, i| %>
-      <%= link_to trainer_path(trainer), class: "text-decoration-none mt-4 text-dark" do %>
-        <div class="card-trip">
-          <% if trainer.user.photo.attached? %>
-            <%= cl_image_tag trainer.user.photo.key %>
-          <% else %>
-            <%= image_tag "athlete.jpg" %>
+  <% if @query %>
+    <div class="main-container">
+      <div class="cards-query">
+        <% @trainers.each_with_index do |trainer, i| %>
+          <%= link_to trainer_path(trainer), class: "text-decoration-none mt-4 text-dark" do %>
+            <div class="card-trip">
+              <% if trainer.user.photo.attached? %>
+                <%= cl_image_tag trainer.user.photo.key %>
+              <% else %>
+                <%= image_tag "athlete.jpg" %>
+              <% end %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2 class="mb-3"><%= trainer.user.first_name %> <%= trainer.user.last_name %></h2>
+                  <p><%= trainer.sports %></p>
+                </div>
+              </div>
+            </div>
           <% end %>
-          <div class="card-trip-infos">
-            <div>
-              <h2 class="mb-3"><%= trainer.user.first_name %> <%= trainer.user.last_name %></h2>
-              <p><%= trainer.sports %></p>
+        <% end %>
+      </div>
+
+      <div style="width: 80%; height: 600px;"
+        class="mt-4"
+        id="map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  <% else %>
+    <div class="cards">
+      <% @trainers.each_with_index do |trainer, i| %>
+        <%= link_to trainer_path(trainer), class: "text-decoration-none mt-4 text-dark" do %>
+          <div class="card-trip">
+            <% if trainer.user.photo.attached? %>
+              <%= cl_image_tag trainer.user.photo.key %>
+            <% else %>
+              <%= image_tag "athlete.jpg" %>
+            <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2 class="mb-3"><%= trainer.user.first_name %> <%= trainer.user.last_name %></h2>
+                <p><%= trainer.sports %></p>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

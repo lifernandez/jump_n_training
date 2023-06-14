@@ -4,6 +4,7 @@
   grid-gap: 16px;
 }
 
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -37,4 +38,20 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+.main-container {
+  display: flex;
+}
+
+#map {
+  height: 100vh;
+}
+
+.cards-query {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin-right: 100px;
 }
