@@ -3,8 +3,8 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+# Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
 Review.destroy_all
@@ -1080,3 +1080,4 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   #   rating: 5,
   #   comment: "The training session was exceptional! The trainer pushed me to my limits and helped me achieve a new personal best. Highly recommend!"
   # )
+

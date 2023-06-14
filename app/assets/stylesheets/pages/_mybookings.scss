@@ -25,7 +25,7 @@
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -54,6 +54,54 @@
   color: white;
 }
 
+
+#pills-trainings {
+  .btn-cancel {
+    padding: 4px 8px;
+    color: black;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: lightgray;
+    transition: background 0.3s ease;
+    border: none;
+    text-decoration: none;
+    margin-right: 30px;
+  }
+
+  .btn-cancel-training:hover {
+    background: lightgray;
+    color: white;
+  }
+
+  .avatar {
+    margin-right: 60px;
+  }
+
+  .title {
+    font-size: 15px;
+    // font-weight: bold;
+    color: Red;
+    border-right: solid 1px gray;
+    padding:  8px 10px 8px 0px ;
+    margin-left: 20px;
+    font-weight: normal;
+  }
+
+  .description {
+    font-size: 10px;
+    font-weight: bold;
+
+  }
+
+  .card-product p {
+    margin-left: 16px ;
+    font-size: 12px;
+    letter-spacing: 0px;
+    font-weight: 600;
+  }
+}
+
+
 .date {
   font-size: 24px;
   // font-weight: bold;
@@ -61,3 +109,5 @@
   border-right: solid 1px gray;
   padding:  8px 60px 8px 0px ;
 }
+
+// training

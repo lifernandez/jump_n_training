@@ -3,9 +3,18 @@ class TrainersController < ApplicationController
 
   def index
     if params[:query].present?
+      @query = true
       sql_query = "sports ILIKE :query"
       # sql_query = "sports ILIKE :query OR synopsis ILIKE :query"
       @trainers = Trainer.search_by_sports_and_address_and_description(params[:query])
+      @services = @trainers.map {|trainer| trainer.services }.flatten
+      @markers = @services.map do |service|
+        {
+          lat: service.latitude,
+          lng: service.longitude
+
+        }
+      end
     else
       @trainers = Trainer.all
     end

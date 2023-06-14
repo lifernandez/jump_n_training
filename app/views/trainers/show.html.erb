@@ -1,3 +1,4 @@
+
 <div class="trainer-section">
   <div class="container trainer-container">
     <% if current_user&.trainer %>
@@ -9,11 +10,13 @@
         <% end %>
         <div class="">
           <h1>Your Trainer Profile</h1>
-          <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
+
+          <h1 class="mb-3"><strong><%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
+
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <p><strong>Description:</strong> <%= @trainer.description %></p>
           <% if @trainer.user == current_user %>
-            <%= link_to "Add a service", new_trainer_service_path(@trainer), class: "btn"%>
+            <%= link_to "Add an activity", new_trainer_service_path(@trainer) , class: "btn btn-primary mr-2" %>
           <% end %>
         </div>
       </div>
@@ -124,10 +127,8 @@
                       </div>
 
 
-
-
-
                 </div>
+
               </div>
             <% end %>
           <% end %>
@@ -186,7 +187,9 @@
                           </div>
                               <%# <button type="button" class=""><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
 
+
                             </div>
+
                           </div>
                         </div>
                       </div>
