@@ -53,12 +53,12 @@ html, body{background: rgb(236, 240, 241);}
       font-size: 2em;
       // padding: 20px 0;
     }
-    p{
-      font-size: .75em;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      // padding: 20px 0;
-    }
+    // p{
+    //   font-size: .75em;
+    //   // text-transform: uppercase;
+    //   // letter-spacing: 2px;
+    //   // padding: 20px 0;
+    // }
 
     button:hover{cursor: pointer}
     button {
@@ -93,4 +93,34 @@ html, body{background: rgb(236, 240, 241);}
         font-weight: 800;
         font-size: .8em;
         transition: all .3s ease-in-out;
+      }
+
+
+      .row {
+        margin-bottom: 10px;
+
+        .col-md-6 {
+          padding: 10px;
+
+          h5 {
+            margin-bottom: 5px;
+          }
+          p{
+            padding: 0px
+          }
+        }
+      }
+
+      .info-card {
+        background-color: $light-gray;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        color: $gray;
+
+        p {
+          margin-right: 5px;
+          margin-left: 5px;
+        }
       }

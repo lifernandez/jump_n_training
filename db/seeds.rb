@@ -309,7 +309,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
   service1 = Service.new(
     trainer: trainer1,
-    address: "Brighton",
+    address: "London",
     price: 25,
     description: "Embark on a transformative journey with our week-long training plan designed to enhance your running/cycling performance. This comprehensive program incorporates a mix of endurance, speed, and recovery sessions, expertly crafted by our trainers to help you achieve your goals.",
     sport: "Running",
@@ -318,14 +318,14 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     title: "Comprehensive Week-Long Running Training"
   )
 
-  file = URI.open("https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/07/eat_after_working_out_732x549_thumb-732x549.jpg")
-  service1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # file = URI.open("https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2022/07/eat_after_working_out_732x549_thumb-732x549.jpg")
+  # service1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   service1.save!
-  puts "Hi Service1"
+  # puts "Hi Service1"
 
   service2= Service.new(
     trainer: trainer1,
-    address: "Brighton",
+    address: "London",
     price: 25,
     description: "Push your limits and improve your stamina with a power-packed running/cycling session led by a personal trainer. This 2-hour session is designed to challenge you and enhance your endurance capabilities.",
     sport: "Cycling",
@@ -341,7 +341,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
   service3= Service.new(
     trainer: trainer1,
-    address: "Brighton",
+    address: "London",
     price: 30,
     description: "Conquer the toughest terrains with a focused running/cycling session that incorporates hill intervals. Our personal trainer will guide you through a 3-hour session, helping you build strength, speed, and mental resilience.",
     sport: "Golf",
@@ -353,6 +353,70 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   file = URI.open("https://images.ctfassets.net/8urtyqugdt2l/3D2iE8CWiIZ8ZnZ1ZGCjWJ/97aaba852f17eb10e65b8aceeb63acad/1594309624-how-to-start-working-out-again-header.jpg")
   service3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   service3.save!
+  puts "Hi Service3"
+
+  service30 = Service.new(
+    trainer: trainer1,
+    address: "London",
+    price: 35,
+    description: "Get ready to sweat and sculpt in a dynamic total-body training session. Together, we'll focus on building lean muscle, improving flexibility, and boosting endurance through a combination of bodyweight exercises, resistance training, and core work. Let's work hard and achieve the results you desire!",
+    sport: "Yoga",
+    service_type: "Session",
+    duration: 2,
+    title: "Sculpt & Sweat: Total-Body Transformation"
+  )
+
+  file = URI.open("https://cdn.mos.cms.futurecdn.net/q5tzid4VnHvn8TGiq7myab.jpeg")
+  service30.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service30.save!
+  puts "Hi Service3"
+
+  service31 = Service.new(
+    trainer: trainer1,
+    address: "London",
+    price: 35,
+    description: "Discover the joy of movement with a fun and engaging training session that combines dance-inspired exercises, functional movements, and bodyweight training. Join me for a session filled with infectious energy, uplifting music, and a supportive environment to help you improve your fitness and coordination.",
+    sport: "Dance",
+    service_type: "Session",
+    duration: 2,
+    title: "Dance Fusion: Move, Groove, and Get Fit"
+  )
+
+  file = URI.open("https://ichef.bbci.co.uk/news/976/cpsprodpb/178F1/production/_107479469_gettyimages-688005548.jpg")
+  service31.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service31.save!
+  puts "Hi Service31"
+
+  service32 = Service.new(
+    trainer: trainer1,
+    address: "London",
+    price: 35,
+    description: "Maximize your performance and prevent injuries with a mobility and stability training session. In this session, we'll focus on improving joint range of motion, enhancing balance, and strengthening the stabilizer muscles. Let's work together to optimize your movement mechanics and unlock your full athletic potential.",
+    sport: "Running",
+    service_type: "Session",
+    duration: 2,
+    title: "Mobility Mastery: Enhance Performance & Prevent Injuries"
+  )
+
+  file = URI.open("https://www.technogym.com/wpress/wp-content/uploads/2019/04/common-mistakes-sports-conditioning-img1.jpg")
+  service32.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service32.save!
+  puts "Hi Service32"
+
+  service33 = Service.new(
+    trainer: trainer1,
+    address: "London",
+    price: 35,
+    description: "Revitalize your mind and body with a rejuvenating yoga-inspired training session. Experience a harmonious blend of flowing movements, mindful breathing, and deep stretches that will leave you feeling refreshed, centered, and ready to take on any challenge that comes your way.",
+    sport: "Yoga",
+    service_type: "Session",
+    duration: 2,
+    title: "Yoga Revive: Restore Mind and Body"
+  )
+
+  file = URI.open("https://images.squarespace-cdn.com/content/v1/58d7e42817bffcffb8099cc9/1588727673333-4NKX46L7MT53O7MK9IYT/image-asset.jpeg")
+  service33.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service33.save!
   puts "Hi Service3"
 
   booking1 = Booking.create(
@@ -437,6 +501,54 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   service6.save!
   puts "Hi Service6"
+
+  service34 = Service.new(
+    trainer: trainer2,
+    address: "London",
+    price: 35,
+    description: "Elevate your cardiovascular endurance and burn calories with a heart-pumping cardio session. From high-intensity interval training (HIIT) to circuit training, we'll explore different training modalities that will challenge your cardiovascular system and improve your overall fitness level.",
+    sport: "Calisthenics",
+    service_type: "Session",
+    duration: 2,
+    title: "Cardio Blitz: Energize Your Heart & Burn Calories"
+  )
+
+  file = URI.open("https://images.squarespace-cdn.com/content/v1/58d7e42817bffcffb8099cc9/1589325563460-CZXBQBRMF4DWSMOB2U8B/aNZlw7Ow.jpeg?format=1000w")
+  service34.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service34.save!
+  puts "Hi Service34"
+
+  service35 = Service.new(
+    trainer: trainer2,
+    address: "London",
+    price: 35,
+    description: "Unleash your inner athlete with a sports-specific training session designed to enhance your performance in your chosen discipline. Whether you're a runner, cyclist, or team sport player, we'll focus on sport-specific drills, functional movements, and conditioning exercises to help you excel on the field or court.",
+    sport: "Calisthenics",
+    service_type: "Session",
+    duration: 2,
+    title: "Sport-Specific Excellence: Unleash Your Athletic Potential"
+  )
+
+  file = URI.open("https://s3-media0.fl.yelpcdn.com/bphoto/qDvA1hpZtf1OsTOYvuZALw/1000s.jpg")
+  service35.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service35.save!
+  puts "Hi Service35"
+
+  service36 = Service.new(
+    trainer: trainer2,
+    address: "London",
+    price: 35,
+    description: "Find your inner zen and build strength from within with a mindful strength training session. Using a combination of bodyweight exercises, resistance bands, and mindfulness techniques, we'll work on developing functional strength, improving posture, and cultivating a strong mind-body connection.",
+    sport: "Calisthenics",
+    service_type: "Session",
+    duration: 2,
+    title: "Mindful Strength: Cultivate Inner Power and Resilience"
+  )
+
+  file = URI.open("https://www.vertimax.com/hubfs/aug2109/images/Agility%20Training%20Images/Agility%20Training%20Shuttle%20Run%20vertimax_011.jpg")
+  service36.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  service36.save!
+  puts "Hi Service36"
 
   booking3 = Booking.create(
     user: user6,
@@ -533,6 +645,22 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
   service9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   service9.save!
   puts "Hi Service9"
+
+  # service37 = Service.new(
+  #   trainer: trainer3,
+  #   address: "London",
+  #   price: 35,
+  #   description: "Ignite your athletic potential with a high-intensity training session designed to push your limits and unlock your inner strength. Join me for an energizing workout that combines explosive exercises, cardio intervals, and strength training, leaving you feeling empowered and accomplished.",
+  #   sport: "",
+  #   service_type: "Session",
+  #   duration: 2,
+  #   title: "Power Ignite: Unleash Your Inner Strength"
+  # )
+
+  # file = URI.open("https://images.ctfassets.net/8urtyqugdt2l/3D2iE8CWiIZ8ZnZ1ZGCjWJ/97aaba852f17eb10e65b8aceeb63acad/1594309624-how-to-start-working-out-again-header.jpg")
+  # service37.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  # service37.save!
+  # puts "Hi Service37"
 
   booking6 = Booking.create(
     user: user12,
@@ -825,7 +953,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
 
   # service18 = Service.new(
   #   trainer: trainer8,
-  #   address: "Brighton",
+  #   address: "Londo",
   #   price: 12,
   #   description: "Mindful Endurance Journey: Embark on a mindful and meditative running/cycling session with a personal trainer. This 3-hour session will focus on finding a balance between physical exertion and mental clarity, allowing you to connect with your body and surroundings.",
   #   sport: "Running",
