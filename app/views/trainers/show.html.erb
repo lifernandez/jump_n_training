@@ -3,19 +3,19 @@
 
   <div class="container">
 
-      <div class="profile-banner d-flex mt-4">
+    <div class="profile-banner d-flex mt-4">
         <% if @trainer.user.photo.attached? %>
-            <%= cl_image_tag @trainer.user.photo.key, class: "card-image me-4" %>
+          <%= cl_image_tag @trainer.user.photo.key, class: "card-image me-4" %>
         <% else %>
           <%= image_tag "athlete.jpg", class: "card-image me-4" %>
         <% end %>
         <div class="">
           <h1>Your Trainer Profile</h1>
-          <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
+          <h1 class="mb-3"><strong><%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <p><strong>Description:</strong> <%= @trainer.description %></p>
           <% if @trainer.user == current_user %>
-            <%= link_to "Add a service", new_trainer_service_path(@trainer), class: "btn"%>
+            <%= link_to "Add an activity", new_trainer_service_path(@trainer) , class: "btn btn-primary mr-2" %>
           <% end %>
         </div>
       </div>
@@ -23,6 +23,7 @@
       <table class="services-table">
         <thead>
           <tr>
+            <th>Title</th>
             <th>Type of service</th>
             <th>Price</th>
             <th>Sport</th>
@@ -32,10 +33,17 @@
         <tbody>
           <% @trainer.services.each do |service| %>
             <tr>
+              <td><%= service.title %></td>
               <td><%= service.service_type %></td>
               <td><%= service.price %></td>
               <td><%= service.sport %></td>
               <td><%= service.description %></td>
+              <td>
+                <% if current_user == @trainer.user %>
+                  <%= link_to "Edit", edit_trainer_service_path(@trainer, service), class: "btn btn-primary btn-sm mr-2" %>
+                  <%= button_to "Delete", trainer_service_path(@trainer, service), method: :delete, data: { confirm: "Are you sure you want to delete this service?" }, class: "btn btn-danger btn-sm" %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
@@ -114,11 +122,6 @@
                         </div>
                       </div>
                     </div>
-
-
-
-
-
               </div>
             </div>
           <% end %>
