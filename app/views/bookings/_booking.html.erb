@@ -1,9 +1,9 @@
 <div class="card-product d-flex justify-content-around" >
+  <% if booking.service.service_type == "Session" %>
     <div class="date"><%=booking.start_time.strftime("%a %d").capitalize %></div>
 
     <div class="card-product-infos">
       <p>🕓 <%= booking.start_time.strftime("%-k:%M")%></p>
-
       <p>📍 <%= booking.service.address %></p>
     </div>
 
@@ -12,5 +12,17 @@
       <%= cl_image_tag booking.service.photo.key, alt: "athlete", class: "avatar" %>
     </div>
     <%= link_to "cancel", booking_path(booking), class: "btn-cancel", data: {turbo_method: :delete, turbo_confirm: "are you sure?"}%>
+  <% else %>
 
-  </div>
+    <div class="title"><%=booking.service.title %></div>
+    <div class="card-product-infos-training">
+      <p> <%= booking.service.description%> </p>
+   </div>
+
+    <div class='d-flex'>
+      <p><%= booking.service.sport %></p>
+      <%= cl_image_tag booking.service.photo.key, alt: "athlete", class: "avatar" %>
+    </div>
+    <%= link_to "cancel", booking_path(booking), class: "btn-cancel", data: {turbo_method: :delete, turbo_confirm: "are you sure?"}%>
+  <% end %>
+</div>
