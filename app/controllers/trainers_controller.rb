@@ -8,11 +8,12 @@ class TrainersController < ApplicationController
       # sql_query = "sports ILIKE :query OR synopsis ILIKE :query"
       @trainers = Trainer.search_by_sports_and_address_and_description(params[:query])
       @services = Service.all
+      @booking = Booking.new
       @markers = @services.geocoded.map do |service|
         {
           lat: service.latitude,
           lng: service.longitude,
-          info_window: render_to_string(partial: "popup", locals: { service: service })
+          info_window: render_to_string(partial: "popup", locals: { service: service, trainer: service.trainer })
           # marker_html: render_to_string(partial: "marker", locals: {service: service})
         }
       end
