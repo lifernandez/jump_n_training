@@ -8,6 +8,16 @@
   background-color: rgb(236, 240, 241);
 }
 
+.trainer-details1 {
+  h1 {
+    font-size: 36px !important;
+
+  }
+  h1, p {
+    text-align: left !important;
+  }
+}
+
 .trainer-details {
   display: flex;
   flex-direction: column;

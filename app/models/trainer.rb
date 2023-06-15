@@ -6,7 +6,7 @@ class Trainer < ApplicationRecord
     pg_search_scope :search_by_sports_and_address_and_description,
     against: [ :sports, :description ],
     associated_against: {
-      services: [ :description, :price, :address]
+      services: [ :description, :address]
     },
     using: {
     tsearch: { prefix: true }

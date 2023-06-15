@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
           currency: 'gbp',
           product_data: {
             name: service.title,
-            images: [service.photo.url]
           }
         }
       ],

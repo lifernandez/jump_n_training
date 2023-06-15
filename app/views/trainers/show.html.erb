@@ -26,7 +26,7 @@
         <% else %>
           <%= image_tag "jumpn-default-profile-img.png", class: "card-image me-4" %>
         <% end %>
-        <div class="mt-5 ms-5">
+        <div class="trainer-details1">
           <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <div class="mt-2 mb-2">
@@ -34,7 +34,7 @@
             <i class="fa-brands fa-twitter"></i>
             <i class="fa-brands fa-facebook"></i>
           </div>
-            <p class="mr-5"><strong>Description:</strong> <%= @trainer.description %></p>
+            <p class="mr-5"><strong></strong> <%= @trainer.description %></p>
             <% rating = 0.0 %>
             <% count = 0 %>
             <% @trainer.services.each do |service| %>
@@ -45,13 +45,10 @@
               <% end %>
             <% end %>
             <div class="rating-container">
-              <p><strong>Rating:</strong></p>
+              <%# <p><strong>Rating:</strong></p> %>
               <div class="star-rating">
-                <% (rating / count).round(1).to_i.times do %>
-                  <span class="star">&#9733;</span>
-                <% end %>
-                <span class="extra-star">&#9733;</span>
-              <span class="rating-number"><%= (rating / count).round(1) %></span>
+                <span class="star">&#9733;</span>
+                <span class="rating-number"><%= (rating / count).round(1) %></span>
               </div>
             </div>
         </div>
@@ -73,7 +70,6 @@
               <th>Price</th>
               <th>Sport</th>
               <th>Description</th>
-              <th> </th>
             </tr>
           </thead>
           <tbody>
@@ -83,7 +79,6 @@
                 <td><%= service.price %></td>
                 <td><%= service.sport %></td>
                 <td><%= service.description %></td>
-                <td> <%= link_to "Delete", trainer_path(@trainer), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "are you sure?"}%> </td>
               </tr>
             <% end %>
           </tbody>
@@ -101,10 +96,10 @@
               <div class="service-card">
                 <%# <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
                 <div class="service-card-infos">
-                  <p><strong>Type:</strong> <%= service.service_type %></p>
+                  <h6><%= service.title %></h6>
                   <p><strong>Price:</strong> <%= service.price %></p>
                   <p><strong>Sport:</strong> <%= service.sport %></p>
-                  <p><%= service.description %></p>
+                  <%# <p><%= service.description %></p>
                   <!-- Button trigger modal -->
 
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= service.id %>">
@@ -154,15 +149,16 @@
               <% if service.service_type == "Session" %>
                 <div class="col-4">
                   <div class="service-card">
+                    <h6><%= service.title %></h6>
                     <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
                     <div class="service-card-infos">
-                      <p><strong>Type:</strong> <%= service.service_type %></p>
                       <p><strong>Price:</strong> <%= service.price %></p>
                       <p><strong>Sport:</strong> <%= service.sport %></p>
                       <!-- Button trigger modal -->
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%= service.id %>">
                         More information
                       </button>
+
                                     <!-- Modal -->
                 <div class="modal fade" id="exampleModal<%= service.id %>" tabindex="-1" aria-labelledby="exampleModal<%= service.id %>Label" aria-hidden="true">
                   <div class="modal-dialog modal-lg" id="sessions-dialog">
