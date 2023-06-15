@@ -30,6 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @trainer = Trainer.find(params[:trainer_id])
     @service = Service.find(params[:service_id])
     @booking = Booking.find(params[:id])

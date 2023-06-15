@@ -1,20 +1,19 @@
 
-  <div class= "container">
+  <div class="container" data-controller="trainers-form">
     <div class="form-wrapper d-flex flex-column align-items-center w-100 py-5 my-5">
       <h1>New Service</h1>
       <%= form_with(model: @service, url: trainer_services_path(@trainer)) do |form| %>
         <div class="service-type-container">
-          <input type="radio" name="service_type" id="training-plan-switch" value="Training Plan" class="switch-input" checked>
+          <input type="radio" name="service_type" id="training-plan-switch" value="Training Plan" class="switch-input" checked data-action="click->trainers-form#toggleSession">
           <label class="switch-label" for="training-plan-switch"></label>
           <label for="training-plan-switch" class="service-type-label">Training Plan</label>
-          <input type="radio" name="service_type" id="session-switch" value="Session" class="switch-input">
+          <input type="radio" name="service_type" id="session-switch" value="Session" class="switch-input" data-action="click->trainers-form#toggleSession">
           <label class="switch-label" for="session-switch"></label>
           <label for="session-switch" class="service-type-label">Session</label>
         </div>
 
         <div class="form-fields training-plan-fields">
         </div>
-
 
           <div>
             <%= form.label :title, class: "form-label" %>
@@ -31,7 +30,7 @@
             <%= form.select :sport, options_for_select(['Running', 'Cycling', 'Yoga', 'Gym', 'Tennis']), prompt: 'Select sport', class: "form-field" %>
           </div>
 
-          <div class="form-fields session-fields">
+          <div class="form-fields session-fields d-none" data-trainers-form-target="form">
             <div>
               <%= form.label :address, class: "form-label" %>
               <%= form.text_field :address, class: "form-field" %>
@@ -59,4 +58,3 @@
       <% end %>
     </div>
    </div>
-<script src="/app/javascript/trainers_form.js"> </script>

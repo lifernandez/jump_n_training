@@ -1,5 +1,12 @@
-<div class ="container bookings-container pt-5">
-  <h2> My bookings </h2>
+<html>
+<head>
+  <title>My Dashboard</title>
+</head>
+<body>
+
+
+<div class ="container bookings-container dashboard pt-5">
+  <h2> My Dashboard </h2>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="pills-sessions-tab" data-bs-toggle="pill" data-bs-target="#pills-sessions" type="button" role="tab" aria-controls="pills-sessions" aria-selected="true">Sessions</button>
@@ -11,15 +18,21 @@
 
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-sessions" role="tabpanel" aria-labelledby="pills-sessions-tab">
-      <% @bookings_session.each do | booking | %>
-        <%= render 'bookings/booking', booking: booking  %>
+      <% @bookings_session.each do |service| %>
+      <%if service.service_type == "Session"%>
+        <%= render 'pages/dashboard', service: service  %>
       <% end %>
+    <% end %>
     </div>
 
     <div class="tab-pane fade" id="pills-trainings" role="tabpanel" aria-labelledby="pills-trainings-tab">
-      <% @bookings_training.each do | booking | %>
-        <%= render 'bookings/booking', booking: booking %>
+      <% @bookings_training.each do |service| %>
+      <%if service.service_type == "Training Plan"%>
+        <%= render 'pages/dashboard', service: service  %>
       <% end %>
+    <% end %>
     </div>
   </div>
 </div>
+</body>
+</html>

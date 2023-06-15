@@ -42,6 +42,7 @@ class TrainersController < ApplicationController
 
   def create
     @trainer = Trainer.new(trainer_params)
+    @trainer.sports = params[:trainer][:sports].reject(&:blank?).join(",")
     @trainer.user = current_user
     if @trainer.save
       current_user.update(istrainer: true)
