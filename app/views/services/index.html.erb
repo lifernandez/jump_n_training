@@ -8,8 +8,9 @@
                   <%= service.trainer.user.first_name %>
                   <%= service.description %>
                   <%= service.sport %>
-                  <%= service.price %>
+                  <%= humanized_money_with_symbol(service.price) %>
         </div>
   </div>
   <% end %>
 </div>
+

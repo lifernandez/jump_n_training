@@ -5,4 +5,5 @@
 <p><strong>Service Type:</strong> <%= @service.service_type %></p>
 <p><strong>Address:</strong> <%= @service.address %></p>
 <p><strong>Sport:</strong> <%= @service.sport %></p>
-<p><strong>Price:</strong> <%= @service.price %></p>
+<p><strong>Price:</strong> <%= humanized_money_with_symbol(@service.price) %></p>
+
