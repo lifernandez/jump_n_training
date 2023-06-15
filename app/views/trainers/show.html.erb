@@ -26,8 +26,7 @@
         <% else %>
           <%= image_tag "jumpn-default-profile-img.png", class: "card-image me-4" %>
         <% end %>
-        <div class="">
-          <h2>Trainer Details</h2>
+        <div class="trainer-details1">
           <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <div class="mt-2 mb-2">
@@ -46,13 +45,10 @@
               <% end %>
             <% end %>
             <div class="rating-container">
-              <p><strong>Rating:</strong></p>
+              <%# <p><strong>Rating:</strong></p> %>
               <div class="star-rating">
-                <% (rating / count).round(1).to_i.times do %>
-                  <span class="star">&#9733;</span>
-                <% end %>
-                <span class="extra-star">&#9733;</span>
-              <span class="rating-number"><%= (rating / count).round(1) %></span>
+                <span class="star">&#9733;</span>
+                <span class="rating-number"><%= (rating / count).round(1) %></span>
               </div>
             </div>
         </div>
@@ -100,10 +96,10 @@
               <div class="service-card">
                 <%# <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
                 <div class="service-card-infos">
-                  <p><strong>Type:</strong> <%= service.service_type %></p>
+                  <h6><%= service.title %></h6>
                   <p><strong>Price:</strong> <%= service.price %></p>
                   <p><strong>Sport:</strong> <%= service.sport %></p>
-                  <p><%= service.description %></p>
+                  <%# <p><%= service.description %></p>
                   <!-- Button trigger modal -->
 
                       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= service.id %>">
@@ -153,9 +149,9 @@
               <% if service.service_type == "Session" %>
                 <div class="col-4">
                   <div class="service-card">
+                    <h6><%= service.title %></h6>
                     <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
                     <div class="service-card-infos">
-                      <p><strong>Type:</strong> <%= service.service_type %></p>
                       <p><strong>Price:</strong> <%= service.price %></p>
                       <p><strong>Sport:</strong> <%= service.sport %></p>
                       <!-- Button trigger modal -->
