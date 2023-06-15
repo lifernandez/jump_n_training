@@ -4,3 +4,4 @@ class StripeCheckoutSessionService
     order.update(state: 'paid')
   end
 end
+
