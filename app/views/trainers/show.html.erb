@@ -27,8 +27,7 @@
         <% else %>
           <%= image_tag "jumpn-default-profile-img.png", class: "card-image me-4" %>
         <% end %>
-        <div class="">
-          <h2>Trainer Details</h2>
+        <div class="mt-5 ms-5">
           <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
           <p><strong>Sports:</strong> <%= @trainer.sports %></p>
           <div class="mt-2 mb-2">
