@@ -1,0 +1,26 @@
+
+  .star-rating {
+  color: gold; /* Star color */
+  font-size: 24px; /* Adjust the size of the stars */
+}
+
+.star {
+  display: inline-block;
+}
+
+.extra-star {
+  display: inline-block;
+  color: silver; /* Color for the extra star */
+}
+
+.rating-container {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+}
+
+.rating-number {
+  font-size: 18px;
+  margin-left: 5px;
+  color: black;
+}
+
