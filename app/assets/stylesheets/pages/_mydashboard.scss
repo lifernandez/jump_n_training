@@ -1,0 +1,113 @@
+.dashboard {
+  .card-product {
+    border: solid 1px lightgrey;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 120px;
+    background: white;
+    display: flex;
+    align-items: center;
+    .avatar {
+      margin-left: 60px;
+    }
+  }
+
+  .card-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-product p {
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+    padding: 0px;
+  }
+
+  .card-product .card-product-infos {
+    padding: 16px;
+  }
+
+  .btn-cancel {
+    padding: 4px 8px;
+    color: black;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: lightgray;
+    transition: background 0.3s ease;
+    border: none;
+    text-decoration: none;
+
+  }
+
+  .btn-cancel:hover {
+    background: lightgray;
+    color: white;
+  }
+
+  #pills-trainings {
+    .card-product {
+      border: solid 1px lightgrey;
+      margin-bottom: 12px;
+      overflow: hidden;
+      border-radius: 20px;
+      height: 120px;
+      background: white;
+      display: flex;
+      align-items: center;
+
+      .avatar {
+        margin-left: 60px;
+      }
+    }
+
+    .card-product h2 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .card-product p {
+      font-size: 16px;
+      line-height: 1.4;
+      opacity: .7;
+      margin-bottom: 0;
+      margin-top: 8px;
+      padding: 0px;
+      font-weight: 100 !important;
+    }
+
+    .card-product .card-product-infos {
+      padding: 16px;
+    }
+
+
+    .btn-cancel {
+      padding: 4px 8px;
+      color: black;
+      padding: 8px 24px;
+      border-radius: 4px;
+      background: lightgray;
+      transition: background 0.3s ease;
+      border: none;
+      text-decoration: none;
+    }
+
+    .title {
+        font-size: 15px;
+        color: #4B4B4B !important;
+        border-right: none !important;
+
+      }
+
+    .btn-cancel:hover {
+      background: lightgray;
+      color: white;
+
+    }
+  }
+}

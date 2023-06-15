@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def mybookings
     @review = Review.new
+    @trainer = current_user.trainer
     @bookings_session = []
     current_user.bookings.map do |booking|
       @bookings_session << booking if booking.service.service_type == 'Session'
@@ -32,5 +33,14 @@ class PagesController < ApplicationController
     end
   end
 
+
+  def mydashboard
+    @bookings_session = current_user.trainer.services.select { |service| service.service_type == 'Session' }
+    @bookings_training = current_user.trainer.services.select { |service| service.service_type == 'Training Plan' }
+    @session_count = 0
+    @bookings_session.each { |service| @session_count += service.bookings.count }
+    @training_count = 0
+    @bookings_training.each { |service| @training_count += service.bookings.count }
+  end
 
 end

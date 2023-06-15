@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_142109) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_15_101306) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_142109) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "service_sku"
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "service_id", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.index ["service_id"], name: "index_orders_on_service_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
@@ -74,13 +88,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_142109) do
     t.string "service_type"
     t.string "address"
     t.string "sport"
-    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.integer "duration"
     t.string "title"
+    t.integer "price_cents", default: 0, null: false
+    t.string "sku"
     t.index ["trainer_id"], name: "index_services_on_trainer_id"
   end
 
@@ -120,6 +135,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_142109) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "services"
   add_foreign_key "bookings", "users"
+  add_foreign_key "orders", "services"
+  add_foreign_key "orders", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "services", "trainers"
   add_foreign_key "subscriptions", "users"

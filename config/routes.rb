@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get 'mybookings', to: 'pages#mybookings'
   resources :pages, only: [:create]
+  get 'mydashboard', to: 'pages#mydashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: [:index, :show, :new, :create]
 
@@ -14,4 +15,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy] do
     resources :reviews, only: [:new, :create]
   end
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end

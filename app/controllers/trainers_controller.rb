@@ -7,12 +7,13 @@ class TrainersController < ApplicationController
       sql_query = "sports ILIKE :query"
       # sql_query = "sports ILIKE :query OR synopsis ILIKE :query"
       @trainers = Trainer.search_by_sports_and_address_and_description(params[:query])
-      @services = @trainers.map {|trainer| trainer.services }.flatten
-      @markers = @services.map do |service|
+      @services = Service.all
+      @markers = @services.geocoded.map do |service|
         {
           lat: service.latitude,
-          lng: service.longitude
-
+          lng: service.longitude,
+          info_window: render_to_string(partial: "popup", locals: { service: service })
+          # marker_html: render_to_string(partial: "marker", locals: {service: service})
         }
       end
     else
@@ -41,6 +42,7 @@ class TrainersController < ApplicationController
 
   def create
     @trainer = Trainer.new(trainer_params)
+    @trainer.sports = params[:trainer][:sports].reject(&:blank?).join(",")
     @trainer.user = current_user
     if @trainer.save
       current_user.update(istrainer: true)

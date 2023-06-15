@@ -1,0 +1,9 @@
+<div class="card-product d-flex justify-content-around" >
+    <div class="title"><%= service.title %></div>
+   <div class='d-flex'>
+    <p> Total Bookings: <strong><%= service.bookings.count %></strong> </p>
+    </div>
+    <div class='d-flex'>
+      <p> Total Revenue:  <strong> <%= service.bookings.count * service.price %> £ </strong> </p>
+    </div>
+</div>
