@@ -14,7 +14,7 @@
               <div class="card-trip-infos">
                 <div>
                   <h2 class="mb-3"><%= trainer.user.first_name %> <%= trainer.user.last_name %></h2>
-                  <p><%= trainer.sports %></p>
+                  <p><%= trainer.sports.split(',').join(", ") %></p>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="card-trip-infos">
               <div>
                 <h2 class="mb-3"><%= trainer.user.first_name %> <%= trainer.user.last_name %></h2>
-                <p><%= trainer.sports %></p>
+                <p><%= trainer.sports.split(',').join(", ") %></p>
               </div>
             </div>
           </div>
