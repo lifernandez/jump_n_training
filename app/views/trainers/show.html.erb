@@ -66,6 +66,7 @@
               <th>Price</th>
               <th>Sport</th>
               <th>Description</th>
+              <th> </th>
             </tr>
           </thead>
           <tbody>
@@ -75,6 +76,7 @@
                 <td><%= service.price %></td>
                 <td><%= service.sport %></td>
                 <td><%= service.description %></td>
+                <td> <%= link_to "Delete", trainer_path(@trainer), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "are you sure?"}%> </td>
               </tr>
             <% end %>
           </tbody>

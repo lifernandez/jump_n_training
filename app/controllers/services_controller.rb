@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
   end
 
   def create
+    raise
     @trainer = Trainer.find(params[:trainer_id])
     @service = Service.new(service_params)
     @service.service_type = params[:service_type]
