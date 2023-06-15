@@ -6,7 +6,7 @@
         <% if @trainer.user.photo.attached? %>
           <%= cl_image_tag @trainer.user.photo.key, class: "card-image me-4" %>
         <% else %>
-          <%= image_tag "athlete.jpg", class: "card-image me-4" %>
+          <%= image_tag "jumpn-default-profile-img.png", class: "card-image me-4" %>
         <% end %>
         <div class="">
           <h1>Your Trainer Profile</h1>
@@ -25,7 +25,7 @@
         <% if @trainer.user.photo.attached? %>
           <%= cl_image_tag @trainer.user.photo.key, class: "card-image me-4" %>
         <% else %>
-          <%= image_tag "athlete.jpg", class: "card-image me-4" %>
+          <%= image_tag "jumpn-default-profile-img.png", class: "card-image me-4" %>
         <% end %>
         <div class="">
           <h2>Trainer Details</h2>
@@ -115,13 +115,17 @@
                             <p><%= service.description %></p>
                           </div>
 
-                                <%= simple_form_for [@trainer, service, @booking] do |form| %>
+                              <%= simple_form_for [@trainer, service, @booking] do |form| %>
                                 <%= form.hidden_field :start_time, :value => Date.today %>
                                 <div class="d-flex align-items-center justify-content-between mb-4" style="width: 307.875px;">
                                   <p><strong>Price:</strong> <%= service.price %></p>
-                                  <%= form.submit "Book", class: "btn btn-primary width:100px" %>
+
                                 </div>
                               <% end %>
+                                <%= form_with url: orders_path do %>
+                                  <%= hidden_field_tag 'service_id', service.id %>
+                                  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+                                <% end %>
                           </div>
                         </div>
                       </div>
@@ -181,8 +185,12 @@
                                 input_html: { data: { controller: "datepicker" }, class: "d-none" } %>
                                 <div class="d-flex align-items-center justify-content-between" style="width: 307.875px;">
                                   <p><strong>Price:</strong> <%= service.price %></p>
-                                  <%= form.submit "Book", class: "btn btn-primary" %>
+
                                 </div>
+                              <% end %>
+                              <%= form_with url: orders_path do %>
+                                <%= hidden_field_tag 'service_id', service.id %>
+                                <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
                               <% end %>
                           </div>
                               <%# <button type="button" class=""><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
@@ -219,7 +227,7 @@
                           <% if review.booking.user.photo.attached? %>
                             <%= cl_image_tag review.booking.user.photo.key, class: "" %>
                           <% else %>
-                            <%= image_tag "athlete.jpg", class: "" %>
+                            <%= image_tag "jumpn-default-profile-img.png", class: "" %>
                           <% end %>
                           <p class="stars"><% review.rating.times do %>
                             <span class="star">&#9733;</span>
