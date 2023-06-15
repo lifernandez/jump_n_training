@@ -7,6 +7,7 @@
 # Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+Order.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Service.destroy_all
@@ -363,7 +364,7 @@ time = Time.parse("01:00:00").seconds_since_midnight.seconds
     sport: "Yoga",
     service_type: "Session",
     duration: 2,
-    title: "Sculpt & Sweat: Total-Body Transformation"
+    title: "Sculpt & Sweat"
   )
 
   file = URI.open("https://cdn.mos.cms.futurecdn.net/q5tzid4VnHvn8TGiq7myab.jpeg")

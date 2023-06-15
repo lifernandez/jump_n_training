@@ -7,13 +7,11 @@
         <% else %>
           <%= image_tag "jumpn-default-profile-img.png", class: "card-image me-4" %>
         <% end %>
-        <div class="">
-          <h1>Your Trainer Profile</h1>
 
-          <h1 class="mb-3"><strong><%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
-
-          <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-          <p><strong>Description:</strong> <%= @trainer.description %></p>
+        <div class="trainer-details1">
+          <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
+          <p><strong>Sports:</strong> <%= @trainer.sports.split(',').join(", ") %></p>
+          <p class="mr-5"><strong></strong> <%= @trainer.description %></p>
           <% if @trainer.user == current_user %>
             <%= link_to "Add an activity", new_trainer_service_path(@trainer) , class: "btn btn-primary mr-2" %>
           <% end %>
@@ -27,14 +25,9 @@
           <%= image_tag "jumpn-default-profile-img.png", class: "card-image me-4" %>
         <% end %>
         <div class="trainer-details1">
-          <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
-          <p><strong>Sports:</strong> <%= @trainer.sports %></p>
-          <div class="mt-2 mb-2">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-facebook"></i>
-          </div>
-            <p class="mr-5"><strong></strong> <%= @trainer.description %></p>
+          <div class="d-flex justify-content-between align-items-end">
+            <h1 class="mb-3"><strong> <%= @trainer.user.first_name %> <%= @trainer.user.last_name %></strong></h1>
+            <%# RATING %>
             <% rating = 0.0 %>
             <% count = 0 %>
             <% @trainer.services.each do |service| %>
@@ -44,13 +37,25 @@
                 <%#= (service.reviews.map(&:rating).sum)/service.reviews.length %>
               <% end %>
             <% end %>
-            <div class="rating-container">
+            <div class="rating-container pb-4">
               <%# <p><strong>Rating:</strong></p> %>
               <div class="star-rating">
                 <span class="star">&#9733;</span>
                 <span class="rating-number"><%= (rating / count).round(1) %></span>
               </div>
             </div>
+
+            <%# RATING %>
+          </div>
+          <p><strong>Sports:</strong> <%= @trainer.sports.split(',').join(", ") %></p>
+          <div class="mt-2 mb-2" style="font-size: 30px;">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+          </div>
+            <p class="mr-5"><strong></strong> <%= @trainer.description %></p>
+            <p class="mr-5"><strong></strong> <%= @trainer.services.first.address %></p>
+
         </div>
       </div>
     <% end %>
@@ -76,7 +81,7 @@
             <% @trainer.services.each do |service| %>
               <tr>
                 <td><%= service.service_type %></td>
-                <td><%= service.price %></td>
+                <td><%= humanized_money_with_symbol(service.price) %></td>
                 <td><%= service.sport %></td>
                 <td><%= service.description %></td>
               </tr>
@@ -87,59 +92,60 @@
     </div>
   <% else %>
     <div class="container trainer-container">
-
       <div class="services-section">
-        <div class="training-plan-category w-25 me-5">
+        <div class="w-25 me-5">
           <h2>Training Plans</h2>
-          <% @trainer.services.each do |service| %>
-            <% if service.service_type == "Training Plan" %>
-              <div class="service-card">
-                <%# <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
-                <div class="service-card-infos">
-                  <h6><%= service.title %></h6>
-                  <p><strong>Price:</strong> <%= service.price %></p>
-                  <p><strong>Sport:</strong> <%= service.sport %></p>
-                  <%# <p><%= service.description %></p>
-                  <!-- Button trigger modal -->
+          <div class="training-plan-category">
+            <% @trainer.services.each do |service| %>
+              <% if service.service_type == "Training Plan" %>
+                <div class="service-card">
+                  <div class="service-card-infos">
+                    <h6><%= service.title %></h6>
+                    <%= cl_image_tag service.photo.key, class: "card-image mb-3", style: "height: 200px; width: 100%; object-fit: cover;" %>
+                    <p><strong>Price:</strong> <%= humanized_money_with_symbol(service.price) %></p>
+                    <p><strong>Sport:</strong> <%= service.sport %></p>
+                    <%# <p><%= service.description %></p>
+                    <!-- Button trigger modal -->
 
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= service.id %>">
-                        More information </button>
-                        <!-- Modal -->
-                      <div class="modal fade" id="exampleModal_<%= service.id %>" tabindex="-1" aria-labelledby="exampleModal_<%= service.id %>Label" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
+                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= service.id %>">
+                          More info </button>
+                          <!-- Modal -->
+                        <div class="modal fade" id="exampleModal_<%= service.id %>" tabindex="-1" aria-labelledby="exampleModal_<%= service.id %>Label" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
 
-                              <h5 class="modal-title" id="exampleModal_<%= service.id %>Label"><%= service.title %></h5>
+                                <h5 class="modal-title" id="exampleModal_<%= service.id %>Label"><%= service.title %></h5>
 
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="col-12">
+                              <h5>Description</h5>
+                              <p><%= service.description %></p>
                             </div>
-                            <div class="col-12">
-                            <h5>Description</h5>
-                            <p><%= service.description %></p>
-                          </div>
 
-                              <%= simple_form_for [@trainer, service, @booking] do |form| %>
-                                <%= form.hidden_field :start_time, :value => Date.today %>
-                                <div class="d-flex align-items-center justify-content-between mb-4" style="width: 307.875px;">
-                                  <p><strong>Price:</strong> <%= service.price %></p>
+                                <%= simple_form_for [@trainer, service, @booking] do |form| %>
+                                  <%= form.hidden_field :start_time, :value => Date.today %>
+                                  <div class="d-flex align-items-center justify-content-between mb-4" style="width: 307.875px;">
+                                    <p><strong>Price:</strong> <%= service.price %></p>
 
-                                </div>
-                              <% end %>
-                                <%= form_with url: orders_path do %>
-                                  <%= hidden_field_tag 'service_id', service.id %>
-                                  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+                                  </div>
                                 <% end %>
+                                  <%= form_with url: orders_path do %>
+                                    <%= hidden_field_tag 'service_id', service.id %>
+                                    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+                                  <% end %>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
+
+                  </div>
 
                 </div>
-
-              </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
 
         <div class="service-category w-75">
@@ -152,12 +158,14 @@
                     <h6><%= service.title %></h6>
                     <%= cl_image_tag service.photo.key, class: "card-image me-4" %>
                     <div class="service-card-infos">
-                      <p><strong>Price:</strong> <%= service.price %></p>
+                      <p><strong>Price:</strong> <%= humanized_money_with_symbol(service.price) %></p>
                       <p><strong>Sport:</strong> <%= service.sport %></p>
                       <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%= service.id %>">
-                        More information
-                      </button>
+                      <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal<%= service.id %>">
+                          More info
+                        </button>
+                      </div>
 
                                     <!-- Modal -->
                 <div class="modal fade" id="exampleModal<%= service.id %>" tabindex="-1" aria-labelledby="exampleModal<%= service.id %>Label" aria-hidden="true">
