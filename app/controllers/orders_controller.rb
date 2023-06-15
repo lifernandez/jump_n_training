@@ -3,6 +3,12 @@ class OrdersController < ApplicationController
     service = Service.find(params[:service_id])
     order = Order.create!(service: service, service_sku: service.sku, amount: service.price, state: 'pending', user: current_user)
 
+    if params[:order].present?
+      Booking.create!(user: current_user, service: service, start_time: params[:order][:start_time])
+    else
+      Booking.create!(user: current_user, service: service)
+    end
+
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [
@@ -11,7 +17,8 @@ class OrdersController < ApplicationController
           unit_amount: service.price_cents.to_s.to_i,
           currency: 'gbp',
           product_data: {
-            name: service.title
+            name: service.title,
+            images: [service.photo.url]
           }
         }
       ],

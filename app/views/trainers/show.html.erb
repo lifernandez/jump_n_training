@@ -98,15 +98,15 @@
                   <p><%= service.description %></p>
                   <!-- Button trigger modal -->
 
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal_<%= service.id %>">
                         More information </button>
                         <!-- Modal -->
-                      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="exampleModal_<%= service.id %>" tabindex="-1" aria-labelledby="exampleModal_<%= service.id %>Label" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
 
-                              <h5 class="modal-title" id="exampleModalLabel"><%= service.title %></h5>
+                              <h5 class="modal-title" id="exampleModal_<%= service.id %>Label"><%= service.title %></h5>
 
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
@@ -151,15 +151,15 @@
                       <p><strong>Price:</strong> <%= service.price %></p>
                       <p><strong>Sport:</strong> <%= service.sport %></p>
                       <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%= service.id %>">
                         More information
                       </button>
                                     <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal<%= service.id %>" tabindex="-1" aria-labelledby="exampleModal<%= service.id %>Label" aria-hidden="true">
                   <div class="modal-dialog modal-lg" id="sessions-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"><%= service.title %></h5>
+                        <h5 class="modal-title" id="exampleModal<%= service.id %>Label"><%= service.title %></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body" id="sessions-body">
@@ -178,19 +178,19 @@
                               <div>
                               <h5>Start time</h5>
                               <p class="mb-3">Training Duration: <%= service.duration %> hours</p>
-                              <%= simple_form_for [@trainer, service, @booking] do |form| %>
+                              <%= simple_form_for Order.new do |form| %>
+                              <%#= simple_form_for [@trainer, service, @booking] do |form| %>
                                 <%= form.input :start_time,
                                 as: :string,
                                 label: false,
-                                input_html: { data: { controller: "datepicker" }, class: "d-none" } %>
+                                input_html: { data: { controller: "datepicker" }, class: "d-none", value: DateTime.now } %>
                                 <div class="d-flex align-items-center justify-content-between" style="width: 307.875px;">
                                   <p><strong>Price:</strong> <%= service.price %></p>
 
                                 </div>
-                              <% end %>
-                              <%= form_with url: orders_path do %>
+                              <%# end %>
                                 <%= hidden_field_tag 'service_id', service.id %>
-                                <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+                                <%= form.submit 'Purchase', class: 'btn btn-primary' %>
                               <% end %>
                           </div>
                               <%# <button type="button" class=""><%= link_to "Book", new_trainer_service_booking_path(@trainer, service), class: "btn" %>
