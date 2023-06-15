@@ -3,5 +3,5 @@
   <h3> <%= service.sport %> - <%= service.price %> £ </h3>
   <p class="description"><%= service.description %></p>
   <h1> <%= service.address %> </h1>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> More information </button>
+  <div type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> <%= link_to "show trainer", trainer_path(trainer) %></div>
 </div>
