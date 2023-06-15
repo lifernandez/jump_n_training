@@ -4,6 +4,7 @@ class Service < ApplicationRecord
   has_many :reviews, through: :bookings
   has_one_attached :photo
   after_create :generate_sku
+  validates :photo, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
