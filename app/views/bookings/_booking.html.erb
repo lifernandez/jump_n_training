@@ -1,9 +1,9 @@
 <div class="card-product d-flex justify-content-around" >
   <% if booking.service.service_type == "Session" %>
-    <div class="date"><%=booking.start_time.strftime("%a %d").capitalize %></div>
+    <div class="date"><%# <%=booking.start_time.strftime("%a %d").capitalize %> </div>
 
     <div class="card-product-infos">
-      <p>🕓 <%= booking.start_time.strftime("%-k:%M")%></p>
+      <p>🕓 <%# <%= booking.start_time.strftime("%-k:%M")%> </p>
       <p>📍 <%= booking.service.address %></p>
     </div>
 
@@ -12,6 +12,40 @@
       <%= cl_image_tag booking.service.photo.key, alt: "athlete", class: "avatar" %>
     </div>
     <%= link_to "cancel", booking_path(booking), class: "btn-cancel", data: {turbo_method: :delete, turbo_confirm: "are you sure?"}%>
+
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+              Leave a review
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><%= booking.service.title %></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <%= simple_form_for [booking, @review] do |form| %>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <%= form.label :rating, class: "form-label" %>
+                        <%= form.number_field :rating, class: "form-control", min: 0, max: 5 %>
+                      </div>
+                      <div class="mb-3">
+                        <%= form.label :comment, class: "form-label" %>
+                        <%= form.text_area :comment, class: "form-control", rows: 3 %>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <%= form.submit "Review", class: "btn btn-primary" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+  </div>
   <% else %>
 
     <div class="title"><%=booking.service.title %></div>
